@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","8200","search lenevo log5050 and capture price","chromium","2026-07-01","failed","2026-07-01","","flipkart.search.spec.ts","",""
+"","12274","data-driven test pavanol@abc.com","chromium","2026-07-01","passed","2026-07-01","","ddtlogin.spec.ts","",""
+"","13570","register and login from homepage","chromium","2026-07-01","passed","2026-07-01","","homeRegisterLogin.spec.ts","",""
+"","4923","data-driven test abcxyz@xyz.com","chromium","2026-07-01","passed","2026-07-01","","ddtlogin.spec.ts","",""
