@@ -23,6 +23,7 @@ export class HomePage {
 
   async clickLogin() {
     await this.loginLink.click();
+    console.log("clicked on login link");
   }
 
   async clickRegister() {
