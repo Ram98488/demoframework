@@ -1,0 +1,1 @@
+Lowest-rated hotel: stypeid: '1', (1)
