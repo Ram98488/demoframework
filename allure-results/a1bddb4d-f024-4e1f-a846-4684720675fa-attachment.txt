@@ -1,0 +1,7 @@
+Scenario 1: search Stockholm hotels on Booking.com with dynamic dates
+==================== Scenario 1 Validation ====================
+==================== Scenario 2 Validation ====================
+Scenario 2: apply filters on the Stockholm results page
+==================== Scenario 3 Validation ====================
+Scenario 3: identify the lowest-rated hotel from the results
+Lowest-rated hotel: stypeid: '1', (1)

@@ -1,0 +1,7 @@
+Scenario 1: search Stockholm hotels on Booking.com with dynamic dates
+==================== Scenario 1 ====================
+==================== Scenario 2 ====================
+Scenario 2: apply filters on the Stockholm results page
+==================== Scenario 3 ====================
+Scenario 3: identify the lowest-rated hotel from the filtered results
+Lowest-rated hotel: {"publicPath":"https://cf.bstatic.com/psb/capla/","cdnOrigin":"https://cf.bstatic.com","bplatformEnvironment":"prod","cs (0.9)

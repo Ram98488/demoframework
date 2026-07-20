@@ -1,0 +1,3404 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: bookingsearch.spec.ts >> Scenario 1, 2 and 3 in one flow
+- Location: tests\bookingsearch.spec.ts:4:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - link "Skip to main content" [ref=e3] [cursor=pointer]:
+    - /url: "#basiclayout"
+    - generic [ref=e5]: Skip to main content
+  - banner [ref=e9]:
+    - generic [ref=e10]:
+      - navigation [ref=e11]:
+        - link "Booking.com" [ref=e15] [cursor=pointer]:
+          - /url: https://www.booking.com/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+          - img [ref=e16]
+        - generic [ref=e18]:
+          - button "Prices in Indian Rupee" [ref=e20] [cursor=pointer]:
+            - generic [ref=e21]: INR
+          - 'button "Language: English (US)" [ref=e23] [cursor=pointer]'
+          - link "Customer support" [ref=e28] [cursor=pointer]:
+            - /url: https://secure.booking.com/help.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee&source=header&src=profile_contact_cs
+            - img [ref=e31]
+          - link "List your property" [ref=e33] [cursor=pointer]:
+            - /url: https://join.booking.com/?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&lang=en-us&sid=7fdae2cc64456324cd4a3848e320ddee&utm_medium=frontend&utm_source=topbar
+            - generic [ref=e34]: List your property
+          - link "Register an account" [ref=e35] [cursor=pointer]:
+            - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=en-us&aid=304142&bkng_action=searchresults_irene&prompt=signin&state=UrICWwl_ckUON2OlOdus4IW3PBh7Vm2BNUBo0CMpWsJK_Dexn_15HxEPRbUPR08AmTr5GyPzs0HyCWuf_nOA03UvwdEub7NbS4FDpS60xO-bKQrQZlcACNrYMTpSp0mY-t3AYZY6IwwKpzRJGbuMb506cDakAeY9J-BUA3CMuuf4wyM9_1PxYw1bws9J9JebtCP9Wj4UOAqEtXthNFkNlf9bGP8cZ5iCDSwulmdCi4zKlFK8IreoOZsI78OIxoqM5wop6f1m7UiEDu-1UlHbX3joPGH-ni2DIGb9PS7hmntXaf8hivlse8Taz-dIpLNJCZey5nzKoXBvqIKUCqLWEilg5B-FW6vGrozU3Xn1oqDlXLE_mHd2QnX81CKntEv0rwEsvvAOoZUULmQEdw38_AkSTDwq*eyJpZCI6InRyYXZlbGxlcl9oZWFkZXIifQ%3D%3D
+            - generic [ref=e36]: Register
+          - link "Sign in" [ref=e38] [cursor=pointer]:
+            - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=en-us&aid=304142&bkng_action=searchresults_irene&prompt=signin&state=UrICWwl_ckUON2OlOdus4IW3PBh7Vm2BNUBo0CMpWsJK_Dexn_15HxEPRbUPR08AmTr5GyPzs0HyCWuf_nOA03UvwdEub7NbS4FDpS60xO-bKQrQZlcACNrYMTpSp0mY-t3AYZY6IwwKpzRJGbuMb506cDakAeY9J-BUA3CMuuf4wyM9_1PxYw1bws9J9JebtCP9Wj4UOAqEtXthNFkNlf9bGP8cZ5iCDSwulmdCi4zKlFK8IreoOZsI78OIxoqM5wop6f1m7UiEDu-1UlHbX3joPGH-ni2DIGb9PS7hmntXaf8hivlse8Taz-dIpLNJCZey5nzKoXBvqIKUCqLWEilg5B-FW6vGrozU3Xn1oqDlXLE_mHd2QnX81CKntEv0rwEsvvAOoZUULmQEdw38_AkSTDwq*eyJpZCI6InRyYXZlbGxlcl9oZWFkZXIifQ%3D%3D
+            - generic [ref=e39]: Sign in
+      - navigation "What are you looking for?" [ref=e40]:
+        - menubar [ref=e42]:
+          - menuitem "Stays" [ref=e43] [cursor=pointer]:
+            - generic [ref=e44]:
+              - img [ref=e46]
+              - generic [ref=e48]: Stays
+          - menuitem "Flights" [ref=e49] [cursor=pointer]:
+            - generic [ref=e50]:
+              - img [ref=e52]
+              - generic [ref=e54]: Flights
+          - menuitem "Car rental" [ref=e55] [cursor=pointer]:
+            - generic [ref=e56]:
+              - img [ref=e58]
+              - generic [ref=e60]: Car rental
+          - menuitem "Attractions" [ref=e61] [cursor=pointer]:
+            - generic [ref=e62]:
+              - img [ref=e64]
+              - generic [ref=e66]: Attractions
+          - menuitem "Airport taxis" [ref=e67] [cursor=pointer]:
+            - generic [ref=e68]:
+              - img [ref=e70]
+              - generic [ref=e72]: Airport taxis
+  - generic [ref=e76]:
+    - region "Search properties" [ref=e79]:
+      - generic [ref=e80]:
+        - generic [ref=e84]:
+          - img [ref=e87]
+          - generic [ref=e89]:
+            - generic [ref=e90]: Enter destination
+            - combobox "Enter destination" [ref=e94]: Stockholm
+          - button "Clear" [ref=e96] [cursor=pointer]:
+            - img "Clear" [ref=e97]:
+              - img [ref=e98]
+        - button "Select dates Wed, Jul 15 — Mon, Jul 20" [ref=e102] [cursor=pointer]:
+          - generic [ref=e103]:
+            - img [ref=e105]
+            - generic [ref=e107]:
+              - generic [ref=e108]: Select dates
+              - generic [ref=e109]: Wed, Jul 15 — Mon, Jul 20
+        - generic [ref=e111] [cursor=pointer]:
+          - img [ref=e113]
+          - generic [ref=e115]:
+            - generic [ref=e116]: Select occupancy
+            - 'button "Number of travelers and rooms. Currently selected: 2 adults · 0 children · 1 room" [ref=e118]':
+              - generic [ref=e120]: 2 adults · 0 children · 1 room
+          - img [ref=e122]
+        - button "Search" [ref=e125] [cursor=pointer]:
+          - generic [ref=e126]: Search
+    - generic [ref=e127]:
+      - navigation "Navigation history menu (breadcrumbs)" [ref=e129]:
+        - list [ref=e130]:
+          - listitem [ref=e131]:
+            - link "Home" [ref=e133] [cursor=pointer]:
+              - /url: https://www.booking.com/index.en-us.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB
+          - listitem [ref=e134]:
+            - generic [ref=e135]:
+              - img [ref=e137]
+              - link "Sweden" [ref=e139] [cursor=pointer]:
+                - /url: https://www.booking.com/country/se.en-us.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB
+          - listitem [ref=e140]:
+            - generic [ref=e141]:
+              - img [ref=e143]
+              - link "Stockholm county" [ref=e145] [cursor=pointer]:
+                - /url: https://www.booking.com/region/se/stockholm.en-us.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB
+          - listitem [ref=e146]:
+            - generic [ref=e147]:
+              - img [ref=e149]
+              - link "Stockholm" [ref=e151] [cursor=pointer]:
+                - /url: https://www.booking.com/city/se/stockholm.en-us.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB
+          - listitem [ref=e152]:
+            - generic [ref=e153]:
+              - img [ref=e155]
+              - generic [ref=e157]: Search results
+      - generic [ref=e158]:
+        - generic [ref=e159]:
+          - generic [ref=e163]:
+            - img "Show on map" [ref=e164]
+            - button "Show on map" [ref=e166] [cursor=pointer]:
+              - img [ref=e169]
+              - generic [ref=e171]: Show on map
+          - region "Filters" [ref=e172]:
+            - heading "Filter by:" [level=2] [ref=e174]
+            - group "Your budget (per night)" [ref=e176]:
+              - heading "Your budget (per night)" [level=2] [ref=e178]:
+                - generic [ref=e179]: Your budget (per night)
+              - generic [ref=e180]:
+                - status [ref=e181]:
+                  - generic [ref=e182]: ₹ 5,000 – ₹ 40,000+
+                - group [ref=e223]:
+                  - group [ref=e224]:
+                    - slider "Min." [ref=e225]: "5000"
+                    - slider "Max." [ref=e226]: "40000"
+            - separator [ref=e228]
+            - group "Popular filters" [ref=e230]:
+              - heading "Popular filters" [level=2] [ref=e232]:
+                - generic [ref=e233]: Popular filters
+              - generic [ref=e234]:
+                - generic [ref=e235]:
+                  - 'checkbox "Hotels: 136 properties" [ref=e236]'
+                  - generic [ref=e237] [cursor=pointer]:
+                    - img [ref=e240]
+                    - generic [ref=e244]:
+                      - generic [ref=e245]: Hotels
+                      - generic [ref=e246]: "136"
+                - generic [ref=e247]:
+                  - 'checkbox "4 stars: 84 properties" [ref=e248]'
+                  - generic [ref=e249] [cursor=pointer]:
+                    - img [ref=e252]
+                    - generic [ref=e256]:
+                      - generic [ref=e259]: 4 stars
+                      - generic [ref=e260]: "84"
+                - generic [ref=e261]:
+                  - 'checkbox "Breakfast included: 139 properties" [checked] [active] [ref=e262]'
+                  - generic [ref=e263] [cursor=pointer]:
+                    - img [ref=e266]
+                    - generic [ref=e270]:
+                      - generic [ref=e271]: Breakfast included
+                      - generic [ref=e272]: "139"
+                - generic [ref=e273]:
+                  - 'checkbox "Very Good: 8+: 102 properties" [ref=e274]'
+                  - generic [ref=e275] [cursor=pointer]:
+                    - img [ref=e278]
+                    - generic [ref=e281]:
+                      - generic [ref=e282]:
+                        - generic [ref=e283]: "Very Good: 8+"
+                        - generic [ref=e284]: "102"
+                      - generic [ref=e285]: Based on guest reviews
+                - generic [ref=e286]:
+                  - 'checkbox "Kitchen/Kitchenette: 19 properties" [ref=e287]'
+                  - generic [ref=e288] [cursor=pointer]:
+                    - img [ref=e291]
+                    - generic [ref=e295]:
+                      - generic [ref=e296]: Kitchen/Kitchenette
+                      - generic [ref=e297]: "19"
+                - generic [ref=e298]:
+                  - 'checkbox "Apartments: 4 properties" [ref=e299]'
+                  - generic [ref=e300] [cursor=pointer]:
+                    - img [ref=e303]
+                    - generic [ref=e307]:
+                      - generic [ref=e308]: Apartments
+                      - generic [ref=e309]: "4"
+                - generic [ref=e310]:
+                  - 'checkbox "Stockholm City Centre: 100 properties" [ref=e311]'
+                  - generic [ref=e312] [cursor=pointer]:
+                    - img [ref=e315]
+                    - generic [ref=e319]:
+                      - generic [ref=e320]: Stockholm City Centre
+                      - generic [ref=e321]: "100"
+                - generic [ref=e322]:
+                  - 'checkbox "Less than 1 km: 51 properties" [ref=e323]'
+                  - generic [ref=e324] [cursor=pointer]:
+                    - img [ref=e327]
+                    - generic [ref=e330]:
+                      - generic [ref=e331]:
+                        - generic [ref=e332]: Less than 1 km
+                        - generic [ref=e333]: "51"
+                      - generic [ref=e334]: Distance from address
+            - separator [ref=e335]
+            - generic [ref=e337]:
+              - generic [ref=e338]:
+                - img [ref=e341]
+                - generic [ref=e344]: Smart filters
+              - generic [ref=e346]:
+                - generic [ref=e347]:
+                  - generic [ref=e351]:
+                    - text: What are you looking for?
+                    - button "More info" [ref=e354] [cursor=pointer]:
+                      - img [ref=e356]
+                  - textbox "What are you looking for? More info" [ref=e359]:
+                    - /placeholder: "Example: I want a place with great reviews and free cancellation"
+                - button "Find properties" [ref=e360] [cursor=pointer]:
+                  - generic [ref=e361]: Find properties
+            - separator [ref=e362]
+            - group "Property Type" [ref=e364]:
+              - heading "Property Type" [level=2] [ref=e366]:
+                - generic [ref=e367]: Property Type
+              - generic [ref=e368]:
+                - generic [ref=e369]:
+                  - 'checkbox "Hotels: 136 properties" [ref=e370]'
+                  - generic [ref=e371] [cursor=pointer]:
+                    - img [ref=e374]
+                    - generic [ref=e378]:
+                      - generic [ref=e379]: Hotels
+                      - generic [ref=e380]: "136"
+                - generic [ref=e381]:
+                  - 'checkbox "Apartments: 4 properties" [ref=e382]'
+                  - generic [ref=e383] [cursor=pointer]:
+                    - img [ref=e386]
+                    - generic [ref=e390]:
+                      - generic [ref=e391]: Apartments
+                      - generic [ref=e392]: "4"
+                - generic [ref=e393]:
+                  - 'checkbox "Bed and Breakfasts: 1 property" [ref=e394]'
+                  - generic [ref=e395] [cursor=pointer]:
+                    - img [ref=e398]
+                    - generic [ref=e402]:
+                      - generic [ref=e403]: Bed and Breakfasts
+                      - generic [ref=e404]: "1"
+                - generic [ref=e405]:
+                  - 'checkbox "Guesthouses: 1 property" [ref=e406]'
+                  - generic [ref=e407] [cursor=pointer]:
+                    - img [ref=e410]
+                    - generic [ref=e414]:
+                      - generic [ref=e415]: Guesthouses
+                      - generic [ref=e416]: "1"
+                - generic [ref=e417]:
+                  - 'checkbox "Hostels: 1 property" [ref=e418]'
+                  - generic [ref=e419] [cursor=pointer]:
+                    - img [ref=e422]
+                    - generic [ref=e426]:
+                      - generic [ref=e427]: Hostels
+                      - generic [ref=e428]: "1"
+                - generic [ref=e429]:
+                  - 'checkbox "Entire homes & apartments: 16 properties" [ref=e430]'
+                  - generic [ref=e431] [cursor=pointer]:
+                    - img [ref=e434]
+                    - generic [ref=e438]:
+                      - generic [ref=e439]: Entire homes & apartments
+                      - generic [ref=e440]: "16"
+            - separator [ref=e441]
+            - group "Size and layout" [ref=e443]:
+              - heading "Size and layout" [level=2] [ref=e445]:
+                - generic [ref=e446]: Size and layout
+              - generic [ref=e447]:
+                - generic [ref=e449]: Bedrooms
+                - generic [ref=e450]:
+                  - slider "Bedrooms": "0"
+                  - button [disabled] [ref=e451]:
+                    - img [ref=e454]
+                  - generic [ref=e456]: "0"
+                  - button [ref=e457] [cursor=pointer]:
+                    - img [ref=e460]
+              - generic [ref=e462]:
+                - generic [ref=e464]: Bathrooms
+                - generic [ref=e465]:
+                  - slider "Bathrooms": "0"
+                  - button [disabled] [ref=e466]:
+                    - img [ref=e469]
+                  - generic [ref=e471]: "0"
+                  - button [ref=e472] [cursor=pointer]:
+                    - img [ref=e475]
+              - generic [ref=e478]: Room or unit size
+              - generic [ref=e479]:
+                - status [ref=e480]:
+                  - generic [ref=e481]: 1m² – 115m²
+                - group [ref=e482]:
+                  - group [ref=e483]:
+                    - slider "Set minimum room or unit size" [ref=e484]: "1"
+                    - slider "Set maximum room or unit size" [ref=e485]: "111"
+            - separator [ref=e487]
+            - group "Facilities" [ref=e489]:
+              - heading "Facilities" [level=2] [ref=e491]:
+                - generic [ref=e492]: Facilities
+              - generic [ref=e493]:
+                - generic [ref=e494]:
+                  - 'checkbox "Parking: 103 properties" [ref=e495]'
+                  - generic [ref=e496] [cursor=pointer]:
+                    - img [ref=e499]
+                    - generic [ref=e503]:
+                      - generic [ref=e504]: Parking
+                      - generic [ref=e505]: "103"
+                - generic [ref=e506]:
+                  - 'checkbox "Swimming pool: 5 properties" [ref=e507]'
+                  - generic [ref=e508] [cursor=pointer]:
+                    - img [ref=e511]
+                    - generic [ref=e515]:
+                      - generic [ref=e516]: Swimming pool
+                      - generic [ref=e517]: "5"
+                - generic [ref=e518]:
+                  - 'checkbox "Spa and wellness center: 13 properties" [ref=e519]'
+                  - generic [ref=e520] [cursor=pointer]:
+                    - img [ref=e523]
+                    - generic [ref=e527]:
+                      - generic [ref=e528]: Spa and wellness center
+                      - generic [ref=e529]: "13"
+                - generic [ref=e530]:
+                  - 'checkbox "Hot tub/Jacuzzi: 2 properties" [ref=e531]'
+                  - generic [ref=e532] [cursor=pointer]:
+                    - img [ref=e535]
+                    - generic [ref=e539]:
+                      - generic [ref=e540]: Hot tub/Jacuzzi
+                      - generic [ref=e541]: "2"
+                - generic [ref=e542]:
+                  - 'checkbox "Free Wifi: 138 properties" [ref=e543]'
+                  - generic [ref=e544] [cursor=pointer]:
+                    - img [ref=e547]
+                    - generic [ref=e551]:
+                      - generic [ref=e552]: Free Wifi
+                      - generic [ref=e553]: "138"
+              - button "Show all 13" [ref=e554] [cursor=pointer]:
+                - generic [ref=e556]:
+                  - text: Show all 13
+                  - img [ref=e558]
+            - separator [ref=e560]
+            - group "Room facilities" [ref=e562]:
+              - heading "Room facilities" [level=2] [ref=e564]:
+                - generic [ref=e565]: Room facilities
+              - generic [ref=e566]:
+                - generic [ref=e567]:
+                  - 'checkbox "Air conditioning: 25 properties" [ref=e568]'
+                  - generic [ref=e569] [cursor=pointer]:
+                    - img [ref=e572]
+                    - generic [ref=e576]:
+                      - generic [ref=e577]: Air conditioning
+                      - generic [ref=e578]: "25"
+                - generic [ref=e579]:
+                  - 'checkbox "Private bathroom: 113 properties" [ref=e580]'
+                  - generic [ref=e581] [cursor=pointer]:
+                    - img [ref=e584]
+                    - generic [ref=e588]:
+                      - generic [ref=e589]: Private bathroom
+                      - generic [ref=e590]: "113"
+                - generic [ref=e591]:
+                  - 'checkbox "Balcony: 6 properties" [ref=e592]'
+                  - generic [ref=e593] [cursor=pointer]:
+                    - img [ref=e596]
+                    - generic [ref=e600]:
+                      - generic [ref=e601]: Balcony
+                      - generic [ref=e602]: "6"
+                - generic [ref=e603]:
+                  - 'checkbox "Sea view: 4 properties" [ref=e604]'
+                  - generic [ref=e605] [cursor=pointer]:
+                    - img [ref=e608]
+                    - generic [ref=e612]:
+                      - generic [ref=e613]: Sea view
+                      - generic [ref=e614]: "4"
+                - generic [ref=e615]:
+                  - 'checkbox "Kitchen/Kitchenette: 19 properties" [ref=e616]'
+                  - generic [ref=e617] [cursor=pointer]:
+                    - img [ref=e620]
+                    - generic [ref=e624]:
+                      - generic [ref=e625]: Kitchen/Kitchenette
+                      - generic [ref=e626]: "19"
+              - button "Show all 25" [ref=e627] [cursor=pointer]:
+                - generic [ref=e629]:
+                  - text: Show all 25
+                  - img [ref=e631]
+            - separator [ref=e633]
+            - group "Meals" [ref=e635]:
+              - heading "Meals" [level=2] [ref=e637]:
+                - generic [ref=e638]: Meals
+              - generic [ref=e639]:
+                - generic [ref=e640]:
+                  - 'checkbox "Breakfast included: 139 properties" [checked] [ref=e641]'
+                  - generic [ref=e642] [cursor=pointer]:
+                    - img [ref=e645]
+                    - generic [ref=e649]:
+                      - generic [ref=e650]: Breakfast included
+                      - generic [ref=e651]: "139"
+                - generic [ref=e652]:
+                  - 'checkbox "Breakfast & dinner included: 4 properties" [ref=e653]'
+                  - generic [ref=e654] [cursor=pointer]:
+                    - img [ref=e657]
+                    - generic [ref=e661]:
+                      - generic [ref=e662]: Breakfast & dinner included
+                      - generic [ref=e663]: "4"
+                - generic [ref=e664]:
+                  - 'checkbox "Kitchen facilities: 19 properties" [ref=e665]'
+                  - generic [ref=e666] [cursor=pointer]:
+                    - img [ref=e669]
+                    - generic [ref=e673]:
+                      - generic [ref=e674]: Kitchen facilities
+                      - generic [ref=e675]: "19"
+            - separator [ref=e676]
+            - group "Property rating Find high-quality hotels and vacation rentals" [ref=e678]:
+              - heading "Property rating Find high-quality hotels and vacation rentals" [level=2] [ref=e680]:
+                - generic [ref=e681]: Property rating
+                - generic [ref=e682]: Find high-quality hotels and vacation rentals
+              - generic [ref=e683]:
+                - generic [ref=e684]:
+                  - 'checkbox "2 stars: 7 properties" [ref=e685]'
+                  - generic [ref=e686] [cursor=pointer]:
+                    - img [ref=e689]
+                    - generic [ref=e693]:
+                      - generic [ref=e696]: 2 stars
+                      - generic [ref=e697]: "7"
+                - generic [ref=e698]:
+                  - 'checkbox "3 stars: 37 properties" [ref=e699]'
+                  - generic [ref=e700] [cursor=pointer]:
+                    - img [ref=e703]
+                    - generic [ref=e707]:
+                      - generic [ref=e710]: 3 stars
+                      - generic [ref=e711]: "37"
+                - generic [ref=e712]:
+                  - 'checkbox "4 stars: 84 properties" [ref=e713]'
+                  - generic [ref=e714] [cursor=pointer]:
+                    - img [ref=e717]
+                    - generic [ref=e721]:
+                      - generic [ref=e724]: 4 stars
+                      - generic [ref=e725]: "84"
+                - generic [ref=e726]:
+                  - 'checkbox "5 stars: 9 properties" [ref=e727]'
+                  - generic [ref=e728] [cursor=pointer]:
+                    - img [ref=e731]
+                    - generic [ref=e735]:
+                      - generic [ref=e738]: 5 stars
+                      - generic [ref=e739]: "9"
+            - separator [ref=e740]
+            - group "Review score" [ref=e742]:
+              - heading "Review score" [level=2] [ref=e744]:
+                - generic [ref=e745]: Review score
+              - generic [ref=e746]:
+                - generic [ref=e747]:
+                  - 'checkbox "Wonderful: 9+: 12 properties" [ref=e748]'
+                  - generic [ref=e749] [cursor=pointer]:
+                    - img [ref=e752]
+                    - generic [ref=e756]:
+                      - generic [ref=e757]: "Wonderful: 9+"
+                      - generic [ref=e758]: "12"
+                - generic [ref=e759]:
+                  - 'checkbox "Very Good: 8+: 102 properties" [ref=e760]'
+                  - generic [ref=e761] [cursor=pointer]:
+                    - img [ref=e764]
+                    - generic [ref=e768]:
+                      - generic [ref=e769]: "Very Good: 8+"
+                      - generic [ref=e770]: "102"
+                - generic [ref=e771]:
+                  - 'checkbox "Good: 7+: 133 properties" [ref=e772]'
+                  - generic [ref=e773] [cursor=pointer]:
+                    - img [ref=e776]
+                    - generic [ref=e780]:
+                      - generic [ref=e781]: "Good: 7+"
+                      - generic [ref=e782]: "133"
+                - generic [ref=e783]:
+                  - 'checkbox "Pleasant: 6+: 138 properties" [ref=e784]'
+                  - generic [ref=e785] [cursor=pointer]:
+                    - img [ref=e788]
+                    - generic [ref=e792]:
+                      - generic [ref=e793]: "Pleasant: 6+"
+                      - generic [ref=e794]: "138"
+            - separator [ref=e795]
+            - group "Neighborhood" [ref=e797]:
+              - heading "Neighborhood" [level=2] [ref=e799]:
+                - generic [ref=e800]: Neighborhood
+              - generic [ref=e801]:
+                - generic [ref=e802]:
+                  - 'checkbox "Stockholm City Centre: 100 properties" [ref=e803]'
+                  - generic [ref=e804] [cursor=pointer]:
+                    - img [ref=e807]
+                    - generic [ref=e811]:
+                      - generic [ref=e812]: Stockholm City Centre
+                      - generic [ref=e813]: "100"
+                - generic [ref=e814]:
+                  - 'checkbox "Guests'' favorite area: 70 properties" [ref=e815]'
+                  - generic [ref=e816] [cursor=pointer]:
+                    - img [ref=e819]
+                    - generic [ref=e823]:
+                      - generic [ref=e824]: Guests' favorite area
+                      - generic [ref=e825]: "70"
+                - generic [ref=e826]:
+                  - 'checkbox "Norrmalm: 38 properties" [ref=e827]'
+                  - generic [ref=e828] [cursor=pointer]:
+                    - img [ref=e831]
+                    - generic [ref=e835]:
+                      - generic [ref=e836]: Norrmalm
+                      - generic [ref=e837]: "38"
+                - generic [ref=e838]:
+                  - 'checkbox "Södermalm: 19 properties" [ref=e839]'
+                  - generic [ref=e840] [cursor=pointer]:
+                    - img [ref=e843]
+                    - generic [ref=e847]:
+                      - generic [ref=e848]: Södermalm
+                      - generic [ref=e849]: "19"
+                - generic [ref=e850]:
+                  - 'checkbox "Östermalm: 17 properties" [ref=e851]'
+                  - generic [ref=e852] [cursor=pointer]:
+                    - img [ref=e855]
+                    - generic [ref=e859]:
+                      - generic [ref=e860]: Östermalm
+                      - generic [ref=e861]: "17"
+                - generic [ref=e862]:
+                  - 'checkbox "Vasastan: 10 properties" [ref=e863]'
+                  - generic [ref=e864] [cursor=pointer]:
+                    - img [ref=e867]
+                    - generic [ref=e871]:
+                      - generic [ref=e872]: Vasastan
+                      - generic [ref=e873]: "10"
+                - generic [ref=e874]:
+                  - 'checkbox "Bromma: 8 properties" [ref=e875]'
+                  - generic [ref=e876] [cursor=pointer]:
+                    - img [ref=e879]
+                    - generic [ref=e883]:
+                      - generic [ref=e884]: Bromma
+                      - generic [ref=e885]: "8"
+                - generic [ref=e886]:
+                  - 'checkbox "Kista: 8 properties" [ref=e887]'
+                  - generic [ref=e888] [cursor=pointer]:
+                    - img [ref=e891]
+                    - generic [ref=e895]:
+                      - generic [ref=e896]: Kista
+                      - generic [ref=e897]: "8"
+                - generic [ref=e898]:
+                  - 'checkbox "Kungsholmen: 6 properties" [ref=e899]'
+                  - generic [ref=e900] [cursor=pointer]:
+                    - img [ref=e903]
+                    - generic [ref=e907]:
+                      - generic [ref=e908]: Kungsholmen
+                      - generic [ref=e909]: "6"
+                - generic [ref=e910]:
+                  - 'checkbox "Gamla Stan: 6 properties" [ref=e911]'
+                  - generic [ref=e912] [cursor=pointer]:
+                    - img [ref=e915]
+                    - generic [ref=e919]:
+                      - generic [ref=e920]: Gamla Stan
+                      - generic [ref=e921]: "6"
+              - button "Show all 20" [ref=e922] [cursor=pointer]:
+                - generic [ref=e924]:
+                  - text: Show all 20
+                  - img [ref=e926]
+            - separator [ref=e928]
+            - group "Distance from center of Stockholm" [ref=e930]:
+              - heading "Distance from center of Stockholm" [level=2] [ref=e932]:
+                - generic [ref=e933]: Distance from center of Stockholm
+              - generic [ref=e934]:
+                - generic [ref=e935]:
+                  - 'checkbox "Less than 1 km: 51 properties" [ref=e936]'
+                  - generic [ref=e937] [cursor=pointer]:
+                    - img [ref=e940]
+                    - generic [ref=e944]:
+                      - generic [ref=e945]: Less than 1 km
+                      - generic [ref=e946]: "51"
+                - generic [ref=e947]:
+                  - 'checkbox "Less than 3 km: 97 properties" [ref=e948]'
+                  - generic [ref=e949] [cursor=pointer]:
+                    - img [ref=e952]
+                    - generic [ref=e956]:
+                      - generic [ref=e957]: Less than 3 km
+                      - generic [ref=e958]: "97"
+                - generic [ref=e959]:
+                  - 'checkbox "Less than 5 km: 110 properties" [ref=e960]'
+                  - generic [ref=e961] [cursor=pointer]:
+                    - img [ref=e964]
+                    - generic [ref=e968]:
+                      - generic [ref=e969]: Less than 5 km
+                      - generic [ref=e970]: "110"
+            - separator [ref=e971]
+            - group "Landmarks" [ref=e973]:
+              - heading "Landmarks" [level=2] [ref=e975]:
+                - generic [ref=e976]: Landmarks
+              - generic [ref=e977]:
+                - generic [ref=e978]:
+                  - 'checkbox "Nordiska Kompaniet: 53 properties" [ref=e979]'
+                  - generic [ref=e980] [cursor=pointer]:
+                    - img [ref=e983]
+                    - generic [ref=e987]:
+                      - generic [ref=e988]: Nordiska Kompaniet
+                      - generic [ref=e989]: "53"
+                - generic [ref=e990]:
+                  - 'checkbox "Vasa Museum: 8 properties" [ref=e991]'
+                  - generic [ref=e992] [cursor=pointer]:
+                    - img [ref=e995]
+                    - generic [ref=e999]:
+                      - generic [ref=e1000]: Vasa Museum
+                      - generic [ref=e1001]: "8"
+                - generic [ref=e1002]:
+                  - 'checkbox "Kista Galleria: 7 properties" [ref=e1003]'
+                  - generic [ref=e1004] [cursor=pointer]:
+                    - img [ref=e1007]
+                    - generic [ref=e1011]:
+                      - generic [ref=e1012]: Kista Galleria
+                      - generic [ref=e1013]: "7"
+                - generic [ref=e1014]:
+                  - 'checkbox "Kistamassan: 7 properties" [ref=e1015]'
+                  - generic [ref=e1016] [cursor=pointer]:
+                    - img [ref=e1019]
+                    - generic [ref=e1023]:
+                      - generic [ref=e1024]: Kistamassan
+                      - generic [ref=e1025]: "7"
+                - generic [ref=e1026]:
+                  - 'checkbox "Stockholmsmässan Exhibition Center: 5 properties" [ref=e1027]'
+                  - generic [ref=e1028] [cursor=pointer]:
+                    - img [ref=e1031]
+                    - generic [ref=e1035]:
+                      - generic [ref=e1036]: Stockholmsmässan Exhibition Center
+                      - generic [ref=e1037]: "5"
+              - button "Show all 10" [ref=e1038] [cursor=pointer]:
+                - generic [ref=e1040]:
+                  - text: Show all 10
+                  - img [ref=e1042]
+            - separator [ref=e1044]
+            - group "Bed preference" [ref=e1046]:
+              - heading "Bed preference" [level=2] [ref=e1048]:
+                - generic [ref=e1049]: Bed preference
+              - generic [ref=e1050]:
+                - generic [ref=e1051]:
+                  - 'checkbox "Twin beds: 77 properties" [ref=e1052]'
+                  - generic [ref=e1053] [cursor=pointer]:
+                    - img [ref=e1056]
+                    - generic [ref=e1060]:
+                      - generic [ref=e1061]: Twin beds
+                      - generic [ref=e1062]: "77"
+                - generic [ref=e1063]:
+                  - 'checkbox "Double bed: 124 properties" [ref=e1064]'
+                  - generic [ref=e1065] [cursor=pointer]:
+                    - img [ref=e1068]
+                    - generic [ref=e1072]:
+                      - generic [ref=e1073]: Double bed
+                      - generic [ref=e1074]: "124"
+            - separator [ref=e1075]
+            - group "Reservation policy" [ref=e1077]:
+              - heading "Reservation policy" [level=2] [ref=e1079]:
+                - generic [ref=e1080]: Reservation policy
+              - generic [ref=e1082]:
+                - 'checkbox "Free cancellation: 137 properties" [ref=e1083]'
+                - generic [ref=e1084] [cursor=pointer]:
+                  - img [ref=e1087]
+                  - generic [ref=e1091]:
+                    - generic [ref=e1092]: Free cancellation
+                    - generic [ref=e1093]: "137"
+            - separator [ref=e1094]
+            - group "Travel group" [ref=e1096]:
+              - heading "Travel group" [level=2] [ref=e1098]:
+                - generic [ref=e1099]: Travel group
+              - generic [ref=e1100]:
+                - generic [ref=e1101]:
+                  - 'checkbox "Pet friendly: 85 properties" [ref=e1102]'
+                  - generic [ref=e1103] [cursor=pointer]:
+                    - img [ref=e1106]
+                    - generic [ref=e1110]:
+                      - generic [ref=e1111]: Pet friendly
+                      - generic [ref=e1112]: "85"
+                - generic [ref=e1113]:
+                  - 'checkbox "Adults only: 1 property" [ref=e1114]'
+                  - generic [ref=e1115] [cursor=pointer]:
+                    - img [ref=e1118]
+                    - generic [ref=e1122]:
+                      - generic [ref=e1123]: Adults only
+                      - generic [ref=e1124]: "1"
+                - generic [ref=e1125]:
+                  - 'checkbox "Travel Proud (LGBTQ+ friendly): 59 properties" [ref=e1126]'
+                  - generic [ref=e1127] [cursor=pointer]:
+                    - img [ref=e1130]
+                    - generic [ref=e1134]:
+                      - generic [ref=e1135]: Travel Proud (LGBTQ+ friendly)
+                      - generic [ref=e1136]: "59"
+            - separator [ref=e1137]
+            - group "Fun Things To Do" [ref=e1139]:
+              - heading "Fun Things To Do" [level=2] [ref=e1141]:
+                - generic [ref=e1142]: Fun Things To Do
+              - generic [ref=e1143]:
+                - generic [ref=e1144]:
+                  - 'checkbox "Sauna: 63 properties" [ref=e1145]'
+                  - generic [ref=e1146] [cursor=pointer]:
+                    - img [ref=e1149]
+                    - generic [ref=e1153]:
+                      - generic [ref=e1154]: Sauna
+                      - generic [ref=e1155]: "63"
+                - generic [ref=e1156]:
+                  - 'checkbox "Locker rooms: 22 properties" [ref=e1157]'
+                  - generic [ref=e1158] [cursor=pointer]:
+                    - img [ref=e1161]
+                    - generic [ref=e1165]:
+                      - generic [ref=e1166]: Locker rooms
+                      - generic [ref=e1167]: "22"
+                - generic [ref=e1168]:
+                  - 'checkbox "Fitness center: 83 properties" [ref=e1169]'
+                  - generic [ref=e1170] [cursor=pointer]:
+                    - img [ref=e1173]
+                    - generic [ref=e1177]:
+                      - generic [ref=e1178]: Fitness center
+                      - generic [ref=e1179]: "83"
+                - generic [ref=e1180]:
+                  - 'checkbox "Bicycle rental: 23 properties" [ref=e1181]'
+                  - generic [ref=e1182] [cursor=pointer]:
+                    - img [ref=e1185]
+                    - generic [ref=e1189]:
+                      - generic [ref=e1190]: Bicycle rental
+                      - generic [ref=e1191]: "23"
+                - generic [ref=e1192]:
+                  - 'checkbox "Fitness: 53 properties" [ref=e1193]'
+                  - generic [ref=e1194] [cursor=pointer]:
+                    - img [ref=e1197]
+                    - generic [ref=e1201]:
+                      - generic [ref=e1202]: Fitness
+                      - generic [ref=e1203]: "53"
+            - separator [ref=e1204]
+            - group "Brands" [ref=e1206]:
+              - heading "Brands" [level=2] [ref=e1208]:
+                - generic [ref=e1209]: Brands
+              - generic [ref=e1210]:
+                - generic [ref=e1211]:
+                  - 'checkbox "Scandic: 18 properties" [ref=e1212]'
+                  - generic [ref=e1213] [cursor=pointer]:
+                    - img [ref=e1216]
+                    - generic [ref=e1220]:
+                      - generic [ref=e1221]: Scandic
+                      - generic [ref=e1222]: "18"
+                - generic [ref=e1223]:
+                  - 'checkbox "Strawberry: 8 properties" [ref=e1224]'
+                  - generic [ref=e1225] [cursor=pointer]:
+                    - img [ref=e1228]
+                    - generic [ref=e1232]:
+                      - generic [ref=e1233]: Strawberry
+                      - generic [ref=e1234]: "8"
+                - generic [ref=e1235]:
+                  - 'checkbox "Elite Hotels of Sweden: 6 properties" [ref=e1236]'
+                  - generic [ref=e1237] [cursor=pointer]:
+                    - img [ref=e1240]
+                    - generic [ref=e1244]:
+                      - generic [ref=e1245]: Elite Hotels of Sweden
+                      - generic [ref=e1246]: "6"
+                - generic [ref=e1247]:
+                  - 'checkbox "Best Western: 5 properties" [ref=e1248]'
+                  - generic [ref=e1249] [cursor=pointer]:
+                    - img [ref=e1252]
+                    - generic [ref=e1256]:
+                      - generic [ref=e1257]: Best Western
+                      - generic [ref=e1258]: "5"
+                - generic [ref=e1259]:
+                  - 'checkbox "Design Hotels: 5 properties" [ref=e1260]'
+                  - generic [ref=e1261] [cursor=pointer]:
+                    - img [ref=e1264]
+                    - generic [ref=e1268]:
+                      - generic [ref=e1269]: Design Hotels
+                      - generic [ref=e1270]: "5"
+                - generic [ref=e1271]:
+                  - 'checkbox "Best Western Plus: 4 properties" [ref=e1272]'
+                  - generic [ref=e1273] [cursor=pointer]:
+                    - img [ref=e1276]
+                    - generic [ref=e1280]:
+                      - generic [ref=e1281]: Best Western Plus
+                      - generic [ref=e1282]: "4"
+                - generic [ref=e1283]:
+                  - 'checkbox "WorldHotels Crafted Collection: 4 properties" [ref=e1284]'
+                  - generic [ref=e1285] [cursor=pointer]:
+                    - img [ref=e1288]
+                    - generic [ref=e1292]:
+                      - generic [ref=e1293]: WorldHotels Crafted Collection
+                      - generic [ref=e1294]: "4"
+                - generic [ref=e1295]:
+                  - 'checkbox "Nordic Hotels & Resorts: 4 properties" [ref=e1296]'
+                  - generic [ref=e1297] [cursor=pointer]:
+                    - img [ref=e1300]
+                    - generic [ref=e1304]:
+                      - generic [ref=e1305]: Nordic Hotels & Resorts
+                      - generic [ref=e1306]: "4"
+                - generic [ref=e1307]:
+                  - 'checkbox "BW Signature Collection by Best Western: 3 properties" [ref=e1308]'
+                  - generic [ref=e1309] [cursor=pointer]:
+                    - img [ref=e1312]
+                    - generic [ref=e1316]:
+                      - generic [ref=e1317]: BW Signature Collection by Best Western
+                      - generic [ref=e1318]: "3"
+                - generic [ref=e1319]:
+                  - 'checkbox "Bob W: 3 properties" [ref=e1320]'
+                  - generic [ref=e1321] [cursor=pointer]:
+                    - img [ref=e1324]
+                    - generic [ref=e1328]:
+                      - generic [ref=e1329]: Bob W
+                      - generic [ref=e1330]: "3"
+              - button "Show all 20" [ref=e1331] [cursor=pointer]:
+                - generic [ref=e1333]:
+                  - text: Show all 20
+                  - img [ref=e1335]
+            - separator [ref=e1337]
+            - group "Highly rated features Based on guest reviews" [ref=e1339]:
+              - heading "Highly rated features Based on guest reviews" [level=2] [ref=e1341]:
+                - generic [ref=e1342]: Highly rated features
+                - generic [ref=e1343]: Based on guest reviews
+              - generic [ref=e1345]:
+                - 'checkbox "Very good breakfast: 105 properties" [ref=e1346]'
+                - generic [ref=e1347] [cursor=pointer]:
+                  - img [ref=e1350]
+                  - generic [ref=e1354]:
+                    - generic [ref=e1355]: Very good breakfast
+                    - generic [ref=e1356]: "105"
+            - separator [ref=e1357]
+            - group "Online Payment" [ref=e1359]:
+              - heading "Online Payment" [level=2] [ref=e1361]:
+                - generic [ref=e1362]: Online Payment
+              - generic [ref=e1364]:
+                - 'checkbox "Accepts online payments: 131 properties" [ref=e1365]'
+                - generic [ref=e1366] [cursor=pointer]:
+                  - img [ref=e1369]
+                  - generic [ref=e1373]:
+                    - generic [ref=e1374]: Accepts online payments
+                    - generic [ref=e1375]: "131"
+            - separator [ref=e1376]
+            - group "Certifications" [ref=e1378]:
+              - heading "Certifications" [level=2] [ref=e1380]:
+                - generic [ref=e1381]: Certifications
+              - generic [ref=e1383]:
+                - 'checkbox "Sustainability certification: 74 properties" [ref=e1384]'
+                - generic [ref=e1385] [cursor=pointer]:
+                  - img [ref=e1388]
+                  - generic [ref=e1392]:
+                    - generic [ref=e1393]: Sustainability certification
+                    - generic [ref=e1394]: "74"
+            - separator [ref=e1395]
+            - group "Property Accessibility" [ref=e1397]:
+              - heading "Property Accessibility" [level=2] [ref=e1399]:
+                - generic [ref=e1400]: Property Accessibility
+              - generic [ref=e1401]:
+                - generic [ref=e1402]:
+                  - 'checkbox "Auditory guidance: 4 properties" [ref=e1403]'
+                  - generic [ref=e1404] [cursor=pointer]:
+                    - img [ref=e1407]
+                    - generic [ref=e1411]:
+                      - generic [ref=e1412]: Auditory guidance
+                      - generic [ref=e1413]: "4"
+                - generic [ref=e1414]:
+                  - 'checkbox "Toilet with grab rails: 45 properties" [ref=e1415]'
+                  - generic [ref=e1416] [cursor=pointer]:
+                    - img [ref=e1419]
+                    - generic [ref=e1423]:
+                      - generic [ref=e1424]: Toilet with grab rails
+                      - generic [ref=e1425]: "45"
+                - generic [ref=e1426]:
+                  - 'checkbox "Visual aids (Braille): 1 property" [ref=e1427]'
+                  - generic [ref=e1428] [cursor=pointer]:
+                    - img [ref=e1431]
+                    - generic [ref=e1435]:
+                      - generic [ref=e1436]: Visual aids (Braille)
+                      - generic [ref=e1437]: "1"
+                - generic [ref=e1438]:
+                  - 'checkbox "Lowered sink: 18 properties" [ref=e1439]'
+                  - generic [ref=e1440] [cursor=pointer]:
+                    - img [ref=e1443]
+                    - generic [ref=e1447]:
+                      - generic [ref=e1448]: Lowered sink
+                      - generic [ref=e1449]: "18"
+                - generic [ref=e1450]:
+                  - 'checkbox "Bathroom emergency cord: 31 properties" [ref=e1451]'
+                  - generic [ref=e1452] [cursor=pointer]:
+                    - img [ref=e1455]
+                    - generic [ref=e1459]:
+                      - generic [ref=e1460]: Bathroom emergency cord
+                      - generic [ref=e1461]: "31"
+                - generic [ref=e1462]:
+                  - 'checkbox "Raised toilet: 15 properties" [ref=e1463]'
+                  - generic [ref=e1464] [cursor=pointer]:
+                    - img [ref=e1467]
+                    - generic [ref=e1471]:
+                      - generic [ref=e1472]: Raised toilet
+                      - generic [ref=e1473]: "15"
+            - separator [ref=e1474]
+            - group "Room Accessibility" [ref=e1476]:
+              - heading "Room Accessibility" [level=2] [ref=e1478]:
+                - generic [ref=e1479]: Room Accessibility
+              - generic [ref=e1480]:
+                - generic [ref=e1481]:
+                  - 'checkbox "Upper floors accessible by elevator: 74 properties" [ref=e1482]'
+                  - generic [ref=e1483] [cursor=pointer]:
+                    - img [ref=e1486]
+                    - generic [ref=e1490]:
+                      - generic [ref=e1491]: Upper floors accessible by elevator
+                      - generic [ref=e1492]: "74"
+                - generic [ref=e1493]:
+                  - 'checkbox "Entire unit located on ground floor: 5 properties" [ref=e1494]'
+                  - generic [ref=e1495] [cursor=pointer]:
+                    - img [ref=e1498]
+                    - generic [ref=e1502]:
+                      - generic [ref=e1503]: Entire unit located on ground floor
+                      - generic [ref=e1504]: "5"
+                - generic [ref=e1505]:
+                  - 'checkbox "Walk-in shower: 33 properties" [ref=e1506]'
+                  - generic [ref=e1507] [cursor=pointer]:
+                    - img [ref=e1510]
+                    - generic [ref=e1514]:
+                      - generic [ref=e1515]: Walk-in shower
+                      - generic [ref=e1516]: "33"
+                - generic [ref=e1517]:
+                  - 'checkbox "Entire unit wheelchair accessible: 20 properties" [ref=e1518]'
+                  - generic [ref=e1519] [cursor=pointer]:
+                    - img [ref=e1522]
+                    - generic [ref=e1526]:
+                      - generic [ref=e1527]: Entire unit wheelchair accessible
+                      - generic [ref=e1528]: "20"
+                - generic [ref=e1529]:
+                  - 'checkbox "Adapted bath: 2 properties" [ref=e1530]'
+                  - generic [ref=e1531] [cursor=pointer]:
+                    - img [ref=e1534]
+                    - generic [ref=e1538]:
+                      - generic [ref=e1539]: Adapted bath
+                      - generic [ref=e1540]: "2"
+                - generic [ref=e1541]:
+                  - 'checkbox "Roll-in shower: 16 properties" [ref=e1542]'
+                  - generic [ref=e1543] [cursor=pointer]:
+                    - img [ref=e1546]
+                    - generic [ref=e1550]:
+                      - generic [ref=e1551]: Roll-in shower
+                      - generic [ref=e1552]: "16"
+                - generic [ref=e1553]:
+                  - 'checkbox "Emergency cord in bathroom: 11 properties" [ref=e1554]'
+                  - generic [ref=e1555] [cursor=pointer]:
+                    - img [ref=e1558]
+                    - generic [ref=e1562]:
+                      - generic [ref=e1563]: Emergency cord in bathroom
+                      - generic [ref=e1564]: "11"
+                - generic [ref=e1565]:
+                  - 'checkbox "Shower chair: 10 properties" [ref=e1566]'
+                  - generic [ref=e1567] [cursor=pointer]:
+                    - img [ref=e1570]
+                    - generic [ref=e1574]:
+                      - generic [ref=e1575]: Shower chair
+                      - generic [ref=e1576]: "10"
+                - generic [ref=e1577]:
+                  - 'checkbox "Raised toilet: 3 properties" [ref=e1578]'
+                  - generic [ref=e1579] [cursor=pointer]:
+                    - img [ref=e1582]
+                    - generic [ref=e1586]:
+                      - generic [ref=e1587]: Raised toilet
+                      - generic [ref=e1588]: "3"
+                - generic [ref=e1589]:
+                  - 'checkbox "Toilet with grab rails: 12 properties" [ref=e1590]'
+                  - generic [ref=e1591] [cursor=pointer]:
+                    - img [ref=e1594]
+                    - generic [ref=e1598]:
+                      - generic [ref=e1599]: Toilet with grab rails
+                      - generic [ref=e1600]: "12"
+                - generic [ref=e1601]:
+                  - 'checkbox "Lower sink: 2 properties" [ref=e1602]'
+                  - generic [ref=e1603] [cursor=pointer]:
+                    - img [ref=e1606]
+                    - generic [ref=e1610]:
+                      - generic [ref=e1611]: Lower sink
+                      - generic [ref=e1612]: "2"
+        - generic [ref=e1613]:
+          - generic [ref=e1614]:
+            - 'heading "Search results updated. Stockholm: 139 properties found. Applied filters: Breakfast included. Sorted by: Our top picks." [level=1] [ref=e1615]': "Stockholm: 139 properties found"
+            - radiogroup "Change view" [ref=e1616]:
+              - generic [ref=e1617]:
+                - radio "List" [checked] [ref=e1618]
+                - generic [ref=e1619] [cursor=pointer]: List
+                - radio "Grid" [ref=e1620]
+                - generic [ref=e1621] [cursor=pointer]: Grid
+          - generic [ref=e1622]:
+            - generic [ref=e1624]:
+              - 'button "Sort by: Our top picks" [ref=e1628] [cursor=pointer]':
+                - generic [ref=e1629]:
+                  - img [ref=e1631]
+                  - generic [ref=e1633]: "Sort by: Our top picks"
+                  - img [ref=e1635]
+              - button "Breakfast included" [ref=e1638] [cursor=pointer]:
+                - generic [ref=e1639]:
+                  - generic [ref=e1642]: Breakfast included
+                  - img [ref=e1644]
+            - list [ref=e1646]:
+              - region "Based on your filters, 75% of places to stay are unavailable on our site." [ref=e1648]:
+                - generic [ref=e1649]:
+                  - img [ref=e1652]
+                  - generic [ref=e1656]:
+                    - button "Close banner" [ref=e1658] [cursor=pointer]:
+                      - img [ref=e1661]
+                    - heading "Based on your filters, 75% of places to stay are unavailable on our site." [level=3] [ref=e1663]
+              - text: Browse the results for Stockholm
+              - listitem "Property" [ref=e1664]:
+                - generic [ref=e1665]:
+                  - generic [ref=e1667]:
+                    - link [ref=e1668] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/scandic-malmen.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=2281612_95146925_2_1_0_664482&highlighted_blocks=2281612_95146925_2_1_0_664482&matching_block_id=2281612_95146925_2_1_0_664482&sr_pri_blocks=2281612_95146925_2_1_0_664482_758200&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e1669]
+                    - button "Save this item to a trip list" [ref=e1673] [cursor=pointer]:
+                      - img [ref=e1676]
+                  - generic [ref=e1679]:
+                    - generic [ref=e1680]:
+                      - generic [ref=e1682]:
+                        - generic [ref=e1684]:
+                          - heading "Scandic Malmen Opens in new window" [level=3] [ref=e1685]:
+                            - link "Scandic Malmen Opens in new window" [ref=e1686] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/scandic-malmen.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=2281612_95146925_2_1_0_664482&highlighted_blocks=2281612_95146925_2_1_0_664482&matching_block_id=2281612_95146925_2_1_0_664482&sr_pri_blocks=2281612_95146925_2_1_0_664482_758200&from_sustainable_property_sr=1&from=searchresults
+                              - text: Scandic Malmen
+                              - generic [ref=e1687]: Opens in new window
+                          - button "4 out of 5" [ref=e1690]:
+                            - img [ref=e1691]:
+                              - generic [ref=e1692]:
+                                - img [ref=e1694]
+                                - img [ref=e1697]
+                              - generic [ref=e1699]:
+                                - img [ref=e1701]
+                                - img [ref=e1704]
+                              - generic [ref=e1706]:
+                                - img [ref=e1708]
+                                - img [ref=e1711]
+                              - generic [ref=e1713]:
+                                - img [ref=e1715]
+                                - img [ref=e1718]
+                        - generic [ref=e1721]:
+                          - img [ref=e1726]
+                          - link "Södermalm, Stockholm · Show on map" [ref=e1728] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/scandic-malmen.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=2281612_95146925_2_1_0_664482&highlighted_blocks=2281612_95146925_2_1_0_664482&matching_block_id=2281612_95146925_2_1_0_664482&sr_pri_blocks=2281612_95146925_2_1_0_664482_758200&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e1729]: Södermalm, Stockholm · Show on map
+                          - generic [ref=e1730]:
+                            - text: ·
+                            - button "2 km from downtown" [ref=e1732]
+                          - generic [ref=e1733]:
+                            - text: ·
+                            - button "Subway Access" [ref=e1735]
+                        - generic [ref=e1738]:
+                          - img [ref=e1740]
+                          - generic [ref=e1742]: Sustainability certification
+                      - link "Scored 7.9 Good 3,723 reviews" [ref=e1747] [cursor=pointer]:
+                        - /url: https://www.booking.com/hotel/se/scandic-malmen.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=2281612_95146925_2_1_0_664482&highlighted_blocks=2281612_95146925_2_1_0_664482&matching_block_id=2281612_95146925_2_1_0_664482&sr_pri_blocks=2281612_95146925_2_1_0_664482_758200&from_sustainable_property_sr=1&from=searchresults
+                        - generic [ref=e1749]:
+                          - generic [ref=e1750]: Scored 7.9
+                          - generic [ref=e1751]: "7.9"
+                          - generic [ref=e1752]:
+                            - generic [ref=e1753]: Good
+                            - generic [ref=e1754]: 3,723 reviews
+                    - generic [ref=e1755]:
+                      - generic [ref=e1758]:
+                        - link "Twin Room without Window" [ref=e1759]
+                        - list [ref=e1760]:
+                          - listitem [ref=e1761]:
+                            - generic [ref=e1763]: 2 twin beds
+                          - listitem [ref=e1764]: Breakfast included
+                          - listitem [ref=e1765]:
+                            - generic [ref=e1767]: We have 3 left at this price
+                      - generic [ref=e1769]:
+                        - generic [ref=e1770]:
+                          - generic [ref=e1771]: 5 nights, 2 adults
+                          - generic [ref=e1772]: ₹ 74,833
+                          - generic [ref=e1773]: Price ₹ 74,833
+                          - generic [ref=e1774]: Includes taxes and fees
+                        - link "See your options" [ref=e1776] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/scandic-malmen.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=1&hapos=1&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=2281612_95146925_2_1_0_664482&highlighted_blocks=2281612_95146925_2_1_0_664482&matching_block_id=2281612_95146925_2_1_0_664482&sr_pri_blocks=2281612_95146925_2_1_0_664482_758200&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e1777]: See your options
+                          - img [ref=e1781]
+              - listitem "Property" [ref=e1783]:
+                - generic [ref=e1784]:
+                  - generic [ref=e1786]:
+                    - link [ref=e1787] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/brommavik.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=28056910_215747380_0_1_0_645893&highlighted_blocks=28056910_215747380_0_1_0_645893&matching_block_id=28056910_215747380_0_1_0_645893&sr_pri_blocks=28056910_215747380_0_1_0_645893_502000&nad_id=6940e117-e212-4c4a-9d54-bead753e1830_5&nad_cpc=0.54&nad_track=eyJhdWN0aW9uRXBvY2giOjE3ODM2NjU0MzQxMDYsInJhbmsiOjEsImtvZGRpVHJhY2tpbmdJbmZvIjoiVms3OTUrNWJzTjJ6bGU4QXV1R3BmcFBNSFBGYUJ2c3QydVBkNHZHWTk5b1JRMkdQTTY0N2FqT09VZWNhRGx5TE0zcU5yaGowSFRVeCtWZ3c3TjM3OEJzbzdIUlU0SVFrYVhTYmxzK29IZCtNbDBFQ01SQysvcUVXNjc5WnExRE4zUEdDdGQ0N0tJZFFKUTZwZFJSNE5ONDVQcDNWWGhoL2h6Mm0rTzJYTXBiUnJNeVZ1WUs0enpzd3VsOWd1UDNtRnJ1SzFibklsR0xTS2ZLV1BMODBLSnc2ckI1WWRiYmUvaG52b0tjdkVpdXE3dndHL2NnWXl6YVFwN09qam9XUTZNNEF4aEljZ08wNU42d2ppYWJ2V3VpVXN0SHdIcndoSE1QKzdGNEZiS0NKWENBYm96Wk1ZeTlEMWgvYVl1aTI2aGFoTFJxU2NUQXZLWUcxbWRhUkExZlJsL0VTNFk2aXRnTDFCeE80YStaS2JRcW5MdGRoNkQ0MkhBNU1IcitkTUZsaWc2ZS96S1hKa3FQalV1cEZtM0JvQjdVR2NRWFhzc2JxSFRGL1RrbUN5VHdwdUdBVXBVY0ZBb1ZtKzZ3THQyY1BvaGxTSGxCcjJOeTlaYktQbkNhT0xwNEpYSXZQN2p2M29xalBtS0N4dHJiMU41MHdxZWdlTGJDWlFRZ0JDQ0RYdVQ5TVBtQy9YTFR5RGI3L3hWcG84bXYyQS9DMWJvYUpYcWpWZW5kdnFQWFBCS2syVGIrdGI3NGtXdkhCZzBMRTVDb0ZhbG9vSlFDdkljUko1dFVYOWpNNWNldkpKRFlyRE1EbXZvUmpoNXYzblJFcDR4UUErb1JUQ3hiQUxqMllkQjQ4YkpMVFJGVGlVMGo0UlVQalpkQzVWWlBGS01wNmZRSnN0RmE4Mmt1TlU4aHlvZEd3dk56RzR3N2V1TmZtanN2YmJMQUpsb09SSkduU1dTNHpBMGh6aTRWdmlnbnBFRmNRRUozOVpObUJGNWZGeUwyV0JvQ1h3WVA2VHgxN3J6cE5IQk9NKzJheTRqeE5XQ3NsVjBDMW1vL3ZSTmJUbnBMR3drNzBnK1FGVW1RU0pYc2NBK3locWJvTGk0UHg4NE9tWGNJeVR4Mi82MVRmZHdJOFJSNENxc0Q0RTdTTWpINHArN1hFUFAxakdYNWhxQm9NbzJPRG1FM0t1WVBGYnFqSmNkOGg5dDdZbTVQa2NrYUwxNmxOS1ZkcXBuWXhpYXdIcjd4cSt6NkNqemdtbXBsc1o0S2NINWdISDRtZ2NuQStvVHAwOVhYWHE3LzUyREp4VjZ1UlBmSzBkWUFNcWJ0REJZL1FZRlRzaHRKUWI2N1IzcTlhRHJsSmlGVmxFVTQ2Q3dCM1dqWitFVW4yNG1CQU1KaEFWSFRUQnNRbVpuMEJiOXErRlBpN2h6Vm1iNEZNYWtGQ2NpMGJNNUpRSXcvWUkvM0ZXSjI5UU5JZ0tpNDk1aWZIS1BWVHlHZVQ1M3U4VnBuc3AwT25yU0FrVkJheFFJRXU4eHJ3dGtPUmJ3NTA2QWNMV3FOWjR1UWFrcXVaYWdpMXl2cWs3YTJBVUlUVUpGLzBBclhvRk53UWtDNm5KVG1nWHJrN05ubHR4YTV3UFhtZW9SOHMyRzZuUXhOcUsrVXhkNy93LzQvdjZ4cld1dmhHeGJTZHZjdDFCWTYvbDZnb2IyczVhZU9QNWFFZW5kR3U4L0Z2M2xWdU1URldZMzBYY216UkxSL005UEpyazJ6R3hFdzhIdTVCWGZCc1d0cUJoV2tKY0xBQUxBQW9KaWtTMzNDc1Jta253c3l6ZUZSY01LNEpia09nZXdiQ1VKaHptZFRhUlh5WEs0SnU1Nk5RQ0dzV0dZZ2phTVlYSU93dG9ZTHBDVzBmZTlNTVluaEJvTzZxNzJsd0VGNjFudWVYS3NsSHIwT2RKZkNXem9IUklnTlVIWWZOUUUxdlRMbW1UOVh1K3VxRUpic09yV2NLSi9sY1BYZm5vK09xL050N2piWkpXYU9XQTNtMGhTb1dGL2IxeG92bk9IS0JobzYrSUdmdzM1dE4yS3NmRk84N3gwWVJ3bjRvR3M3aU5tR3RLejZzZmJqZmUzUTF6bVNJaGltRklsZUU4cGxzU2l1eHpwU0lWcDRBR1RLQlFKMXVtSFlWekxLVUdqVWEwVWFPM3BQQ0xsMXBvTmtSQnp1YmgzbWxiOEVvU2xNN0ZmbUdTWHZQMUZiQWo2T0pVN2dRZWVnUE9BVT0ifQ%3D%3D&nad_placement=SR_MAIN&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e1788]
+                    - button "Save this item to a trip list" [ref=e1792] [cursor=pointer]:
+                      - img [ref=e1795]
+                  - generic [ref=e1798]:
+                    - generic [ref=e1799]:
+                      - generic [ref=e1801]:
+                        - generic [ref=e1803]:
+                          - heading "Brommavik Hotel Opens in new window" [level=3] [ref=e1804]:
+                            - link "Brommavik Hotel Opens in new window" [ref=e1805] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/brommavik.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=28056910_215747380_0_1_0_645893&highlighted_blocks=28056910_215747380_0_1_0_645893&matching_block_id=28056910_215747380_0_1_0_645893&sr_pri_blocks=28056910_215747380_0_1_0_645893_502000&nad_id=6940e117-e212-4c4a-9d54-bead753e1830_5&nad_cpc=0.54&nad_track=eyJhdWN0aW9uRXBvY2giOjE3ODM2NjU0MzQxMDYsInJhbmsiOjEsImtvZGRpVHJhY2tpbmdJbmZvIjoiVms3OTUrNWJzTjJ6bGU4QXV1R3BmcFBNSFBGYUJ2c3QydVBkNHZHWTk5b1JRMkdQTTY0N2FqT09VZWNhRGx5TE0zcU5yaGowSFRVeCtWZ3c3TjM3OEJzbzdIUlU0SVFrYVhTYmxzK29IZCtNbDBFQ01SQysvcUVXNjc5WnExRE4zUEdDdGQ0N0tJZFFKUTZwZFJSNE5ONDVQcDNWWGhoL2h6Mm0rTzJYTXBiUnJNeVZ1WUs0enpzd3VsOWd1UDNtRnJ1SzFibklsR0xTS2ZLV1BMODBLSnc2ckI1WWRiYmUvaG52b0tjdkVpdXE3dndHL2NnWXl6YVFwN09qam9XUTZNNEF4aEljZ08wNU42d2ppYWJ2V3VpVXN0SHdIcndoSE1QKzdGNEZiS0NKWENBYm96Wk1ZeTlEMWgvYVl1aTI2aGFoTFJxU2NUQXZLWUcxbWRhUkExZlJsL0VTNFk2aXRnTDFCeE80YStaS2JRcW5MdGRoNkQ0MkhBNU1IcitkTUZsaWc2ZS96S1hKa3FQalV1cEZtM0JvQjdVR2NRWFhzc2JxSFRGL1RrbUN5VHdwdUdBVXBVY0ZBb1ZtKzZ3THQyY1BvaGxTSGxCcjJOeTlaYktQbkNhT0xwNEpYSXZQN2p2M29xalBtS0N4dHJiMU41MHdxZWdlTGJDWlFRZ0JDQ0RYdVQ5TVBtQy9YTFR5RGI3L3hWcG84bXYyQS9DMWJvYUpYcWpWZW5kdnFQWFBCS2syVGIrdGI3NGtXdkhCZzBMRTVDb0ZhbG9vSlFDdkljUko1dFVYOWpNNWNldkpKRFlyRE1EbXZvUmpoNXYzblJFcDR4UUErb1JUQ3hiQUxqMllkQjQ4YkpMVFJGVGlVMGo0UlVQalpkQzVWWlBGS01wNmZRSnN0RmE4Mmt1TlU4aHlvZEd3dk56RzR3N2V1TmZtanN2YmJMQUpsb09SSkduU1dTNHpBMGh6aTRWdmlnbnBFRmNRRUozOVpObUJGNWZGeUwyV0JvQ1h3WVA2VHgxN3J6cE5IQk9NKzJheTRqeE5XQ3NsVjBDMW1vL3ZSTmJUbnBMR3drNzBnK1FGVW1RU0pYc2NBK3locWJvTGk0UHg4NE9tWGNJeVR4Mi82MVRmZHdJOFJSNENxc0Q0RTdTTWpINHArN1hFUFAxakdYNWhxQm9NbzJPRG1FM0t1WVBGYnFqSmNkOGg5dDdZbTVQa2NrYUwxNmxOS1ZkcXBuWXhpYXdIcjd4cSt6NkNqemdtbXBsc1o0S2NINWdISDRtZ2NuQStvVHAwOVhYWHE3LzUyREp4VjZ1UlBmSzBkWUFNcWJ0REJZL1FZRlRzaHRKUWI2N1IzcTlhRHJsSmlGVmxFVTQ2Q3dCM1dqWitFVW4yNG1CQU1KaEFWSFRUQnNRbVpuMEJiOXErRlBpN2h6Vm1iNEZNYWtGQ2NpMGJNNUpRSXcvWUkvM0ZXSjI5UU5JZ0tpNDk1aWZIS1BWVHlHZVQ1M3U4VnBuc3AwT25yU0FrVkJheFFJRXU4eHJ3dGtPUmJ3NTA2QWNMV3FOWjR1UWFrcXVaYWdpMXl2cWs3YTJBVUlUVUpGLzBBclhvRk53UWtDNm5KVG1nWHJrN05ubHR4YTV3UFhtZW9SOHMyRzZuUXhOcUsrVXhkNy93LzQvdjZ4cld1dmhHeGJTZHZjdDFCWTYvbDZnb2IyczVhZU9QNWFFZW5kR3U4L0Z2M2xWdU1URldZMzBYY216UkxSL005UEpyazJ6R3hFdzhIdTVCWGZCc1d0cUJoV2tKY0xBQUxBQW9KaWtTMzNDc1Jta253c3l6ZUZSY01LNEpia09nZXdiQ1VKaHptZFRhUlh5WEs0SnU1Nk5RQ0dzV0dZZ2phTVlYSU93dG9ZTHBDVzBmZTlNTVluaEJvTzZxNzJsd0VGNjFudWVYS3NsSHIwT2RKZkNXem9IUklnTlVIWWZOUUUxdlRMbW1UOVh1K3VxRUpic09yV2NLSi9sY1BYZm5vK09xL050N2piWkpXYU9XQTNtMGhTb1dGL2IxeG92bk9IS0JobzYrSUdmdzM1dE4yS3NmRk84N3gwWVJ3bjRvR3M3aU5tR3RLejZzZmJqZmUzUTF6bVNJaGltRklsZUU4cGxzU2l1eHpwU0lWcDRBR1RLQlFKMXVtSFlWekxLVUdqVWEwVWFPM3BQQ0xsMXBvTmtSQnp1YmgzbWxiOEVvU2xNN0ZmbUdTWHZQMUZiQWo2T0pVN2dRZWVnUE9BVT0ifQ%3D%3D&nad_placement=SR_MAIN&from_sustainable_property_sr=1&from=searchresults
+                              - text: Brommavik Hotel
+                              - generic [ref=e1806]: Opens in new window
+                          - button "4 out of 5" [ref=e1809]:
+                            - img [ref=e1810]:
+                              - generic [ref=e1811]:
+                                - img [ref=e1813]
+                                - img [ref=e1816]
+                              - generic [ref=e1818]:
+                                - img [ref=e1820]
+                                - img [ref=e1823]
+                              - generic [ref=e1825]:
+                                - img [ref=e1827]
+                                - img [ref=e1830]
+                              - generic [ref=e1832]:
+                                - img [ref=e1834]
+                                - img [ref=e1837]
+                          - button [ref=e1840]:
+                            - img [ref=e1842]
+                          - generic [ref=e1846]: Ad
+                          - generic [ref=e1847]: This property spends a little extra to appear in this spot, and it matches your search criteria.
+                        - generic [ref=e1849]:
+                          - link "Bromma, Stockholm · Show on map" [ref=e1850] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/brommavik.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=28056910_215747380_0_1_0_645893&highlighted_blocks=28056910_215747380_0_1_0_645893&matching_block_id=28056910_215747380_0_1_0_645893&sr_pri_blocks=28056910_215747380_0_1_0_645893_502000&nad_id=6940e117-e212-4c4a-9d54-bead753e1830_5&nad_cpc=0.54&nad_track=eyJhdWN0aW9uRXBvY2giOjE3ODM2NjU0MzQxMDYsInJhbmsiOjEsImtvZGRpVHJhY2tpbmdJbmZvIjoiVms3OTUrNWJzTjJ6bGU4QXV1R3BmcFBNSFBGYUJ2c3QydVBkNHZHWTk5b1JRMkdQTTY0N2FqT09VZWNhRGx5TE0zcU5yaGowSFRVeCtWZ3c3TjM3OEJzbzdIUlU0SVFrYVhTYmxzK29IZCtNbDBFQ01SQysvcUVXNjc5WnExRE4zUEdDdGQ0N0tJZFFKUTZwZFJSNE5ONDVQcDNWWGhoL2h6Mm0rTzJYTXBiUnJNeVZ1WUs0enpzd3VsOWd1UDNtRnJ1SzFibklsR0xTS2ZLV1BMODBLSnc2ckI1WWRiYmUvaG52b0tjdkVpdXE3dndHL2NnWXl6YVFwN09qam9XUTZNNEF4aEljZ08wNU42d2ppYWJ2V3VpVXN0SHdIcndoSE1QKzdGNEZiS0NKWENBYm96Wk1ZeTlEMWgvYVl1aTI2aGFoTFJxU2NUQXZLWUcxbWRhUkExZlJsL0VTNFk2aXRnTDFCeE80YStaS2JRcW5MdGRoNkQ0MkhBNU1IcitkTUZsaWc2ZS96S1hKa3FQalV1cEZtM0JvQjdVR2NRWFhzc2JxSFRGL1RrbUN5VHdwdUdBVXBVY0ZBb1ZtKzZ3THQyY1BvaGxTSGxCcjJOeTlaYktQbkNhT0xwNEpYSXZQN2p2M29xalBtS0N4dHJiMU41MHdxZWdlTGJDWlFRZ0JDQ0RYdVQ5TVBtQy9YTFR5RGI3L3hWcG84bXYyQS9DMWJvYUpYcWpWZW5kdnFQWFBCS2syVGIrdGI3NGtXdkhCZzBMRTVDb0ZhbG9vSlFDdkljUko1dFVYOWpNNWNldkpKRFlyRE1EbXZvUmpoNXYzblJFcDR4UUErb1JUQ3hiQUxqMllkQjQ4YkpMVFJGVGlVMGo0UlVQalpkQzVWWlBGS01wNmZRSnN0RmE4Mmt1TlU4aHlvZEd3dk56RzR3N2V1TmZtanN2YmJMQUpsb09SSkduU1dTNHpBMGh6aTRWdmlnbnBFRmNRRUozOVpObUJGNWZGeUwyV0JvQ1h3WVA2VHgxN3J6cE5IQk9NKzJheTRqeE5XQ3NsVjBDMW1vL3ZSTmJUbnBMR3drNzBnK1FGVW1RU0pYc2NBK3locWJvTGk0UHg4NE9tWGNJeVR4Mi82MVRmZHdJOFJSNENxc0Q0RTdTTWpINHArN1hFUFAxakdYNWhxQm9NbzJPRG1FM0t1WVBGYnFqSmNkOGg5dDdZbTVQa2NrYUwxNmxOS1ZkcXBuWXhpYXdIcjd4cSt6NkNqemdtbXBsc1o0S2NINWdISDRtZ2NuQStvVHAwOVhYWHE3LzUyREp4VjZ1UlBmSzBkWUFNcWJ0REJZL1FZRlRzaHRKUWI2N1IzcTlhRHJsSmlGVmxFVTQ2Q3dCM1dqWitFVW4yNG1CQU1KaEFWSFRUQnNRbVpuMEJiOXErRlBpN2h6Vm1iNEZNYWtGQ2NpMGJNNUpRSXcvWUkvM0ZXSjI5UU5JZ0tpNDk1aWZIS1BWVHlHZVQ1M3U4VnBuc3AwT25yU0FrVkJheFFJRXU4eHJ3dGtPUmJ3NTA2QWNMV3FOWjR1UWFrcXVaYWdpMXl2cWs3YTJBVUlUVUpGLzBBclhvRk53UWtDNm5KVG1nWHJrN05ubHR4YTV3UFhtZW9SOHMyRzZuUXhOcUsrVXhkNy93LzQvdjZ4cld1dmhHeGJTZHZjdDFCWTYvbDZnb2IyczVhZU9QNWFFZW5kR3U4L0Z2M2xWdU1URldZMzBYY216UkxSL005UEpyazJ6R3hFdzhIdTVCWGZCc1d0cUJoV2tKY0xBQUxBQW9KaWtTMzNDc1Jta253c3l6ZUZSY01LNEpia09nZXdiQ1VKaHptZFRhUlh5WEs0SnU1Nk5RQ0dzV0dZZ2phTVlYSU93dG9ZTHBDVzBmZTlNTVluaEJvTzZxNzJsd0VGNjFudWVYS3NsSHIwT2RKZkNXem9IUklnTlVIWWZOUUUxdlRMbW1UOVh1K3VxRUpic09yV2NLSi9sY1BYZm5vK09xL050N2piWkpXYU9XQTNtMGhTb1dGL2IxeG92bk9IS0JobzYrSUdmdzM1dE4yS3NmRk84N3gwWVJ3bjRvR3M3aU5tR3RLejZzZmJqZmUzUTF6bVNJaGltRklsZUU4cGxzU2l1eHpwU0lWcDRBR1RLQlFKMXVtSFlWekxLVUdqVWEwVWFPM3BQQ0xsMXBvTmtSQnp1YmgzbWxiOEVvU2xNN0ZmbUdTWHZQMUZiQWo2T0pVN2dRZWVnUE9BVT0ifQ%3D%3D&nad_placement=SR_MAIN&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e1851]: Bromma, Stockholm · Show on map
+                          - generic [ref=e1852]:
+                            - text: ·
+                            - button "6.7 km from downtown" [ref=e1854]
+                        - generic [ref=e1857]:
+                          - img [ref=e1859]
+                          - generic [ref=e1861]: Sustainability certification
+                      - link "Scored 8.5 Very Good 1,847 reviews" [ref=e1866] [cursor=pointer]:
+                        - /url: https://www.booking.com/hotel/se/brommavik.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=28056910_215747380_0_1_0_645893&highlighted_blocks=28056910_215747380_0_1_0_645893&matching_block_id=28056910_215747380_0_1_0_645893&sr_pri_blocks=28056910_215747380_0_1_0_645893_502000&nad_id=6940e117-e212-4c4a-9d54-bead753e1830_5&nad_cpc=0.54&nad_track=eyJhdWN0aW9uRXBvY2giOjE3ODM2NjU0MzQxMDYsInJhbmsiOjEsImtvZGRpVHJhY2tpbmdJbmZvIjoiVms3OTUrNWJzTjJ6bGU4QXV1R3BmcFBNSFBGYUJ2c3QydVBkNHZHWTk5b1JRMkdQTTY0N2FqT09VZWNhRGx5TE0zcU5yaGowSFRVeCtWZ3c3TjM3OEJzbzdIUlU0SVFrYVhTYmxzK29IZCtNbDBFQ01SQysvcUVXNjc5WnExRE4zUEdDdGQ0N0tJZFFKUTZwZFJSNE5ONDVQcDNWWGhoL2h6Mm0rTzJYTXBiUnJNeVZ1WUs0enpzd3VsOWd1UDNtRnJ1SzFibklsR0xTS2ZLV1BMODBLSnc2ckI1WWRiYmUvaG52b0tjdkVpdXE3dndHL2NnWXl6YVFwN09qam9XUTZNNEF4aEljZ08wNU42d2ppYWJ2V3VpVXN0SHdIcndoSE1QKzdGNEZiS0NKWENBYm96Wk1ZeTlEMWgvYVl1aTI2aGFoTFJxU2NUQXZLWUcxbWRhUkExZlJsL0VTNFk2aXRnTDFCeE80YStaS2JRcW5MdGRoNkQ0MkhBNU1IcitkTUZsaWc2ZS96S1hKa3FQalV1cEZtM0JvQjdVR2NRWFhzc2JxSFRGL1RrbUN5VHdwdUdBVXBVY0ZBb1ZtKzZ3THQyY1BvaGxTSGxCcjJOeTlaYktQbkNhT0xwNEpYSXZQN2p2M29xalBtS0N4dHJiMU41MHdxZWdlTGJDWlFRZ0JDQ0RYdVQ5TVBtQy9YTFR5RGI3L3hWcG84bXYyQS9DMWJvYUpYcWpWZW5kdnFQWFBCS2syVGIrdGI3NGtXdkhCZzBMRTVDb0ZhbG9vSlFDdkljUko1dFVYOWpNNWNldkpKRFlyRE1EbXZvUmpoNXYzblJFcDR4UUErb1JUQ3hiQUxqMllkQjQ4YkpMVFJGVGlVMGo0UlVQalpkQzVWWlBGS01wNmZRSnN0RmE4Mmt1TlU4aHlvZEd3dk56RzR3N2V1TmZtanN2YmJMQUpsb09SSkduU1dTNHpBMGh6aTRWdmlnbnBFRmNRRUozOVpObUJGNWZGeUwyV0JvQ1h3WVA2VHgxN3J6cE5IQk9NKzJheTRqeE5XQ3NsVjBDMW1vL3ZSTmJUbnBMR3drNzBnK1FGVW1RU0pYc2NBK3locWJvTGk0UHg4NE9tWGNJeVR4Mi82MVRmZHdJOFJSNENxc0Q0RTdTTWpINHArN1hFUFAxakdYNWhxQm9NbzJPRG1FM0t1WVBGYnFqSmNkOGg5dDdZbTVQa2NrYUwxNmxOS1ZkcXBuWXhpYXdIcjd4cSt6NkNqemdtbXBsc1o0S2NINWdISDRtZ2NuQStvVHAwOVhYWHE3LzUyREp4VjZ1UlBmSzBkWUFNcWJ0REJZL1FZRlRzaHRKUWI2N1IzcTlhRHJsSmlGVmxFVTQ2Q3dCM1dqWitFVW4yNG1CQU1KaEFWSFRUQnNRbVpuMEJiOXErRlBpN2h6Vm1iNEZNYWtGQ2NpMGJNNUpRSXcvWUkvM0ZXSjI5UU5JZ0tpNDk1aWZIS1BWVHlHZVQ1M3U4VnBuc3AwT25yU0FrVkJheFFJRXU4eHJ3dGtPUmJ3NTA2QWNMV3FOWjR1UWFrcXVaYWdpMXl2cWs3YTJBVUlUVUpGLzBBclhvRk53UWtDNm5KVG1nWHJrN05ubHR4YTV3UFhtZW9SOHMyRzZuUXhOcUsrVXhkNy93LzQvdjZ4cld1dmhHeGJTZHZjdDFCWTYvbDZnb2IyczVhZU9QNWFFZW5kR3U4L0Z2M2xWdU1URldZMzBYY216UkxSL005UEpyazJ6R3hFdzhIdTVCWGZCc1d0cUJoV2tKY0xBQUxBQW9KaWtTMzNDc1Jta253c3l6ZUZSY01LNEpia09nZXdiQ1VKaHptZFRhUlh5WEs0SnU1Nk5RQ0dzV0dZZ2phTVlYSU93dG9ZTHBDVzBmZTlNTVluaEJvTzZxNzJsd0VGNjFudWVYS3NsSHIwT2RKZkNXem9IUklnTlVIWWZOUUUxdlRMbW1UOVh1K3VxRUpic09yV2NLSi9sY1BYZm5vK09xL050N2piWkpXYU9XQTNtMGhTb1dGL2IxeG92bk9IS0JobzYrSUdmdzM1dE4yS3NmRk84N3gwWVJ3bjRvR3M3aU5tR3RLejZzZmJqZmUzUTF6bVNJaGltRklsZUU4cGxzU2l1eHpwU0lWcDRBR1RLQlFKMXVtSFlWekxLVUdqVWEwVWFPM3BQQ0xsMXBvTmtSQnp1YmgzbWxiOEVvU2xNN0ZmbUdTWHZQMUZiQWo2T0pVN2dRZWVnUE9BVT0ifQ%3D%3D&nad_placement=SR_MAIN&from_sustainable_property_sr=1&from=searchresults
+                        - generic [ref=e1868]:
+                          - generic [ref=e1869]: Scored 8.5
+                          - generic [ref=e1870]: "8.5"
+                          - generic [ref=e1871]:
+                            - generic [ref=e1872]: Very Good
+                            - generic [ref=e1873]: 1,847 reviews
+                    - generic "Getaway Deal. This property is offering a discount on select stays between Mar 26 and Sep 30, 2026.." [ref=e1877]:
+                      - generic [ref=e1878]: Getaway Deal
+                    - generic [ref=e1879]:
+                      - generic [ref=e1882]:
+                        - link "Economy Double Room without Window" [ref=e1883]
+                        - list [ref=e1884]:
+                          - listitem [ref=e1885]:
+                            - generic [ref=e1887]: 1 queen bed
+                          - listitem [ref=e1888]: Breakfast included
+                          - listitem [ref=e1889]:
+                            - generic [ref=e1890]:
+                              - img [ref=e1893]
+                              - strong [ref=e1897]: Free cancellation
+                          - listitem [ref=e1898]:
+                            - generic [ref=e1899]:
+                              - img [ref=e1902]
+                              - generic [ref=e1905]:
+                                - strong [ref=e1906]: No prepayment needed
+                                - text: – pay at the property
+                          - listitem [ref=e1907]:
+                            - generic [ref=e1909]: We have 7 left at this price
+                      - generic [ref=e1911]:
+                        - generic [ref=e1912]:
+                          - generic [ref=e1913]: 5 nights, 2 adults
+                          - generic [ref=e1915]:
+                            - generic [ref=e1916]: ₹ 61,933
+                            - generic [ref=e1917]:
+                              - generic [ref=e1918]: ₹ 49,546
+                              - img [ref=e1920]
+                          - generic [ref=e1922]: Original price ₹ 61,933. Current price ₹ 49,546.
+                          - generic [ref=e1923]: Includes taxes and fees
+                        - link "See your options" [ref=e1925] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/brommavik.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=2&hapos=2&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=28056910_215747380_0_1_0_645893&highlighted_blocks=28056910_215747380_0_1_0_645893&matching_block_id=28056910_215747380_0_1_0_645893&sr_pri_blocks=28056910_215747380_0_1_0_645893_502000&nad_id=6940e117-e212-4c4a-9d54-bead753e1830_5&nad_cpc=0.54&nad_track=eyJhdWN0aW9uRXBvY2giOjE3ODM2NjU0MzQxMDYsInJhbmsiOjEsImtvZGRpVHJhY2tpbmdJbmZvIjoiVms3OTUrNWJzTjJ6bGU4QXV1R3BmcFBNSFBGYUJ2c3QydVBkNHZHWTk5b1JRMkdQTTY0N2FqT09VZWNhRGx5TE0zcU5yaGowSFRVeCtWZ3c3TjM3OEJzbzdIUlU0SVFrYVhTYmxzK29IZCtNbDBFQ01SQysvcUVXNjc5WnExRE4zUEdDdGQ0N0tJZFFKUTZwZFJSNE5ONDVQcDNWWGhoL2h6Mm0rTzJYTXBiUnJNeVZ1WUs0enpzd3VsOWd1UDNtRnJ1SzFibklsR0xTS2ZLV1BMODBLSnc2ckI1WWRiYmUvaG52b0tjdkVpdXE3dndHL2NnWXl6YVFwN09qam9XUTZNNEF4aEljZ08wNU42d2ppYWJ2V3VpVXN0SHdIcndoSE1QKzdGNEZiS0NKWENBYm96Wk1ZeTlEMWgvYVl1aTI2aGFoTFJxU2NUQXZLWUcxbWRhUkExZlJsL0VTNFk2aXRnTDFCeE80YStaS2JRcW5MdGRoNkQ0MkhBNU1IcitkTUZsaWc2ZS96S1hKa3FQalV1cEZtM0JvQjdVR2NRWFhzc2JxSFRGL1RrbUN5VHdwdUdBVXBVY0ZBb1ZtKzZ3THQyY1BvaGxTSGxCcjJOeTlaYktQbkNhT0xwNEpYSXZQN2p2M29xalBtS0N4dHJiMU41MHdxZWdlTGJDWlFRZ0JDQ0RYdVQ5TVBtQy9YTFR5RGI3L3hWcG84bXYyQS9DMWJvYUpYcWpWZW5kdnFQWFBCS2syVGIrdGI3NGtXdkhCZzBMRTVDb0ZhbG9vSlFDdkljUko1dFVYOWpNNWNldkpKRFlyRE1EbXZvUmpoNXYzblJFcDR4UUErb1JUQ3hiQUxqMllkQjQ4YkpMVFJGVGlVMGo0UlVQalpkQzVWWlBGS01wNmZRSnN0RmE4Mmt1TlU4aHlvZEd3dk56RzR3N2V1TmZtanN2YmJMQUpsb09SSkduU1dTNHpBMGh6aTRWdmlnbnBFRmNRRUozOVpObUJGNWZGeUwyV0JvQ1h3WVA2VHgxN3J6cE5IQk9NKzJheTRqeE5XQ3NsVjBDMW1vL3ZSTmJUbnBMR3drNzBnK1FGVW1RU0pYc2NBK3locWJvTGk0UHg4NE9tWGNJeVR4Mi82MVRmZHdJOFJSNENxc0Q0RTdTTWpINHArN1hFUFAxakdYNWhxQm9NbzJPRG1FM0t1WVBGYnFqSmNkOGg5dDdZbTVQa2NrYUwxNmxOS1ZkcXBuWXhpYXdIcjd4cSt6NkNqemdtbXBsc1o0S2NINWdISDRtZ2NuQStvVHAwOVhYWHE3LzUyREp4VjZ1UlBmSzBkWUFNcWJ0REJZL1FZRlRzaHRKUWI2N1IzcTlhRHJsSmlGVmxFVTQ2Q3dCM1dqWitFVW4yNG1CQU1KaEFWSFRUQnNRbVpuMEJiOXErRlBpN2h6Vm1iNEZNYWtGQ2NpMGJNNUpRSXcvWUkvM0ZXSjI5UU5JZ0tpNDk1aWZIS1BWVHlHZVQ1M3U4VnBuc3AwT25yU0FrVkJheFFJRXU4eHJ3dGtPUmJ3NTA2QWNMV3FOWjR1UWFrcXVaYWdpMXl2cWs3YTJBVUlUVUpGLzBBclhvRk53UWtDNm5KVG1nWHJrN05ubHR4YTV3UFhtZW9SOHMyRzZuUXhOcUsrVXhkNy93LzQvdjZ4cld1dmhHeGJTZHZjdDFCWTYvbDZnb2IyczVhZU9QNWFFZW5kR3U4L0Z2M2xWdU1URldZMzBYY216UkxSL005UEpyazJ6R3hFdzhIdTVCWGZCc1d0cUJoV2tKY0xBQUxBQW9KaWtTMzNDc1Jta253c3l6ZUZSY01LNEpia09nZXdiQ1VKaHptZFRhUlh5WEs0SnU1Nk5RQ0dzV0dZZ2phTVlYSU93dG9ZTHBDVzBmZTlNTVluaEJvTzZxNzJsd0VGNjFudWVYS3NsSHIwT2RKZkNXem9IUklnTlVIWWZOUUUxdlRMbW1UOVh1K3VxRUpic09yV2NLSi9sY1BYZm5vK09xL050N2piWkpXYU9XQTNtMGhTb1dGL2IxeG92bk9IS0JobzYrSUdmdzM1dE4yS3NmRk84N3gwWVJ3bjRvR3M3aU5tR3RLejZzZmJqZmUzUTF6bVNJaGltRklsZUU4cGxzU2l1eHpwU0lWcDRBR1RLQlFKMXVtSFlWekxLVUdqVWEwVWFPM3BQQ0xsMXBvTmtSQnp1YmgzbWxiOEVvU2xNN0ZmbUdTWHZQMUZiQWo2T0pVN2dRZWVnUE9BVT0ifQ%3D%3D&nad_placement=SR_MAIN&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e1926]: See your options
+                          - img [ref=e1930]
+              - listitem "Property" [ref=e1932]:
+                - generic [ref=e1933]:
+                  - generic [ref=e1935]:
+                    - link [ref=e1936] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/scandic-sjapfartshotellet.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=3&hapos=3&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=2282605_95146939_2_1_0_664477&highlighted_blocks=2282605_95146939_2_1_0_664477&matching_block_id=2282605_95146939_2_1_0_664477&sr_pri_blocks=2282605_95146939_2_1_0_664477_785100&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e1937]
+                    - button "Save this item to a trip list" [ref=e1941] [cursor=pointer]:
+                      - img [ref=e1944]
+                  - generic [ref=e1947]:
+                    - generic [ref=e1948]:
+                      - generic [ref=e1950]:
+                        - generic [ref=e1952]:
+                          - heading "Scandic Sjöfartshotellet Opens in new window" [level=3] [ref=e1953]:
+                            - link "Scandic Sjöfartshotellet Opens in new window" [ref=e1954] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/scandic-sjapfartshotellet.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=3&hapos=3&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=2282605_95146939_2_1_0_664477&highlighted_blocks=2282605_95146939_2_1_0_664477&matching_block_id=2282605_95146939_2_1_0_664477&sr_pri_blocks=2282605_95146939_2_1_0_664477_785100&from_sustainable_property_sr=1&from=searchresults
+                              - text: Scandic Sjöfartshotellet
+                              - generic [ref=e1955]: Opens in new window
+                          - button "4 out of 5" [ref=e1958]:
+                            - img [ref=e1959]:
+                              - generic [ref=e1960]:
+                                - img [ref=e1962]
+                                - img [ref=e1965]
+                              - generic [ref=e1967]:
+                                - img [ref=e1969]
+                                - img [ref=e1972]
+                              - generic [ref=e1974]:
+                                - img [ref=e1976]
+                                - img [ref=e1979]
+                              - generic [ref=e1981]:
+                                - img [ref=e1983]
+                                - img [ref=e1986]
+                        - generic [ref=e1989]:
+                          - img [ref=e1994]
+                          - link "Södermalm, Stockholm · Show on map" [ref=e1996] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/scandic-sjapfartshotellet.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=3&hapos=3&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=2282605_95146939_2_1_0_664477&highlighted_blocks=2282605_95146939_2_1_0_664477&matching_block_id=2282605_95146939_2_1_0_664477&sr_pri_blocks=2282605_95146939_2_1_0_664477_785100&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e1997]: Södermalm, Stockholm · Show on map
+                          - generic [ref=e1998]:
+                            - text: ·
+                            - button "1.6 km from downtown" [ref=e2000]
+                          - generic [ref=e2001]:
+                            - text: ·
+                            - button "Subway Access" [ref=e2003]
+                        - generic [ref=e2006]:
+                          - img [ref=e2008]
+                          - generic [ref=e2010]: Sustainability certification
+                      - link "Scored 7.7 Good 2,939 reviews" [ref=e2015] [cursor=pointer]:
+                        - /url: https://www.booking.com/hotel/se/scandic-sjapfartshotellet.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=3&hapos=3&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=2282605_95146939_2_1_0_664477&highlighted_blocks=2282605_95146939_2_1_0_664477&matching_block_id=2282605_95146939_2_1_0_664477&sr_pri_blocks=2282605_95146939_2_1_0_664477_785100&from_sustainable_property_sr=1&from=searchresults
+                        - generic [ref=e2017]:
+                          - generic [ref=e2018]: Scored 7.7
+                          - generic [ref=e2019]: "7.7"
+                          - generic [ref=e2020]:
+                            - generic [ref=e2021]: Good
+                            - generic [ref=e2022]: 2,939 reviews
+                    - generic [ref=e2023]:
+                      - generic [ref=e2026]:
+                        - link "Twin Room without Window" [ref=e2027]
+                        - list [ref=e2028]:
+                          - listitem [ref=e2029]:
+                            - generic [ref=e2031]: 2 twin beds
+                          - listitem [ref=e2032]: Breakfast included
+                          - listitem [ref=e2033]:
+                            - generic [ref=e2035]: We have 4 left at this price
+                      - generic [ref=e2037]:
+                        - generic [ref=e2038]:
+                          - generic [ref=e2039]: 5 nights, 2 adults
+                          - generic [ref=e2040]: ₹ 77,488
+                          - generic [ref=e2041]: Price ₹ 77,488
+                          - generic [ref=e2042]: Includes taxes and fees
+                        - link "See your options" [ref=e2044] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/scandic-sjapfartshotellet.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=3&hapos=3&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=2282605_95146939_2_1_0_664477&highlighted_blocks=2282605_95146939_2_1_0_664477&matching_block_id=2282605_95146939_2_1_0_664477&sr_pri_blocks=2282605_95146939_2_1_0_664477_785100&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2045]: See your options
+                          - img [ref=e2049]
+              - listitem "Property" [ref=e2051]:
+                - generic [ref=e2052]:
+                  - generic [ref=e2054]:
+                    - link [ref=e2055] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/downtown-camper-by-scandic.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=4&hapos=4&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=230896406_101238173_2_1_0_664473&highlighted_blocks=230896406_101238173_2_1_0_664473&matching_block_id=230896406_101238173_2_1_0_664473&sr_pri_blocks=230896406_101238173_2_1_0_664473_1132200&nad_id=6940e117-e212-4c4a-9d54-bead753e1830_0&nad_cpc=0.86&nad_track=eyJhdWN0aW9uRXBvY2giOjE3ODM2NjU0MzQxMDcsInJhbmsiOjIsImtvZGRpVHJhY2tpbmdJbmZvIjoiVms3OTUrNWJzTjJ6bGU4QXV1R3BmcE1xSE5sWkJyc3VKdVBkNHZHWTk5b1JRMkdQTWFjN2FqT09VZWNhRGx5TE0zcU5yaGowbDU4ejJWa3c3TjM3OEJzbzdIUlU2WVFhYVU2YnZiUjBpbnFoK3NabUJzSE0yaDV5eEdrV0NJVWovUzJ2RGFRRVVYZWpLYnJKVlF0bEZyUE9FNTJ5YXlreGV3Y0xkZTduS1RPMFVWQ3NpOVZ0dXlVQTN4ZTRVbyt5RllhbC9BTDZCV1gxeHRydXFwN01WZ3BTb1FXakhJOVFkZSt0eHNkaS9GMnY3dnlGTVhIb3RkSUFEZi9XeHlUQWNBdGRDYUlkQ1I3WERLaTNCbnpqMGFueFlvWUk3dkpPZlhZTDBKV1p3Y1Evemo0cld0eDdwdHZLTGs5MmFFVHZEZ2lZUlJxeXU1WVdZVzdWQVg1QWo5d280emEvR2tNMUpXYUtaSUpKWUg0WU0rMko4bnpsUVVWbmNGYnVjc0tjdkJ0V1M3a3FYaGsxQUdTV2tCZjgxR0RjWjYzWHdLdkVtVUZoUFlRbFdpOGk3R1pNeldWdnVLVE9GSVJoYXhtUGV1VmV4UytLem1JSUlSdzAvVk5PRUtBZTVwL0ttUjVzS0laMnZGSTdCMDMyQkVQMU5aMHpxZWdjemJPWlFZd0NDT0x1Tjh4ei9tQ0hmUFR5VFdFRFhFbUt2a2lqMkNWZG91TktKY2xqS1gxblVwRFg2WFNzYWtTRjBISC9acWN1WHBnNFhPMFp4UXhEbjVvYkhmTkxVVmFkMTRPaXdsc1ZzYVozZEVMZWFBUTVINlBQSUtFcDd4d0FBb1NyT3JVSTd3cmRCWW9LaXZ6TTl2SmtQeWFSNkU3YmN6WGlpTjN1bnM2Q2dCRHp6UDBjUG9hRXBVNWt0YlNNTGtoTDZiYWZGeXpid1ZxN0RkU3JNQnFqMjZHN2c5aS9Fa1NBak5rSW1XQXhnc1hwaE1qNzhYQ2VDcVhvMjVMczVJbTRmeVpyQnFEcWM5NVIwbjNJYzhVWmRUdW5WS09OT1c0VVk5VXdiM01aUzJKQklpTTRiNkpqQTZENmtYUUJ4dTlXbVd3bDZxL3dURDI4cWxPbVZaUW9HTmJpRG5hOElqYmV2M0FacXhnMmU4MDltTUxqMEtTMllZcHM4S3RscFFYTmlHRVRVTzJRZHBlb2RMazRYK0VmZCtHT1ZrWjRFTmpwOEZUT2FYcHV0aGZNRDExeGtCa09UR3B6czFMT0VCb2h3TVVKSWVueUdqQkJJUWdLajJpM09xblJicFdDWEtXbHJ5M1BTTlB2d1h5UXFZVitSTFZLREJRSlloNy8vNkdDcWJmTk9kVFNxTWVVYTZ0bS9odzl4WTJJU3U5Si9DTm41MEVodkd3c2hNVWZ3NjZlNkhTNXpGT1ZKNDJFWWFjb25xWmhTZ3NnT1JJSTZOME90Zmk2SkI3MG9NaDRYbUFSYTFud0hVRmVRamxYNUs5UXFUWWE2YkZoU0pzdXBVVml4cUM2bG5QVHluOGdHS2k2Ty85OTd6UGlGMjNtS0hlUXN1eFJJNndqc2ZQbHI5V016Q2k4cDRaK3FZUll1a3lBekcrM0VjYmhYQkRibnVWZy80aGZkNnlFR0ZMT25ZR0pkci9SNVNNSEI5TSs2aEdkakdhREQwZEpLZTQrTzR4VkQxbE5ETFhubVBMdkJ6aEYxRmNhZWpPWEdIeDZjSktjUzc3aDhvYWphMjhzMExXUWN4VVNDTnZYWHZ3QitmUE45MkFRdlA1M1pGbU1wYnpRb0k5VXVLYS9PVXZ2WHBvZ05yL3N3ZTdjaXhERjQxaWlHTHBjMGp4Qnpzb1pnYm91a21mS0pud0pvMFN3WjNjYmJqVlVnWnFsN2V3anV5T0p3bDduV2lyMXFHU2tKZnB4TDhzYW9lWjMwZjJEclpmeGZWYXRaVXArdW5XamZYWjJaTDB2amJ1ckEyd2RhTnZicDhOb0ZsSEN3OG5KbThtbGVMWXlxWUxsL0lXaExtMVNIUWRiVnpKVlZtTEovNVNBZk9URVdIbVJvR2diR0lKbmNaWEowWW9ZY3NRL2dpZGdTMEVoMVRraWhRYTl4T2tVbG5zSzNQa21GVWdrMWgvRlNPTTdMOTBkajQ3eTF6ME85M3pZbmdGSkgxaEE4K2RKN3JUOXRsbEtmOUNlb010SDN1QT0ifQ%3D%3D&nad_placement=SR_MAIN&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e2056]
+                    - button "Save this item to a trip list" [ref=e2060] [cursor=pointer]:
+                      - img [ref=e2063]
+                  - generic [ref=e2066]:
+                    - generic [ref=e2067]:
+                      - generic [ref=e2069]:
+                        - generic [ref=e2071]:
+                          - heading "Downtown Camper by Scandic Opens in new window" [level=3] [ref=e2072]:
+                            - link "Downtown Camper by Scandic Opens in new window" [ref=e2073] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/downtown-camper-by-scandic.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=4&hapos=4&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=230896406_101238173_2_1_0_664473&highlighted_blocks=230896406_101238173_2_1_0_664473&matching_block_id=230896406_101238173_2_1_0_664473&sr_pri_blocks=230896406_101238173_2_1_0_664473_1132200&nad_id=6940e117-e212-4c4a-9d54-bead753e1830_0&nad_cpc=0.86&nad_track=eyJhdWN0aW9uRXBvY2giOjE3ODM2NjU0MzQxMDcsInJhbmsiOjIsImtvZGRpVHJhY2tpbmdJbmZvIjoiVms3OTUrNWJzTjJ6bGU4QXV1R3BmcE1xSE5sWkJyc3VKdVBkNHZHWTk5b1JRMkdQTWFjN2FqT09VZWNhRGx5TE0zcU5yaGowbDU4ejJWa3c3TjM3OEJzbzdIUlU2WVFhYVU2YnZiUjBpbnFoK3NabUJzSE0yaDV5eEdrV0NJVWovUzJ2RGFRRVVYZWpLYnJKVlF0bEZyUE9FNTJ5YXlreGV3Y0xkZTduS1RPMFVWQ3NpOVZ0dXlVQTN4ZTRVbyt5RllhbC9BTDZCV1gxeHRydXFwN01WZ3BTb1FXakhJOVFkZSt0eHNkaS9GMnY3dnlGTVhIb3RkSUFEZi9XeHlUQWNBdGRDYUlkQ1I3WERLaTNCbnpqMGFueFlvWUk3dkpPZlhZTDBKV1p3Y1Evemo0cld0eDdwdHZLTGs5MmFFVHZEZ2lZUlJxeXU1WVdZVzdWQVg1QWo5d280emEvR2tNMUpXYUtaSUpKWUg0WU0rMko4bnpsUVVWbmNGYnVjc0tjdkJ0V1M3a3FYaGsxQUdTV2tCZjgxR0RjWjYzWHdLdkVtVUZoUFlRbFdpOGk3R1pNeldWdnVLVE9GSVJoYXhtUGV1VmV4UytLem1JSUlSdzAvVk5PRUtBZTVwL0ttUjVzS0laMnZGSTdCMDMyQkVQMU5aMHpxZWdjemJPWlFZd0NDT0x1Tjh4ei9tQ0hmUFR5VFdFRFhFbUt2a2lqMkNWZG91TktKY2xqS1gxblVwRFg2WFNzYWtTRjBISC9acWN1WHBnNFhPMFp4UXhEbjVvYkhmTkxVVmFkMTRPaXdsc1ZzYVozZEVMZWFBUTVINlBQSUtFcDd4d0FBb1NyT3JVSTd3cmRCWW9LaXZ6TTl2SmtQeWFSNkU3YmN6WGlpTjN1bnM2Q2dCRHp6UDBjUG9hRXBVNWt0YlNNTGtoTDZiYWZGeXpid1ZxN0RkU3JNQnFqMjZHN2c5aS9Fa1NBak5rSW1XQXhnc1hwaE1qNzhYQ2VDcVhvMjVMczVJbTRmeVpyQnFEcWM5NVIwbjNJYzhVWmRUdW5WS09OT1c0VVk5VXdiM01aUzJKQklpTTRiNkpqQTZENmtYUUJ4dTlXbVd3bDZxL3dURDI4cWxPbVZaUW9HTmJpRG5hOElqYmV2M0FacXhnMmU4MDltTUxqMEtTMllZcHM4S3RscFFYTmlHRVRVTzJRZHBlb2RMazRYK0VmZCtHT1ZrWjRFTmpwOEZUT2FYcHV0aGZNRDExeGtCa09UR3B6czFMT0VCb2h3TVVKSWVueUdqQkJJUWdLajJpM09xblJicFdDWEtXbHJ5M1BTTlB2d1h5UXFZVitSTFZLREJRSlloNy8vNkdDcWJmTk9kVFNxTWVVYTZ0bS9odzl4WTJJU3U5Si9DTm41MEVodkd3c2hNVWZ3NjZlNkhTNXpGT1ZKNDJFWWFjb25xWmhTZ3NnT1JJSTZOME90Zmk2SkI3MG9NaDRYbUFSYTFud0hVRmVRamxYNUs5UXFUWWE2YkZoU0pzdXBVVml4cUM2bG5QVHluOGdHS2k2Ty85OTd6UGlGMjNtS0hlUXN1eFJJNndqc2ZQbHI5V016Q2k4cDRaK3FZUll1a3lBekcrM0VjYmhYQkRibnVWZy80aGZkNnlFR0ZMT25ZR0pkci9SNVNNSEI5TSs2aEdkakdhREQwZEpLZTQrTzR4VkQxbE5ETFhubVBMdkJ6aEYxRmNhZWpPWEdIeDZjSktjUzc3aDhvYWphMjhzMExXUWN4VVNDTnZYWHZ3QitmUE45MkFRdlA1M1pGbU1wYnpRb0k5VXVLYS9PVXZ2WHBvZ05yL3N3ZTdjaXhERjQxaWlHTHBjMGp4Qnpzb1pnYm91a21mS0pud0pvMFN3WjNjYmJqVlVnWnFsN2V3anV5T0p3bDduV2lyMXFHU2tKZnB4TDhzYW9lWjMwZjJEclpmeGZWYXRaVXArdW5XamZYWjJaTDB2amJ1ckEyd2RhTnZicDhOb0ZsSEN3OG5KbThtbGVMWXlxWUxsL0lXaExtMVNIUWRiVnpKVlZtTEovNVNBZk9URVdIbVJvR2diR0lKbmNaWEowWW9ZY3NRL2dpZGdTMEVoMVRraWhRYTl4T2tVbG5zSzNQa21GVWdrMWgvRlNPTTdMOTBkajQ3eTF6ME85M3pZbmdGSkgxaEE4K2RKN3JUOXRsbEtmOUNlb010SDN1QT0ifQ%3D%3D&nad_placement=SR_MAIN&from_sustainable_property_sr=1&from=searchresults
+                              - text: Downtown Camper by Scandic
+                              - generic [ref=e2074]: Opens in new window
+                          - button "4 out of 5" [ref=e2077]:
+                            - img [ref=e2078]:
+                              - generic [ref=e2079]:
+                                - img [ref=e2081]
+                                - img [ref=e2084]
+                              - generic [ref=e2086]:
+                                - img [ref=e2088]
+                                - img [ref=e2091]
+                              - generic [ref=e2093]:
+                                - img [ref=e2095]
+                                - img [ref=e2098]
+                              - generic [ref=e2100]:
+                                - img [ref=e2102]
+                                - img [ref=e2105]
+                          - generic [ref=e2109]: Ad
+                          - generic [ref=e2110]: This property spends a little extra to appear in this spot, and it matches your search criteria.
+                        - generic [ref=e2112]:
+                          - link "Norrmalm, Stockholm · Show on map" [ref=e2113] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/downtown-camper-by-scandic.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=4&hapos=4&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=230896406_101238173_2_1_0_664473&highlighted_blocks=230896406_101238173_2_1_0_664473&matching_block_id=230896406_101238173_2_1_0_664473&sr_pri_blocks=230896406_101238173_2_1_0_664473_1132200&nad_id=6940e117-e212-4c4a-9d54-bead753e1830_0&nad_cpc=0.86&nad_track=eyJhdWN0aW9uRXBvY2giOjE3ODM2NjU0MzQxMDcsInJhbmsiOjIsImtvZGRpVHJhY2tpbmdJbmZvIjoiVms3OTUrNWJzTjJ6bGU4QXV1R3BmcE1xSE5sWkJyc3VKdVBkNHZHWTk5b1JRMkdQTWFjN2FqT09VZWNhRGx5TE0zcU5yaGowbDU4ejJWa3c3TjM3OEJzbzdIUlU2WVFhYVU2YnZiUjBpbnFoK3NabUJzSE0yaDV5eEdrV0NJVWovUzJ2RGFRRVVYZWpLYnJKVlF0bEZyUE9FNTJ5YXlreGV3Y0xkZTduS1RPMFVWQ3NpOVZ0dXlVQTN4ZTRVbyt5RllhbC9BTDZCV1gxeHRydXFwN01WZ3BTb1FXakhJOVFkZSt0eHNkaS9GMnY3dnlGTVhIb3RkSUFEZi9XeHlUQWNBdGRDYUlkQ1I3WERLaTNCbnpqMGFueFlvWUk3dkpPZlhZTDBKV1p3Y1Evemo0cld0eDdwdHZLTGs5MmFFVHZEZ2lZUlJxeXU1WVdZVzdWQVg1QWo5d280emEvR2tNMUpXYUtaSUpKWUg0WU0rMko4bnpsUVVWbmNGYnVjc0tjdkJ0V1M3a3FYaGsxQUdTV2tCZjgxR0RjWjYzWHdLdkVtVUZoUFlRbFdpOGk3R1pNeldWdnVLVE9GSVJoYXhtUGV1VmV4UytLem1JSUlSdzAvVk5PRUtBZTVwL0ttUjVzS0laMnZGSTdCMDMyQkVQMU5aMHpxZWdjemJPWlFZd0NDT0x1Tjh4ei9tQ0hmUFR5VFdFRFhFbUt2a2lqMkNWZG91TktKY2xqS1gxblVwRFg2WFNzYWtTRjBISC9acWN1WHBnNFhPMFp4UXhEbjVvYkhmTkxVVmFkMTRPaXdsc1ZzYVozZEVMZWFBUTVINlBQSUtFcDd4d0FBb1NyT3JVSTd3cmRCWW9LaXZ6TTl2SmtQeWFSNkU3YmN6WGlpTjN1bnM2Q2dCRHp6UDBjUG9hRXBVNWt0YlNNTGtoTDZiYWZGeXpid1ZxN0RkU3JNQnFqMjZHN2c5aS9Fa1NBak5rSW1XQXhnc1hwaE1qNzhYQ2VDcVhvMjVMczVJbTRmeVpyQnFEcWM5NVIwbjNJYzhVWmRUdW5WS09OT1c0VVk5VXdiM01aUzJKQklpTTRiNkpqQTZENmtYUUJ4dTlXbVd3bDZxL3dURDI4cWxPbVZaUW9HTmJpRG5hOElqYmV2M0FacXhnMmU4MDltTUxqMEtTMllZcHM4S3RscFFYTmlHRVRVTzJRZHBlb2RMazRYK0VmZCtHT1ZrWjRFTmpwOEZUT2FYcHV0aGZNRDExeGtCa09UR3B6czFMT0VCb2h3TVVKSWVueUdqQkJJUWdLajJpM09xblJicFdDWEtXbHJ5M1BTTlB2d1h5UXFZVitSTFZLREJRSlloNy8vNkdDcWJmTk9kVFNxTWVVYTZ0bS9odzl4WTJJU3U5Si9DTm41MEVodkd3c2hNVWZ3NjZlNkhTNXpGT1ZKNDJFWWFjb25xWmhTZ3NnT1JJSTZOME90Zmk2SkI3MG9NaDRYbUFSYTFud0hVRmVRamxYNUs5UXFUWWE2YkZoU0pzdXBVVml4cUM2bG5QVHluOGdHS2k2Ty85OTd6UGlGMjNtS0hlUXN1eFJJNndqc2ZQbHI5V016Q2k4cDRaK3FZUll1a3lBekcrM0VjYmhYQkRibnVWZy80aGZkNnlFR0ZMT25ZR0pkci9SNVNNSEI5TSs2aEdkakdhREQwZEpLZTQrTzR4VkQxbE5ETFhubVBMdkJ6aEYxRmNhZWpPWEdIeDZjSktjUzc3aDhvYWphMjhzMExXUWN4VVNDTnZYWHZ3QitmUE45MkFRdlA1M1pGbU1wYnpRb0k5VXVLYS9PVXZ2WHBvZ05yL3N3ZTdjaXhERjQxaWlHTHBjMGp4Qnpzb1pnYm91a21mS0pud0pvMFN3WjNjYmJqVlVnWnFsN2V3anV5T0p3bDduV2lyMXFHU2tKZnB4TDhzYW9lWjMwZjJEclpmeGZWYXRaVXArdW5XamZYWjJaTDB2amJ1ckEyd2RhTnZicDhOb0ZsSEN3OG5KbThtbGVMWXlxWUxsL0lXaExtMVNIUWRiVnpKVlZtTEovNVNBZk9URVdIbVJvR2diR0lKbmNaWEowWW9ZY3NRL2dpZGdTMEVoMVRraWhRYTl4T2tVbG5zSzNQa21GVWdrMWgvRlNPTTdMOTBkajQ3eTF6ME85M3pZbmdGSkgxaEE4K2RKN3JUOXRsbEtmOUNlb010SDN1QT0ifQ%3D%3D&nad_placement=SR_MAIN&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e2114]: Norrmalm, Stockholm · Show on map
+                          - generic [ref=e2115]:
+                            - text: ·
+                            - button "150 m from downtown" [ref=e2117]
+                          - generic [ref=e2118]:
+                            - text: ·
+                            - button "Subway Access" [ref=e2120]
+                        - generic [ref=e2123]:
+                          - img [ref=e2125]
+                          - generic [ref=e2127]: Sustainability certification
+                      - generic [ref=e2131]:
+                        - link "Scored 8.7 Excellent 6,090 reviews" [ref=e2132] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/downtown-camper-by-scandic.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=4&hapos=4&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=230896406_101238173_2_1_0_664473&highlighted_blocks=230896406_101238173_2_1_0_664473&matching_block_id=230896406_101238173_2_1_0_664473&sr_pri_blocks=230896406_101238173_2_1_0_664473_1132200&nad_id=6940e117-e212-4c4a-9d54-bead753e1830_0&nad_cpc=0.86&nad_track=eyJhdWN0aW9uRXBvY2giOjE3ODM2NjU0MzQxMDcsInJhbmsiOjIsImtvZGRpVHJhY2tpbmdJbmZvIjoiVms3OTUrNWJzTjJ6bGU4QXV1R3BmcE1xSE5sWkJyc3VKdVBkNHZHWTk5b1JRMkdQTWFjN2FqT09VZWNhRGx5TE0zcU5yaGowbDU4ejJWa3c3TjM3OEJzbzdIUlU2WVFhYVU2YnZiUjBpbnFoK3NabUJzSE0yaDV5eEdrV0NJVWovUzJ2RGFRRVVYZWpLYnJKVlF0bEZyUE9FNTJ5YXlreGV3Y0xkZTduS1RPMFVWQ3NpOVZ0dXlVQTN4ZTRVbyt5RllhbC9BTDZCV1gxeHRydXFwN01WZ3BTb1FXakhJOVFkZSt0eHNkaS9GMnY3dnlGTVhIb3RkSUFEZi9XeHlUQWNBdGRDYUlkQ1I3WERLaTNCbnpqMGFueFlvWUk3dkpPZlhZTDBKV1p3Y1Evemo0cld0eDdwdHZLTGs5MmFFVHZEZ2lZUlJxeXU1WVdZVzdWQVg1QWo5d280emEvR2tNMUpXYUtaSUpKWUg0WU0rMko4bnpsUVVWbmNGYnVjc0tjdkJ0V1M3a3FYaGsxQUdTV2tCZjgxR0RjWjYzWHdLdkVtVUZoUFlRbFdpOGk3R1pNeldWdnVLVE9GSVJoYXhtUGV1VmV4UytLem1JSUlSdzAvVk5PRUtBZTVwL0ttUjVzS0laMnZGSTdCMDMyQkVQMU5aMHpxZWdjemJPWlFZd0NDT0x1Tjh4ei9tQ0hmUFR5VFdFRFhFbUt2a2lqMkNWZG91TktKY2xqS1gxblVwRFg2WFNzYWtTRjBISC9acWN1WHBnNFhPMFp4UXhEbjVvYkhmTkxVVmFkMTRPaXdsc1ZzYVozZEVMZWFBUTVINlBQSUtFcDd4d0FBb1NyT3JVSTd3cmRCWW9LaXZ6TTl2SmtQeWFSNkU3YmN6WGlpTjN1bnM2Q2dCRHp6UDBjUG9hRXBVNWt0YlNNTGtoTDZiYWZGeXpid1ZxN0RkU3JNQnFqMjZHN2c5aS9Fa1NBak5rSW1XQXhnc1hwaE1qNzhYQ2VDcVhvMjVMczVJbTRmeVpyQnFEcWM5NVIwbjNJYzhVWmRUdW5WS09OT1c0VVk5VXdiM01aUzJKQklpTTRiNkpqQTZENmtYUUJ4dTlXbVd3bDZxL3dURDI4cWxPbVZaUW9HTmJpRG5hOElqYmV2M0FacXhnMmU4MDltTUxqMEtTMllZcHM4S3RscFFYTmlHRVRVTzJRZHBlb2RMazRYK0VmZCtHT1ZrWjRFTmpwOEZUT2FYcHV0aGZNRDExeGtCa09UR3B6czFMT0VCb2h3TVVKSWVueUdqQkJJUWdLajJpM09xblJicFdDWEtXbHJ5M1BTTlB2d1h5UXFZVitSTFZLREJRSlloNy8vNkdDcWJmTk9kVFNxTWVVYTZ0bS9odzl4WTJJU3U5Si9DTm41MEVodkd3c2hNVWZ3NjZlNkhTNXpGT1ZKNDJFWWFjb25xWmhTZ3NnT1JJSTZOME90Zmk2SkI3MG9NaDRYbUFSYTFud0hVRmVRamxYNUs5UXFUWWE2YkZoU0pzdXBVVml4cUM2bG5QVHluOGdHS2k2Ty85OTd6UGlGMjNtS0hlUXN1eFJJNndqc2ZQbHI5V016Q2k4cDRaK3FZUll1a3lBekcrM0VjYmhYQkRibnVWZy80aGZkNnlFR0ZMT25ZR0pkci9SNVNNSEI5TSs2aEdkakdhREQwZEpLZTQrTzR4VkQxbE5ETFhubVBMdkJ6aEYxRmNhZWpPWEdIeDZjSktjUzc3aDhvYWphMjhzMExXUWN4VVNDTnZYWHZ3QitmUE45MkFRdlA1M1pGbU1wYnpRb0k5VXVLYS9PVXZ2WHBvZ05yL3N3ZTdjaXhERjQxaWlHTHBjMGp4Qnpzb1pnYm91a21mS0pud0pvMFN3WjNjYmJqVlVnWnFsN2V3anV5T0p3bDduV2lyMXFHU2tKZnB4TDhzYW9lWjMwZjJEclpmeGZWYXRaVXArdW5XamZYWjJaTDB2amJ1ckEyd2RhTnZicDhOb0ZsSEN3OG5KbThtbGVMWXlxWUxsL0lXaExtMVNIUWRiVnpKVlZtTEovNVNBZk9URVdIbVJvR2diR0lKbmNaWEowWW9ZY3NRL2dpZGdTMEVoMVRraWhRYTl4T2tVbG5zSzNQa21GVWdrMWgvRlNPTTdMOTBkajQ3eTF6ME85M3pZbmdGSkgxaEE4K2RKN3JUOXRsbEtmOUNlb010SDN1QT0ifQ%3D%3D&nad_placement=SR_MAIN&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2134]:
+                            - generic [ref=e2135]: Scored 8.7
+                            - generic [ref=e2136]: "8.7"
+                            - generic [ref=e2137]:
+                              - generic [ref=e2138]: Excellent
+                              - generic [ref=e2139]: 6,090 reviews
+                        - 'link "Breakfast: Scored 9.4" [ref=e2141] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/downtown-camper-by-scandic.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=4&hapos=4&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=230896406_101238173_2_1_0_664473&highlighted_blocks=230896406_101238173_2_1_0_664473&matching_block_id=230896406_101238173_2_1_0_664473&sr_pri_blocks=230896406_101238173_2_1_0_664473_1132200&nad_id=6940e117-e212-4c4a-9d54-bead753e1830_0&nad_cpc=0.86&nad_track=eyJhdWN0aW9uRXBvY2giOjE3ODM2NjU0MzQxMDcsInJhbmsiOjIsImtvZGRpVHJhY2tpbmdJbmZvIjoiVms3OTUrNWJzTjJ6bGU4QXV1R3BmcE1xSE5sWkJyc3VKdVBkNHZHWTk5b1JRMkdQTWFjN2FqT09VZWNhRGx5TE0zcU5yaGowbDU4ejJWa3c3TjM3OEJzbzdIUlU2WVFhYVU2YnZiUjBpbnFoK3NabUJzSE0yaDV5eEdrV0NJVWovUzJ2RGFRRVVYZWpLYnJKVlF0bEZyUE9FNTJ5YXlreGV3Y0xkZTduS1RPMFVWQ3NpOVZ0dXlVQTN4ZTRVbyt5RllhbC9BTDZCV1gxeHRydXFwN01WZ3BTb1FXakhJOVFkZSt0eHNkaS9GMnY3dnlGTVhIb3RkSUFEZi9XeHlUQWNBdGRDYUlkQ1I3WERLaTNCbnpqMGFueFlvWUk3dkpPZlhZTDBKV1p3Y1Evemo0cld0eDdwdHZLTGs5MmFFVHZEZ2lZUlJxeXU1WVdZVzdWQVg1QWo5d280emEvR2tNMUpXYUtaSUpKWUg0WU0rMko4bnpsUVVWbmNGYnVjc0tjdkJ0V1M3a3FYaGsxQUdTV2tCZjgxR0RjWjYzWHdLdkVtVUZoUFlRbFdpOGk3R1pNeldWdnVLVE9GSVJoYXhtUGV1VmV4UytLem1JSUlSdzAvVk5PRUtBZTVwL0ttUjVzS0laMnZGSTdCMDMyQkVQMU5aMHpxZWdjemJPWlFZd0NDT0x1Tjh4ei9tQ0hmUFR5VFdFRFhFbUt2a2lqMkNWZG91TktKY2xqS1gxblVwRFg2WFNzYWtTRjBISC9acWN1WHBnNFhPMFp4UXhEbjVvYkhmTkxVVmFkMTRPaXdsc1ZzYVozZEVMZWFBUTVINlBQSUtFcDd4d0FBb1NyT3JVSTd3cmRCWW9LaXZ6TTl2SmtQeWFSNkU3YmN6WGlpTjN1bnM2Q2dCRHp6UDBjUG9hRXBVNWt0YlNNTGtoTDZiYWZGeXpid1ZxN0RkU3JNQnFqMjZHN2c5aS9Fa1NBak5rSW1XQXhnc1hwaE1qNzhYQ2VDcVhvMjVMczVJbTRmeVpyQnFEcWM5NVIwbjNJYzhVWmRUdW5WS09OT1c0VVk5VXdiM01aUzJKQklpTTRiNkpqQTZENmtYUUJ4dTlXbVd3bDZxL3dURDI4cWxPbVZaUW9HTmJpRG5hOElqYmV2M0FacXhnMmU4MDltTUxqMEtTMllZcHM4S3RscFFYTmlHRVRVTzJRZHBlb2RMazRYK0VmZCtHT1ZrWjRFTmpwOEZUT2FYcHV0aGZNRDExeGtCa09UR3B6czFMT0VCb2h3TVVKSWVueUdqQkJJUWdLajJpM09xblJicFdDWEtXbHJ5M1BTTlB2d1h5UXFZVitSTFZLREJRSlloNy8vNkdDcWJmTk9kVFNxTWVVYTZ0bS9odzl4WTJJU3U5Si9DTm41MEVodkd3c2hNVWZ3NjZlNkhTNXpGT1ZKNDJFWWFjb25xWmhTZ3NnT1JJSTZOME90Zmk2SkI3MG9NaDRYbUFSYTFud0hVRmVRamxYNUs5UXFUWWE2YkZoU0pzdXBVVml4cUM2bG5QVHluOGdHS2k2Ty85OTd6UGlGMjNtS0hlUXN1eFJJNndqc2ZQbHI5V016Q2k4cDRaK3FZUll1a3lBekcrM0VjYmhYQkRibnVWZy80aGZkNnlFR0ZMT25ZR0pkci9SNVNNSEI5TSs2aEdkakdhREQwZEpLZTQrTzR4VkQxbE5ETFhubVBMdkJ6aEYxRmNhZWpPWEdIeDZjSktjUzc3aDhvYWphMjhzMExXUWN4VVNDTnZYWHZ3QitmUE45MkFRdlA1M1pGbU1wYnpRb0k5VXVLYS9PVXZ2WHBvZ05yL3N3ZTdjaXhERjQxaWlHTHBjMGp4Qnpzb1pnYm91a21mS0pud0pvMFN3WjNjYmJqVlVnWnFsN2V3anV5T0p3bDduV2lyMXFHU2tKZnB4TDhzYW9lWjMwZjJEclpmeGZWYXRaVXArdW5XamZYWjJaTDB2amJ1ckEyd2RhTnZicDhOb0ZsSEN3OG5KbThtbGVMWXlxWUxsL0lXaExtMVNIUWRiVnpKVlZtTEovNVNBZk9URVdIbVJvR2diR0lKbmNaWEowWW9ZY3NRL2dpZGdTMEVoMVRraWhRYTl4T2tVbG5zSzNQa21GVWdrMWgvRlNPTTdMOTBkajQ3eTF6ME85M3pZbmdGSkgxaEE4K2RKN3JUOXRsbEtmOUNlb010SDN1QT0ifQ%3D%3D&nad_placement=SR_MAIN&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2143]: Breakfast 9.4
+                    - generic [ref=e2144]:
+                      - generic [ref=e2147]:
+                        - link "Classic Twin Room" [ref=e2148]
+                        - list [ref=e2149]:
+                          - listitem [ref=e2150]:
+                            - generic [ref=e2152]: 2 twin beds
+                          - listitem [ref=e2153]: Breakfast included
+                      - generic [ref=e2155]:
+                        - generic [ref=e2156]:
+                          - generic [ref=e2157]: 5 nights, 2 adults
+                          - generic [ref=e2158]: ₹ 111,746
+                          - generic [ref=e2159]: Price ₹ 111,746
+                          - generic [ref=e2160]: Includes taxes and fees
+                        - link "See your options" [ref=e2162] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/downtown-camper-by-scandic.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=4&hapos=4&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=230896406_101238173_2_1_0_664473&highlighted_blocks=230896406_101238173_2_1_0_664473&matching_block_id=230896406_101238173_2_1_0_664473&sr_pri_blocks=230896406_101238173_2_1_0_664473_1132200&nad_id=6940e117-e212-4c4a-9d54-bead753e1830_0&nad_cpc=0.86&nad_track=eyJhdWN0aW9uRXBvY2giOjE3ODM2NjU0MzQxMDcsInJhbmsiOjIsImtvZGRpVHJhY2tpbmdJbmZvIjoiVms3OTUrNWJzTjJ6bGU4QXV1R3BmcE1xSE5sWkJyc3VKdVBkNHZHWTk5b1JRMkdQTWFjN2FqT09VZWNhRGx5TE0zcU5yaGowbDU4ejJWa3c3TjM3OEJzbzdIUlU2WVFhYVU2YnZiUjBpbnFoK3NabUJzSE0yaDV5eEdrV0NJVWovUzJ2RGFRRVVYZWpLYnJKVlF0bEZyUE9FNTJ5YXlreGV3Y0xkZTduS1RPMFVWQ3NpOVZ0dXlVQTN4ZTRVbyt5RllhbC9BTDZCV1gxeHRydXFwN01WZ3BTb1FXakhJOVFkZSt0eHNkaS9GMnY3dnlGTVhIb3RkSUFEZi9XeHlUQWNBdGRDYUlkQ1I3WERLaTNCbnpqMGFueFlvWUk3dkpPZlhZTDBKV1p3Y1Evemo0cld0eDdwdHZLTGs5MmFFVHZEZ2lZUlJxeXU1WVdZVzdWQVg1QWo5d280emEvR2tNMUpXYUtaSUpKWUg0WU0rMko4bnpsUVVWbmNGYnVjc0tjdkJ0V1M3a3FYaGsxQUdTV2tCZjgxR0RjWjYzWHdLdkVtVUZoUFlRbFdpOGk3R1pNeldWdnVLVE9GSVJoYXhtUGV1VmV4UytLem1JSUlSdzAvVk5PRUtBZTVwL0ttUjVzS0laMnZGSTdCMDMyQkVQMU5aMHpxZWdjemJPWlFZd0NDT0x1Tjh4ei9tQ0hmUFR5VFdFRFhFbUt2a2lqMkNWZG91TktKY2xqS1gxblVwRFg2WFNzYWtTRjBISC9acWN1WHBnNFhPMFp4UXhEbjVvYkhmTkxVVmFkMTRPaXdsc1ZzYVozZEVMZWFBUTVINlBQSUtFcDd4d0FBb1NyT3JVSTd3cmRCWW9LaXZ6TTl2SmtQeWFSNkU3YmN6WGlpTjN1bnM2Q2dCRHp6UDBjUG9hRXBVNWt0YlNNTGtoTDZiYWZGeXpid1ZxN0RkU3JNQnFqMjZHN2c5aS9Fa1NBak5rSW1XQXhnc1hwaE1qNzhYQ2VDcVhvMjVMczVJbTRmeVpyQnFEcWM5NVIwbjNJYzhVWmRUdW5WS09OT1c0VVk5VXdiM01aUzJKQklpTTRiNkpqQTZENmtYUUJ4dTlXbVd3bDZxL3dURDI4cWxPbVZaUW9HTmJpRG5hOElqYmV2M0FacXhnMmU4MDltTUxqMEtTMllZcHM4S3RscFFYTmlHRVRVTzJRZHBlb2RMazRYK0VmZCtHT1ZrWjRFTmpwOEZUT2FYcHV0aGZNRDExeGtCa09UR3B6czFMT0VCb2h3TVVKSWVueUdqQkJJUWdLajJpM09xblJicFdDWEtXbHJ5M1BTTlB2d1h5UXFZVitSTFZLREJRSlloNy8vNkdDcWJmTk9kVFNxTWVVYTZ0bS9odzl4WTJJU3U5Si9DTm41MEVodkd3c2hNVWZ3NjZlNkhTNXpGT1ZKNDJFWWFjb25xWmhTZ3NnT1JJSTZOME90Zmk2SkI3MG9NaDRYbUFSYTFud0hVRmVRamxYNUs5UXFUWWE2YkZoU0pzdXBVVml4cUM2bG5QVHluOGdHS2k2Ty85OTd6UGlGMjNtS0hlUXN1eFJJNndqc2ZQbHI5V016Q2k4cDRaK3FZUll1a3lBekcrM0VjYmhYQkRibnVWZy80aGZkNnlFR0ZMT25ZR0pkci9SNVNNSEI5TSs2aEdkakdhREQwZEpLZTQrTzR4VkQxbE5ETFhubVBMdkJ6aEYxRmNhZWpPWEdIeDZjSktjUzc3aDhvYWphMjhzMExXUWN4VVNDTnZYWHZ3QitmUE45MkFRdlA1M1pGbU1wYnpRb0k5VXVLYS9PVXZ2WHBvZ05yL3N3ZTdjaXhERjQxaWlHTHBjMGp4Qnpzb1pnYm91a21mS0pud0pvMFN3WjNjYmJqVlVnWnFsN2V3anV5T0p3bDduV2lyMXFHU2tKZnB4TDhzYW9lWjMwZjJEclpmeGZWYXRaVXArdW5XamZYWjJaTDB2amJ1ckEyd2RhTnZicDhOb0ZsSEN3OG5KbThtbGVMWXlxWUxsL0lXaExtMVNIUWRiVnpKVlZtTEovNVNBZk9URVdIbVJvR2diR0lKbmNaWEowWW9ZY3NRL2dpZGdTMEVoMVRraWhRYTl4T2tVbG5zSzNQa21GVWdrMWgvRlNPTTdMOTBkajQ3eTF6ME85M3pZbmdGSkgxaEE4K2RKN3JUOXRsbEtmOUNlb010SDN1QT0ifQ%3D%3D&nad_placement=SR_MAIN&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2163]: See your options
+                          - img [ref=e2167]
+              - listitem "Property" [ref=e2169]:
+                - generic [ref=e2170]:
+                  - generic [ref=e2172]:
+                    - link [ref=e2173] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/haymarket.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=5&hapos=5&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=166908315_89559779_2_1_0_664558&highlighted_blocks=166908315_89559779_2_1_0_664558&matching_block_id=166908315_89559779_2_1_0_664558&sr_pri_blocks=166908315_89559779_2_1_0_664558_994500&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e2174]
+                    - button "Save this item to a trip list" [ref=e2178] [cursor=pointer]:
+                      - img [ref=e2181]
+                  - generic [ref=e2184]:
+                    - generic [ref=e2185]:
+                      - generic [ref=e2187]:
+                        - generic [ref=e2189]:
+                          - heading "Haymarket by Scandic Opens in new window" [level=3] [ref=e2190]:
+                            - link "Haymarket by Scandic Opens in new window" [ref=e2191] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/haymarket.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=5&hapos=5&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=166908315_89559779_2_1_0_664558&highlighted_blocks=166908315_89559779_2_1_0_664558&matching_block_id=166908315_89559779_2_1_0_664558&sr_pri_blocks=166908315_89559779_2_1_0_664558_994500&from_sustainable_property_sr=1&from=searchresults
+                              - text: Haymarket by Scandic
+                              - generic [ref=e2192]: Opens in new window
+                          - button "4 out of 5" [ref=e2195]:
+                            - img [ref=e2196]:
+                              - generic [ref=e2197]:
+                                - img [ref=e2199]
+                                - img [ref=e2202]
+                              - generic [ref=e2204]:
+                                - img [ref=e2206]
+                                - img [ref=e2209]
+                              - generic [ref=e2211]:
+                                - img [ref=e2213]
+                                - img [ref=e2216]
+                              - generic [ref=e2218]:
+                                - img [ref=e2220]
+                                - img [ref=e2223]
+                        - generic [ref=e2226]:
+                          - img [ref=e2231]
+                          - link "Norrmalm, Stockholm · Show on map" [ref=e2233] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/haymarket.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=5&hapos=5&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=166908315_89559779_2_1_0_664558&highlighted_blocks=166908315_89559779_2_1_0_664558&matching_block_id=166908315_89559779_2_1_0_664558&sr_pri_blocks=166908315_89559779_2_1_0_664558_994500&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e2234]: Norrmalm, Stockholm · Show on map
+                          - generic [ref=e2235]:
+                            - text: ·
+                            - button "350 m from downtown" [ref=e2237]
+                          - generic [ref=e2238]:
+                            - text: ·
+                            - button "Subway Access" [ref=e2240]
+                        - generic [ref=e2243]:
+                          - img [ref=e2245]
+                          - generic [ref=e2247]: Sustainability certification
+                      - generic [ref=e2251]:
+                        - link "Scored 8.4 Very Good 6,431 reviews" [ref=e2252] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/haymarket.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=5&hapos=5&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=166908315_89559779_2_1_0_664558&highlighted_blocks=166908315_89559779_2_1_0_664558&matching_block_id=166908315_89559779_2_1_0_664558&sr_pri_blocks=166908315_89559779_2_1_0_664558_994500&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2254]:
+                            - generic [ref=e2255]: Scored 8.4
+                            - generic [ref=e2256]: "8.4"
+                            - generic [ref=e2257]:
+                              - generic [ref=e2258]: Very Good
+                              - generic [ref=e2259]: 6,431 reviews
+                        - 'link "Location: Scored 9.7" [ref=e2261] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/haymarket.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=5&hapos=5&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=166908315_89559779_2_1_0_664558&highlighted_blocks=166908315_89559779_2_1_0_664558&matching_block_id=166908315_89559779_2_1_0_664558&sr_pri_blocks=166908315_89559779_2_1_0_664558_994500&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2263]: Location 9.7
+                    - generic [ref=e2264]:
+                      - generic [ref=e2267]:
+                        - link "Classic Double Room without Window" [ref=e2268]
+                        - list [ref=e2269]:
+                          - listitem [ref=e2270]:
+                            - generic [ref=e2272]: 1 queen bed
+                          - listitem [ref=e2273]: Breakfast included
+                      - generic [ref=e2275]:
+                        - generic [ref=e2276]:
+                          - generic [ref=e2277]: 5 nights, 2 adults
+                          - generic [ref=e2278]: ₹ 98,155
+                          - generic [ref=e2279]: Price ₹ 98,155
+                          - generic [ref=e2280]: Includes taxes and fees
+                        - link "See your options" [ref=e2282] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/haymarket.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=5&hapos=5&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=166908315_89559779_2_1_0_664558&highlighted_blocks=166908315_89559779_2_1_0_664558&matching_block_id=166908315_89559779_2_1_0_664558&sr_pri_blocks=166908315_89559779_2_1_0_664558_994500&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2283]: See your options
+                          - img [ref=e2287]
+              - generic [ref=e2291]:
+                - generic [ref=e2293]:
+                  - heading "Sign in, save money" [level=3] [ref=e2294]
+                  - generic [ref=e2295]: Unlock member-only discounts in Stockholm
+                  - generic [ref=e2297]:
+                    - link "Sign in to Booking.com." [ref=e2298] [cursor=pointer]:
+                      - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=en-us&aid=304142&bkng_action=searchresults_irene&prompt=signin&state=UrICWwl_ckUON2OlOdus4IW3PBh7Vm2BNUBo0CMpWsJK_Dexn_15HxEPRbUPR08AmTr5GyPzs0HyCWuf_nOA03UvwdEub7NbS4FDpS60xO-bKQrQZlcACNrYMTpSp0mY-t3AYZY6IwwKpzRJGbuMb506cDakAeY9J-BUA3CMuuf4wyM9_1PxYw1bws9J9JebtCP9Wj4UOAqEtXthNFkNlf9bGP8cZ5iCDSwulmdCi4zKlFK8IreoOZsI78OIxoqM5wop6f1m7UiEDu-1UlHbX3joPGH-ni2DIGb9PS7hmntXaf8hivlse8Taz-dIpLNJCZey5nzKoXBvqIKUCqLWEilg5B-FW6vGrozU3Xn1oqDlXLE_mHd2QnX81CKntEv0rwEsvvAOoZUULmQEdw38_AkSTDwq*eyJpZCI6InNlYXJjaF9yZXN1bHRzIn0%3D
+                      - generic [ref=e2299]: Sign in
+                    - link "Register - Create a Booking.com account." [ref=e2300] [cursor=pointer]:
+                      - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=en-us&aid=304142&bkng_action=searchresults_irene&prompt=signin&state=UrICWwl_ckUON2OlOdus4IW3PBh7Vm2BNUBo0CMpWsJK_Dexn_15HxEPRbUPR08AmTr5GyPzs0HyCWuf_nOA03UvwdEub7NbS4FDpS60xO-bKQrQZlcACNrYMTpSp0mY-t3AYZY6IwwKpzRJGbuMb506cDakAeY9J-BUA3CMuuf4wyM9_1PxYw1bws9J9JebtCP9Wj4UOAqEtXthNFkNlf9bGP8cZ5iCDSwulmdCi4zKlFK8IreoOZsI78OIxoqM5wop6f1m7UiEDu-1UlHbX3joPGH-ni2DIGb9PS7hmntXaf8hivlse8Taz-dIpLNJCZey5nzKoXBvqIKUCqLWEilg5B-FW6vGrozU3Xn1oqDlXLE_mHd2QnX81CKntEv0rwEsvvAOoZUULmQEdw38_AkSTDwq*eyJpZCI6InNlYXJjaF9yZXN1bHRzIn0%3D
+                      - generic [ref=e2301]: Register
+                - img "Sign in, save money" [ref=e2305]
+              - listitem "Property" [ref=e2306]:
+                - generic [ref=e2307]:
+                  - generic [ref=e2309]:
+                    - link [ref=e2310] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/forenom-aparthotel-alvik.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=6&hapos=6&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1819107_140662081_2_1_0_646932&highlighted_blocks=1819107_140662081_2_1_0_646932&matching_block_id=1819107_140662081_2_1_0_646932&sr_pri_blocks=1819107_140662081_2_1_0_646932_576250&from=searchresults
+                      - img [ref=e2311]
+                    - button "Save this item to a trip list" [ref=e2315] [cursor=pointer]:
+                      - img [ref=e2318]
+                  - generic [ref=e2321]:
+                    - generic [ref=e2322]:
+                      - generic [ref=e2324]:
+                        - generic [ref=e2326]:
+                          - heading "The Nooq Alvik - Hotel & Studios Opens in new window" [level=3] [ref=e2327]:
+                            - link "The Nooq Alvik - Hotel & Studios Opens in new window" [ref=e2328] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/forenom-aparthotel-alvik.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=6&hapos=6&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1819107_140662081_2_1_0_646932&highlighted_blocks=1819107_140662081_2_1_0_646932&matching_block_id=1819107_140662081_2_1_0_646932&sr_pri_blocks=1819107_140662081_2_1_0_646932_576250&from=searchresults
+                              - text: The Nooq Alvik - Hotel & Studios
+                              - generic [ref=e2329]: Opens in new window
+                          - button "3 out of 5" [ref=e2332]:
+                            - img [ref=e2333]:
+                              - generic [ref=e2334]:
+                                - img [ref=e2336]
+                                - img [ref=e2339]
+                              - generic [ref=e2341]:
+                                - img [ref=e2343]
+                                - img [ref=e2346]
+                              - generic [ref=e2348]:
+                                - img [ref=e2350]
+                                - img [ref=e2353]
+                        - generic [ref=e2356]:
+                          - link "Bromma, Stockholm · Show on map" [ref=e2357] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/forenom-aparthotel-alvik.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=6&hapos=6&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1819107_140662081_2_1_0_646932&highlighted_blocks=1819107_140662081_2_1_0_646932&matching_block_id=1819107_140662081_2_1_0_646932&sr_pri_blocks=1819107_140662081_2_1_0_646932_576250&from=searchresults&map=1
+                            - generic [ref=e2358]: Bromma, Stockholm · Show on map
+                          - generic [ref=e2359]:
+                            - text: ·
+                            - button "4.9 km from downtown" [ref=e2361]
+                      - link "Scored 7.5 Good 3,168 reviews" [ref=e2366] [cursor=pointer]:
+                        - /url: https://www.booking.com/hotel/se/forenom-aparthotel-alvik.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=6&hapos=6&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1819107_140662081_2_1_0_646932&highlighted_blocks=1819107_140662081_2_1_0_646932&matching_block_id=1819107_140662081_2_1_0_646932&sr_pri_blocks=1819107_140662081_2_1_0_646932_576250&from=searchresults
+                        - generic [ref=e2368]:
+                          - generic [ref=e2369]: Scored 7.5
+                          - generic [ref=e2370]: "7.5"
+                          - generic [ref=e2371]:
+                            - generic [ref=e2372]: Good
+                            - generic [ref=e2373]: 3,168 reviews
+                    - generic [ref=e2374]:
+                      - generic [ref=e2377]:
+                        - link "Queen Studio" [ref=e2378]
+                        - list [ref=e2379]:
+                          - listitem [ref=e2380]:
+                            - generic [ref=e2381]:
+                              - generic [ref=e2382]: Entire studio • 1 bathroom • 1 kitchen • 18 m²
+                              - generic [ref=e2383]: 1 queen bed
+                          - listitem [ref=e2384]: Breakfast included
+                      - generic [ref=e2386]:
+                        - generic [ref=e2387]:
+                          - generic [ref=e2388]: 5 nights, 2 adults
+                          - generic [ref=e2390]:
+                            - generic [ref=e2391]: ₹ 63,700
+                            - generic [ref=e2392]:
+                              - generic [ref=e2393]: ₹ 56,875
+                              - img [ref=e2395]
+                          - generic [ref=e2397]: Original price ₹ 63,700. Current price ₹ 56,875.
+                          - generic [ref=e2398]: Includes taxes and fees
+                        - link "See your options" [ref=e2400] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/forenom-aparthotel-alvik.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=6&hapos=6&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1819107_140662081_2_1_0_646932&highlighted_blocks=1819107_140662081_2_1_0_646932&matching_block_id=1819107_140662081_2_1_0_646932&sr_pri_blocks=1819107_140662081_2_1_0_646932_576250&from=searchresults
+                          - generic [ref=e2401]: See your options
+                          - img [ref=e2405]
+              - listitem "Property" [ref=e2407]:
+                - generic [ref=e2408]:
+                  - generic [ref=e2410]:
+                    - link [ref=e2411] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/best-western-amp.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=7&hapos=7&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=148994413_338217489_2_1_0&highlighted_blocks=148994413_338217489_2_1_0&matching_block_id=148994413_338217489_2_1_0&sr_pri_blocks=148994413_338217489_2_1_0__606400&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e2412]
+                    - button "Save this item to a trip list" [ref=e2416] [cursor=pointer]:
+                      - img [ref=e2419]
+                  - generic [ref=e2422]:
+                    - generic [ref=e2423]:
+                      - generic [ref=e2425]:
+                        - generic [ref=e2427]:
+                          - heading "Best Western and hotel Opens in new window" [level=3] [ref=e2428]:
+                            - link "Best Western and hotel Opens in new window" [ref=e2429] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/best-western-amp.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=7&hapos=7&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=148994413_338217489_2_1_0&highlighted_blocks=148994413_338217489_2_1_0&matching_block_id=148994413_338217489_2_1_0&sr_pri_blocks=148994413_338217489_2_1_0__606400&from_sustainable_property_sr=1&from=searchresults
+                              - text: Best Western and hotel
+                              - generic [ref=e2430]: Opens in new window
+                          - button "3 out of 5" [ref=e2433]:
+                            - img [ref=e2434]:
+                              - generic [ref=e2435]:
+                                - img [ref=e2437]
+                                - img [ref=e2440]
+                              - generic [ref=e2442]:
+                                - img [ref=e2444]
+                                - img [ref=e2447]
+                              - generic [ref=e2449]:
+                                - img [ref=e2451]
+                                - img [ref=e2454]
+                        - generic [ref=e2457]:
+                          - img [ref=e2462]
+                          - link "Norrmalm, Stockholm · Show on map" [ref=e2464] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/best-western-amp.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=7&hapos=7&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=148994413_338217489_2_1_0&highlighted_blocks=148994413_338217489_2_1_0&matching_block_id=148994413_338217489_2_1_0&sr_pri_blocks=148994413_338217489_2_1_0__606400&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e2465]: Norrmalm, Stockholm · Show on map
+                          - generic [ref=e2466]:
+                            - text: ·
+                            - button "450 m from downtown" [ref=e2468]
+                          - generic [ref=e2469]:
+                            - text: ·
+                            - button "Subway Access" [ref=e2471]
+                        - generic [ref=e2474]:
+                          - img [ref=e2476]
+                          - generic [ref=e2478]: Sustainability certification
+                      - generic [ref=e2482]:
+                        - link "Scored 8.4 Very Good 7,200 reviews" [ref=e2483] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/best-western-amp.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=7&hapos=7&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=148994413_338217489_2_1_0&highlighted_blocks=148994413_338217489_2_1_0&matching_block_id=148994413_338217489_2_1_0&sr_pri_blocks=148994413_338217489_2_1_0__606400&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2485]:
+                            - generic [ref=e2486]: Scored 8.4
+                            - generic [ref=e2487]: "8.4"
+                            - generic [ref=e2488]:
+                              - generic [ref=e2489]: Very Good
+                              - generic [ref=e2490]: 7,200 reviews
+                        - 'link "Breakfast: Scored 9.0" [ref=e2492] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/best-western-amp.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=7&hapos=7&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=148994413_338217489_2_1_0&highlighted_blocks=148994413_338217489_2_1_0&matching_block_id=148994413_338217489_2_1_0&sr_pri_blocks=148994413_338217489_2_1_0__606400&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2494]: Breakfast 9.0
+                    - generic "Getaway Deal. This property is offering a discount on select stays between Mar 26 and Sep 30, 2026.." [ref=e2498]:
+                      - generic [ref=e2499]: Getaway Deal
+                    - generic [ref=e2500]:
+                      - generic [ref=e2503]:
+                        - link "Small & Smart Double - No window" [ref=e2504]
+                        - list [ref=e2505]:
+                          - listitem [ref=e2506]:
+                            - generic [ref=e2508]: 1 full bed
+                          - listitem [ref=e2509]: Breakfast included
+                          - listitem [ref=e2510]:
+                            - generic [ref=e2511]:
+                              - img [ref=e2514]
+                              - strong [ref=e2518]: Free cancellation
+                          - listitem [ref=e2519]:
+                            - generic [ref=e2520]:
+                              - img [ref=e2523]
+                              - generic [ref=e2526]:
+                                - strong [ref=e2527]: No prepayment needed
+                                - text: – pay at the property
+                          - listitem [ref=e2528]:
+                            - generic [ref=e2530]: We have 5 left at this price
+                      - generic [ref=e2532]:
+                        - generic [ref=e2533]:
+                          - generic [ref=e2534]: 5 nights, 2 adults
+                          - generic [ref=e2536]:
+                            - generic [ref=e2537]: ₹ 74,813
+                            - generic [ref=e2538]:
+                              - generic [ref=e2539]: ₹ 59,850
+                              - img [ref=e2541]
+                          - generic [ref=e2543]: Original price ₹ 74,813. Current price ₹ 59,850.
+                          - generic [ref=e2544]: Includes taxes and fees
+                        - link "See your options" [ref=e2546] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/best-western-amp.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=7&hapos=7&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=148994413_338217489_2_1_0&highlighted_blocks=148994413_338217489_2_1_0&matching_block_id=148994413_338217489_2_1_0&sr_pri_blocks=148994413_338217489_2_1_0__606400&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2547]: See your options
+                          - img [ref=e2551]
+              - listitem "Property" [ref=e2553]:
+                - generic [ref=e2554]:
+                  - generic [ref=e2556]:
+                    - link [ref=e2557] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/clarion-stockholm.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=8&hapos=8&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1820906_140661732_2_1_0_645632&highlighted_blocks=1820906_140661732_2_1_0_645632&matching_block_id=1820906_140661732_2_1_0_645632&sr_pri_blocks=1820906_140661732_2_1_0_645632_988839&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e2558]
+                    - button "Save this item to a trip list" [ref=e2562] [cursor=pointer]:
+                      - img [ref=e2565]
+                  - generic [ref=e2568]:
+                    - generic [ref=e2569]:
+                      - generic [ref=e2571]:
+                        - generic [ref=e2573]:
+                          - heading "Clarion Hotel Stockholm Opens in new window" [level=3] [ref=e2574]:
+                            - link "Clarion Hotel Stockholm Opens in new window" [ref=e2575] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/clarion-stockholm.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=8&hapos=8&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1820906_140661732_2_1_0_645632&highlighted_blocks=1820906_140661732_2_1_0_645632&matching_block_id=1820906_140661732_2_1_0_645632&sr_pri_blocks=1820906_140661732_2_1_0_645632_988839&from_sustainable_property_sr=1&from=searchresults
+                              - text: Clarion Hotel Stockholm
+                              - generic [ref=e2576]: Opens in new window
+                          - button "4 out of 5" [ref=e2579]:
+                            - img [ref=e2580]:
+                              - generic [ref=e2581]:
+                                - img [ref=e2583]
+                                - img [ref=e2586]
+                              - generic [ref=e2588]:
+                                - img [ref=e2590]
+                                - img [ref=e2593]
+                              - generic [ref=e2595]:
+                                - img [ref=e2597]
+                                - img [ref=e2600]
+                              - generic [ref=e2602]:
+                                - img [ref=e2604]
+                                - img [ref=e2607]
+                          - button [ref=e2610]:
+                            - img [ref=e2612]
+                        - generic [ref=e2615]:
+                          - link "Södermalm, Stockholm · Show on map" [ref=e2616] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/clarion-stockholm.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=8&hapos=8&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1820906_140661732_2_1_0_645632&highlighted_blocks=1820906_140661732_2_1_0_645632&matching_block_id=1820906_140661732_2_1_0_645632&sr_pri_blocks=1820906_140661732_2_1_0_645632_988839&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e2617]: Södermalm, Stockholm · Show on map
+                          - generic [ref=e2618]:
+                            - text: ·
+                            - button "2.8 km from downtown" [ref=e2620]
+                          - generic [ref=e2621]:
+                            - text: ·
+                            - button "Subway Access" [ref=e2623]
+                        - generic [ref=e2626]:
+                          - img [ref=e2628]
+                          - generic [ref=e2630]: Sustainability certification
+                      - link "Scored 8.2 Very Good 11,396 reviews" [ref=e2635] [cursor=pointer]:
+                        - /url: https://www.booking.com/hotel/se/clarion-stockholm.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=8&hapos=8&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1820906_140661732_2_1_0_645632&highlighted_blocks=1820906_140661732_2_1_0_645632&matching_block_id=1820906_140661732_2_1_0_645632&sr_pri_blocks=1820906_140661732_2_1_0_645632_988839&from_sustainable_property_sr=1&from=searchresults
+                        - generic [ref=e2637]:
+                          - generic [ref=e2638]: Scored 8.2
+                          - generic [ref=e2639]: "8.2"
+                          - generic [ref=e2640]:
+                            - generic [ref=e2641]: Very Good
+                            - generic [ref=e2642]: 11,396 reviews
+                    - generic [ref=e2643]:
+                      - generic [ref=e2646]:
+                        - link "Superior Twin Room" [ref=e2647]
+                        - list [ref=e2648]:
+                          - listitem [ref=e2649]:
+                            - generic [ref=e2651]: 2 twin beds
+                          - listitem [ref=e2652]: Breakfast included
+                          - listitem [ref=e2653]:
+                            - generic [ref=e2655]: We have 5 left at this price
+                      - generic [ref=e2657]:
+                        - generic [ref=e2658]:
+                          - generic [ref=e2659]: 5 nights, 2 adults
+                          - generic [ref=e2661]:
+                            - generic [ref=e2662]: ₹ 109,308
+                            - generic [ref=e2663]:
+                              - generic [ref=e2664]: ₹ 97,596
+                              - img [ref=e2666]
+                          - generic [ref=e2668]: Original price ₹ 109,308. Current price ₹ 97,596.
+                          - generic [ref=e2669]: Includes taxes and fees
+                        - link "See your options" [ref=e2671] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/clarion-stockholm.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=8&hapos=8&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1820906_140661732_2_1_0_645632&highlighted_blocks=1820906_140661732_2_1_0_645632&matching_block_id=1820906_140661732_2_1_0_645632&sr_pri_blocks=1820906_140661732_2_1_0_645632_988839&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2672]: See your options
+                          - img [ref=e2676]
+              - listitem "Property" [ref=e2678]:
+                - generic [ref=e2679]:
+                  - generic [ref=e2681]:
+                    - link [ref=e2682] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/adlon-hotell.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=9&hapos=9&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1840910_332268188_2_1_0_649013&highlighted_blocks=1840910_332268188_2_1_0_649013&matching_block_id=1840910_332268188_2_1_0_649013&sr_pri_blocks=1840910_332268188_2_1_0_649013_1270400&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e2683]
+                    - button "Save this item to a trip list" [ref=e2687] [cursor=pointer]:
+                      - img [ref=e2690]
+                  - generic [ref=e2693]:
+                    - generic [ref=e2694]:
+                      - generic [ref=e2696]:
+                        - generic [ref=e2698]:
+                          - heading "Elite Hotel Adlon Opens in new window" [level=3] [ref=e2699]:
+                            - link "Elite Hotel Adlon Opens in new window" [ref=e2700] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/adlon-hotell.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=9&hapos=9&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1840910_332268188_2_1_0_649013&highlighted_blocks=1840910_332268188_2_1_0_649013&matching_block_id=1840910_332268188_2_1_0_649013&sr_pri_blocks=1840910_332268188_2_1_0_649013_1270400&from_sustainable_property_sr=1&from=searchresults
+                              - text: Elite Hotel Adlon
+                              - generic [ref=e2701]: Opens in new window
+                          - button "4 out of 5" [ref=e2704]:
+                            - img [ref=e2705]:
+                              - generic [ref=e2706]:
+                                - img [ref=e2708]
+                                - img [ref=e2711]
+                              - generic [ref=e2713]:
+                                - img [ref=e2715]
+                                - img [ref=e2718]
+                              - generic [ref=e2720]:
+                                - img [ref=e2722]
+                                - img [ref=e2725]
+                              - generic [ref=e2727]:
+                                - img [ref=e2729]
+                                - img [ref=e2732]
+                          - button [ref=e2735]:
+                            - img [ref=e2737]
+                        - generic [ref=e2740]:
+                          - img [ref=e2745]
+                          - link "Norrmalm, Stockholm · Show on map" [ref=e2747] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/adlon-hotell.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=9&hapos=9&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1840910_332268188_2_1_0_649013&highlighted_blocks=1840910_332268188_2_1_0_649013&matching_block_id=1840910_332268188_2_1_0_649013&sr_pri_blocks=1840910_332268188_2_1_0_649013_1270400&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e2748]: Norrmalm, Stockholm · Show on map
+                          - generic [ref=e2749]:
+                            - text: ·
+                            - button "450 m from downtown" [ref=e2751]
+                          - generic [ref=e2752]:
+                            - text: ·
+                            - button "Subway Access" [ref=e2754]
+                        - generic [ref=e2757]:
+                          - img [ref=e2759]
+                          - generic [ref=e2761]: Sustainability certification
+                      - generic [ref=e2765]:
+                        - link "Scored 8.4 Very Good 7,592 reviews" [ref=e2766] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/adlon-hotell.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=9&hapos=9&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1840910_332268188_2_1_0_649013&highlighted_blocks=1840910_332268188_2_1_0_649013&matching_block_id=1840910_332268188_2_1_0_649013&sr_pri_blocks=1840910_332268188_2_1_0_649013_1270400&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2768]:
+                            - generic [ref=e2769]: Scored 8.4
+                            - generic [ref=e2770]: "8.4"
+                            - generic [ref=e2771]:
+                              - generic [ref=e2772]: Very Good
+                              - generic [ref=e2773]: 7,592 reviews
+                        - 'link "Location: Scored 9.6" [ref=e2775] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/adlon-hotell.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=9&hapos=9&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1840910_332268188_2_1_0_649013&highlighted_blocks=1840910_332268188_2_1_0_649013&matching_block_id=1840910_332268188_2_1_0_649013&sr_pri_blocks=1840910_332268188_2_1_0_649013_1270400&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2777]: Location 9.6
+                    - generic "Getaway Deal. This property is offering a discount on select stays between Mar 26 and Sep 30, 2026.." [ref=e2781]:
+                      - generic [ref=e2782]: Getaway Deal
+                    - generic [ref=e2783]:
+                      - generic [ref=e2786]:
+                        - link "Junior Suite" [ref=e2787]
+                        - list [ref=e2788]:
+                          - listitem [ref=e2789]:
+                            - generic [ref=e2790]:
+                              - generic [ref=e2792]: Private suite
+                              - generic [ref=e2793]: 1 queen bed
+                          - listitem [ref=e2794]: Breakfast included
+                          - listitem [ref=e2795]:
+                            - generic [ref=e2796]:
+                              - img [ref=e2799]
+                              - strong [ref=e2803]: Free cancellation
+                          - listitem [ref=e2804]:
+                            - generic [ref=e2805]:
+                              - img [ref=e2808]
+                              - generic [ref=e2811]:
+                                - strong [ref=e2812]: No prepayment needed
+                                - text: – pay at the property
+                          - listitem [ref=e2813]:
+                            - generic [ref=e2815]: We have 1 left at this price
+                      - generic [ref=e2817]:
+                        - generic [ref=e2818]:
+                          - generic [ref=e2819]: 5 nights, 2 adults
+                          - generic [ref=e2821]:
+                            - generic [ref=e2822]: ₹ 156,732
+                            - generic [ref=e2823]:
+                              - generic [ref=e2824]: ₹ 125,386
+                              - img [ref=e2826]
+                          - generic [ref=e2828]: Original price ₹ 156,732. Current price ₹ 125,386.
+                          - generic [ref=e2829]: Includes taxes and fees
+                        - link "See your options" [ref=e2831] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/adlon-hotell.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=9&hapos=9&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1840910_332268188_2_1_0_649013&highlighted_blocks=1840910_332268188_2_1_0_649013&matching_block_id=1840910_332268188_2_1_0_649013&sr_pri_blocks=1840910_332268188_2_1_0_649013_1270400&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2832]: See your options
+                          - img [ref=e2836]
+              - listitem "Property" [ref=e2838]:
+                - generic [ref=e2839]:
+                  - generic [ref=e2841]:
+                    - link [ref=e2842] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/nordic-sea.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=10&hapos=10&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1838207_140661760_2_1_0_648031&highlighted_blocks=1838207_140661760_2_1_0_648031&matching_block_id=1838207_140661760_2_1_0_648031&sr_pri_blocks=1838207_140661760_2_1_0_648031_705536&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e2843]
+                    - button "Save this item to a trip list" [ref=e2847] [cursor=pointer]:
+                      - img [ref=e2850]
+                  - generic [ref=e2853]:
+                    - generic [ref=e2854]:
+                      - generic [ref=e2856]:
+                        - generic [ref=e2858]:
+                          - heading "Hotel C Stockholm Opens in new window" [level=3] [ref=e2859]:
+                            - link "Hotel C Stockholm Opens in new window" [ref=e2860] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/nordic-sea.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=10&hapos=10&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1838207_140661760_2_1_0_648031&highlighted_blocks=1838207_140661760_2_1_0_648031&matching_block_id=1838207_140661760_2_1_0_648031&sr_pri_blocks=1838207_140661760_2_1_0_648031_705536&from_sustainable_property_sr=1&from=searchresults
+                              - text: Hotel C Stockholm
+                              - generic [ref=e2861]: Opens in new window
+                          - button "4 out of 5" [ref=e2864]:
+                            - img [ref=e2865]:
+                              - generic [ref=e2866]:
+                                - img [ref=e2868]
+                                - img [ref=e2871]
+                              - generic [ref=e2873]:
+                                - img [ref=e2875]
+                                - img [ref=e2878]
+                              - generic [ref=e2880]:
+                                - img [ref=e2882]
+                                - img [ref=e2885]
+                              - generic [ref=e2887]:
+                                - img [ref=e2889]
+                                - img [ref=e2892]
+                        - generic [ref=e2895]:
+                          - img [ref=e2900]
+                          - link "Norrmalm, Stockholm · Show on map" [ref=e2902] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/nordic-sea.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=10&hapos=10&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1838207_140661760_2_1_0_648031&highlighted_blocks=1838207_140661760_2_1_0_648031&matching_block_id=1838207_140661760_2_1_0_648031&sr_pri_blocks=1838207_140661760_2_1_0_648031_705536&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e2903]: Norrmalm, Stockholm · Show on map
+                          - generic [ref=e2904]:
+                            - text: ·
+                            - button "500 m from downtown" [ref=e2906]
+                          - generic [ref=e2907]:
+                            - text: ·
+                            - button "Subway Access" [ref=e2909]
+                        - generic [ref=e2912]:
+                          - img [ref=e2914]
+                          - generic [ref=e2916]: Sustainability certification
+                      - generic [ref=e2920]:
+                        - link "Scored 8.3 Very Good 3,515 reviews" [ref=e2921] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/nordic-sea.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=10&hapos=10&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1838207_140661760_2_1_0_648031&highlighted_blocks=1838207_140661760_2_1_0_648031&matching_block_id=1838207_140661760_2_1_0_648031&sr_pri_blocks=1838207_140661760_2_1_0_648031_705536&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2923]:
+                            - generic [ref=e2924]: Scored 8.3
+                            - generic [ref=e2925]: "8.3"
+                            - generic [ref=e2926]:
+                              - generic [ref=e2927]: Very Good
+                              - generic [ref=e2928]: 3,515 reviews
+                        - 'link "Location: Scored 9.6" [ref=e2930] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/nordic-sea.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=10&hapos=10&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1838207_140661760_2_1_0_648031&highlighted_blocks=1838207_140661760_2_1_0_648031&matching_block_id=1838207_140661760_2_1_0_648031&sr_pri_blocks=1838207_140661760_2_1_0_648031_705536&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2932]: Location 9.6
+                    - generic [ref=e2933]:
+                      - generic [ref=e2936]:
+                        - link "Compact Cabin (no windows) - 55 in bed" [ref=e2937]
+                        - list [ref=e2938]:
+                          - listitem [ref=e2939]:
+                            - generic [ref=e2941]: 1 full bed
+                          - listitem [ref=e2942]: Breakfast included
+                          - listitem [ref=e2943]:
+                            - generic [ref=e2945]: We have 3 left at this price
+                      - generic [ref=e2947]:
+                        - generic [ref=e2948]:
+                          - generic [ref=e2949]: 5 nights, 2 adults
+                          - generic [ref=e2951]:
+                            - generic [ref=e2952]: ₹ 77,991
+                            - generic [ref=e2953]:
+                              - generic [ref=e2954]: ₹ 69,635
+                              - img [ref=e2956]
+                          - generic [ref=e2958]: Original price ₹ 77,991. Current price ₹ 69,635.
+                          - generic [ref=e2959]: Includes taxes and fees
+                        - link "See your options" [ref=e2961] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/nordic-sea.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=10&hapos=10&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1838207_140661760_2_1_0_648031&highlighted_blocks=1838207_140661760_2_1_0_648031&matching_block_id=1838207_140661760_2_1_0_648031&sr_pri_blocks=1838207_140661760_2_1_0_648031_705536&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e2962]: See your options
+                          - img [ref=e2966]
+              - listitem "Property" [ref=e2968]:
+                - generic [ref=e2969]:
+                  - generic [ref=e2971]:
+                    - link [ref=e2972] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/motel-l-alvsjo.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=11&hapos=11&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=231661303_344312778_2_1_0_656427&highlighted_blocks=231661303_344312778_2_1_0_656427&matching_block_id=231661303_344312778_2_1_0_656427&sr_pri_blocks=231661303_344312778_2_1_0_656427_505200&from=searchresults
+                      - img [ref=e2973]
+                    - button "Save this item to a trip list" [ref=e2977] [cursor=pointer]:
+                      - img [ref=e2980]
+                  - generic [ref=e2983]:
+                    - generic [ref=e2984]:
+                      - generic [ref=e2986]:
+                        - generic [ref=e2988]:
+                          - heading "Motel L Stockholm Älvsjö Opens in new window" [level=3] [ref=e2989]:
+                            - link "Motel L Stockholm Älvsjö Opens in new window" [ref=e2990] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/motel-l-alvsjo.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=11&hapos=11&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=231661303_344312778_2_1_0_656427&highlighted_blocks=231661303_344312778_2_1_0_656427&matching_block_id=231661303_344312778_2_1_0_656427&sr_pri_blocks=231661303_344312778_2_1_0_656427_505200&from=searchresults
+                              - text: Motel L Stockholm Älvsjö
+                              - generic [ref=e2991]: Opens in new window
+                          - button "3 out of 5" [ref=e2994]:
+                            - img [ref=e2995]:
+                              - generic [ref=e2996]:
+                                - img [ref=e2998]
+                                - img [ref=e3001]
+                              - generic [ref=e3003]:
+                                - img [ref=e3005]
+                                - img [ref=e3008]
+                              - generic [ref=e3010]:
+                                - img [ref=e3012]
+                                - img [ref=e3015]
+                        - generic [ref=e3018]:
+                          - link "Älvsjö, Stockholm · Show on map" [ref=e3019] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/motel-l-alvsjo.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=11&hapos=11&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=231661303_344312778_2_1_0_656427&highlighted_blocks=231661303_344312778_2_1_0_656427&matching_block_id=231661303_344312778_2_1_0_656427&sr_pri_blocks=231661303_344312778_2_1_0_656427_505200&from=searchresults&map=1
+                            - generic [ref=e3020]: Älvsjö, Stockholm · Show on map
+                          - generic [ref=e3021]:
+                            - text: ·
+                            - button "6.3 km from downtown" [ref=e3023]
+                      - link "Scored 8.3 Very Good 2,526 reviews" [ref=e3028] [cursor=pointer]:
+                        - /url: https://www.booking.com/hotel/se/motel-l-alvsjo.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=11&hapos=11&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=231661303_344312778_2_1_0_656427&highlighted_blocks=231661303_344312778_2_1_0_656427&matching_block_id=231661303_344312778_2_1_0_656427&sr_pri_blocks=231661303_344312778_2_1_0_656427_505200&from=searchresults
+                        - generic [ref=e3030]:
+                          - generic [ref=e3031]: Scored 8.3
+                          - generic [ref=e3032]: "8.3"
+                          - generic [ref=e3033]:
+                            - generic [ref=e3034]: Very Good
+                            - generic [ref=e3035]: 2,526 reviews
+                    - generic "Getaway Deal. This property is offering a discount on select stays between Mar 26 and Sep 30, 2026.." [ref=e3039]:
+                      - generic [ref=e3040]: Getaway Deal
+                    - generic [ref=e3041]:
+                      - generic [ref=e3044]:
+                        - link "Stylish Double Room" [ref=e3045]
+                        - list [ref=e3046]:
+                          - listitem [ref=e3047]:
+                            - generic [ref=e3049]: 1 full bed
+                          - listitem [ref=e3050]: Breakfast included
+                          - listitem [ref=e3051]:
+                            - generic [ref=e3052]:
+                              - img [ref=e3055]
+                              - strong [ref=e3059]: Free cancellation
+                          - listitem [ref=e3060]:
+                            - generic [ref=e3061]:
+                              - img [ref=e3064]
+                              - generic [ref=e3067]:
+                                - strong [ref=e3068]: No prepayment needed
+                                - text: – pay at the property
+                      - generic [ref=e3070]:
+                        - generic [ref=e3071]:
+                          - generic [ref=e3072]: 5 nights, 2 adults
+                          - generic [ref=e3074]:
+                            - generic [ref=e3075]: ₹ 62,328
+                            - generic [ref=e3076]:
+                              - generic [ref=e3077]: ₹ 49,862
+                              - img [ref=e3079]
+                          - generic [ref=e3081]: Original price ₹ 62,328. Current price ₹ 49,862.
+                          - generic [ref=e3082]: Includes taxes and fees
+                        - link "See your options" [ref=e3084] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/motel-l-alvsjo.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=11&hapos=11&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=231661303_344312778_2_1_0_656427&highlighted_blocks=231661303_344312778_2_1_0_656427&matching_block_id=231661303_344312778_2_1_0_656427&sr_pri_blocks=231661303_344312778_2_1_0_656427_505200&from=searchresults
+                          - generic [ref=e3085]: See your options
+                          - img [ref=e3089]
+              - listitem "Property" [ref=e3091]:
+                - generic [ref=e3092]:
+                  - generic [ref=e3094]:
+                    - link [ref=e3095] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/quality-globe.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=12&hapos=12&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1823115_140661536_2_1_0_645616&highlighted_blocks=1823115_140661536_2_1_0_645616&matching_block_id=1823115_140661536_2_1_0_645616&sr_pri_blocks=1823115_140661536_2_1_0_645616_542563&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e3096]
+                    - button "Save this item to a trip list" [ref=e3100] [cursor=pointer]:
+                      - img [ref=e3103]
+                  - generic [ref=e3106]:
+                    - generic [ref=e3107]:
+                      - generic [ref=e3109]:
+                        - generic [ref=e3111]:
+                          - heading "Quality Hotel Globe Opens in new window" [level=3] [ref=e3112]:
+                            - link "Quality Hotel Globe Opens in new window" [ref=e3113] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/quality-globe.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=12&hapos=12&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1823115_140661536_2_1_0_645616&highlighted_blocks=1823115_140661536_2_1_0_645616&matching_block_id=1823115_140661536_2_1_0_645616&sr_pri_blocks=1823115_140661536_2_1_0_645616_542563&from_sustainable_property_sr=1&from=searchresults
+                              - text: Quality Hotel Globe
+                              - generic [ref=e3114]: Opens in new window
+                          - button "4 out of 5" [ref=e3117]:
+                            - img [ref=e3118]:
+                              - generic [ref=e3119]:
+                                - img [ref=e3121]
+                                - img [ref=e3124]
+                              - generic [ref=e3126]:
+                                - img [ref=e3128]
+                                - img [ref=e3131]
+                              - generic [ref=e3133]:
+                                - img [ref=e3135]
+                                - img [ref=e3138]
+                              - generic [ref=e3140]:
+                                - img [ref=e3142]
+                                - img [ref=e3145]
+                          - button [ref=e3148]:
+                            - img [ref=e3150]
+                        - generic [ref=e3153]:
+                          - link "Enskede - Årsta - Vantör, Stockholm · Show on map" [ref=e3154] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/quality-globe.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=12&hapos=12&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1823115_140661536_2_1_0_645616&highlighted_blocks=1823115_140661536_2_1_0_645616&matching_block_id=1823115_140661536_2_1_0_645616&sr_pri_blocks=1823115_140661536_2_1_0_645616_542563&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e3155]: Enskede - Årsta - Vantör, Stockholm · Show on map
+                          - generic [ref=e3156]:
+                            - text: ·
+                            - button "4.6 km from downtown" [ref=e3158]
+                          - generic [ref=e3159]:
+                            - text: ·
+                            - button "Subway Access" [ref=e3161]
+                        - generic [ref=e3164]:
+                          - img [ref=e3166]
+                          - generic [ref=e3168]: Sustainability certification
+                      - link "Scored 8.1 Very Good 7,638 reviews" [ref=e3173] [cursor=pointer]:
+                        - /url: https://www.booking.com/hotel/se/quality-globe.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=12&hapos=12&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1823115_140661536_2_1_0_645616&highlighted_blocks=1823115_140661536_2_1_0_645616&matching_block_id=1823115_140661536_2_1_0_645616&sr_pri_blocks=1823115_140661536_2_1_0_645616_542563&from_sustainable_property_sr=1&from=searchresults
+                        - generic [ref=e3175]:
+                          - generic [ref=e3176]: Scored 8.1
+                          - generic [ref=e3177]: "8.1"
+                          - generic [ref=e3178]:
+                            - generic [ref=e3179]: Very Good
+                            - generic [ref=e3180]: 7,638 reviews
+                    - generic [ref=e3181]:
+                      - generic [ref=e3184]:
+                        - link "Standard Twin Room" [ref=e3185]
+                        - list [ref=e3186]:
+                          - listitem [ref=e3187]:
+                            - generic [ref=e3189]: 2 twin beds
+                          - listitem [ref=e3190]: Breakfast included
+                      - generic [ref=e3192]:
+                        - generic [ref=e3193]:
+                          - generic [ref=e3194]: 5 nights, 2 adults
+                          - generic [ref=e3196]:
+                            - generic [ref=e3197]: ₹ 64,490
+                            - generic [ref=e3198]:
+                              - generic [ref=e3199]: ₹ 53,550
+                              - img [ref=e3201]
+                          - generic [ref=e3203]: Original price ₹ 64,490. Current price ₹ 53,550.
+                          - generic [ref=e3204]: Includes taxes and fees
+                        - link "See your options" [ref=e3206] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/quality-globe.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=12&hapos=12&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1823115_140661536_2_1_0_645616&highlighted_blocks=1823115_140661536_2_1_0_645616&matching_block_id=1823115_140661536_2_1_0_645616&sr_pri_blocks=1823115_140661536_2_1_0_645616_542563&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e3207]: See your options
+                          - img [ref=e3211]
+              - listitem "Property" [ref=e3213]:
+                - generic [ref=e3214]:
+                  - generic [ref=e3216]:
+                    - link [ref=e3217] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/best-western-time.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=13&hapos=13&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1826625_338217620_2_1_0_705256&highlighted_blocks=1826625_338217620_2_1_0_705256&matching_block_id=1826625_338217620_2_1_0_705256&sr_pri_blocks=1826625_338217620_2_1_0_705256_697600&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e3218]
+                    - button "Save this item to a trip list" [ref=e3222] [cursor=pointer]:
+                      - img [ref=e3225]
+                  - generic [ref=e3228]:
+                    - generic [ref=e3229]:
+                      - generic [ref=e3231]:
+                        - generic [ref=e3233]:
+                          - heading "Best Western Plus Time Hotel Opens in new window" [level=3] [ref=e3234]:
+                            - link "Best Western Plus Time Hotel Opens in new window" [ref=e3235] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/best-western-time.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=13&hapos=13&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1826625_338217620_2_1_0_705256&highlighted_blocks=1826625_338217620_2_1_0_705256&matching_block_id=1826625_338217620_2_1_0_705256&sr_pri_blocks=1826625_338217620_2_1_0_705256_697600&from_sustainable_property_sr=1&from=searchresults
+                              - text: Best Western Plus Time Hotel
+                              - generic [ref=e3236]: Opens in new window
+                          - button "4 out of 5" [ref=e3239]:
+                            - img [ref=e3240]:
+                              - generic [ref=e3241]:
+                                - img [ref=e3243]
+                                - img [ref=e3246]
+                              - generic [ref=e3248]:
+                                - img [ref=e3250]
+                                - img [ref=e3253]
+                              - generic [ref=e3255]:
+                                - img [ref=e3257]
+                                - img [ref=e3260]
+                              - generic [ref=e3262]:
+                                - img [ref=e3264]
+                                - img [ref=e3267]
+                          - button [ref=e3270]:
+                            - img [ref=e3272]
+                        - generic [ref=e3275]:
+                          - link "Vasastan, Stockholm · Show on map" [ref=e3276] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/best-western-time.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=13&hapos=13&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1826625_338217620_2_1_0_705256&highlighted_blocks=1826625_338217620_2_1_0_705256&matching_block_id=1826625_338217620_2_1_0_705256&sr_pri_blocks=1826625_338217620_2_1_0_705256_697600&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e3277]: Vasastan, Stockholm · Show on map
+                          - generic [ref=e3278]:
+                            - text: ·
+                            - button "1.9 km from downtown" [ref=e3280]
+                          - generic [ref=e3281]:
+                            - text: ·
+                            - button "Subway Access" [ref=e3283]
+                        - generic [ref=e3286]:
+                          - img [ref=e3288]
+                          - generic [ref=e3290]: Sustainability certification
+                      - generic [ref=e3294]:
+                        - link "Scored 8.9 Excellent 6,582 reviews" [ref=e3295] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/best-western-time.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=13&hapos=13&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1826625_338217620_2_1_0_705256&highlighted_blocks=1826625_338217620_2_1_0_705256&matching_block_id=1826625_338217620_2_1_0_705256&sr_pri_blocks=1826625_338217620_2_1_0_705256_697600&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e3297]:
+                            - generic [ref=e3298]: Scored 8.9
+                            - generic [ref=e3299]: "8.9"
+                            - generic [ref=e3300]:
+                              - generic [ref=e3301]: Excellent
+                              - generic [ref=e3302]: 6,582 reviews
+                        - 'link "Breakfast: Scored 9.0" [ref=e3304] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/best-western-time.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=13&hapos=13&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1826625_338217620_2_1_0_705256&highlighted_blocks=1826625_338217620_2_1_0_705256&matching_block_id=1826625_338217620_2_1_0_705256&sr_pri_blocks=1826625_338217620_2_1_0_705256_697600&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e3306]: Breakfast 9.0
+                    - generic "Getaway Deal. This property is offering a discount on select stays between Mar 26 and Sep 30, 2026.." [ref=e3310]:
+                      - generic [ref=e3311]: Getaway Deal
+                    - generic [ref=e3312]:
+                      - generic [ref=e3315]:
+                        - link "Standard Twin Room" [ref=e3316]
+                        - list [ref=e3317]:
+                          - listitem [ref=e3318]:
+                            - generic [ref=e3320]: 2 twin beds
+                          - listitem [ref=e3321]: Breakfast included
+                          - listitem [ref=e3322]:
+                            - generic [ref=e3323]:
+                              - img [ref=e3326]
+                              - strong [ref=e3330]: Free cancellation
+                          - listitem [ref=e3331]:
+                            - generic [ref=e3332]:
+                              - img [ref=e3335]
+                              - generic [ref=e3338]:
+                                - strong [ref=e3339]: No prepayment needed
+                                - text: – pay at the property
+                      - generic [ref=e3341]:
+                        - generic [ref=e3342]:
+                          - generic [ref=e3343]: 5 nights, 2 adults
+                          - generic [ref=e3345]:
+                            - generic [ref=e3346]: ₹ 86,064
+                            - generic [ref=e3347]:
+                              - generic [ref=e3348]: ₹ 68,852
+                              - img [ref=e3350]
+                          - generic [ref=e3352]: Original price ₹ 86,064. Current price ₹ 68,852.
+                          - generic [ref=e3353]: Includes taxes and fees
+                        - link "See your options" [ref=e3355] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/best-western-time.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=13&hapos=13&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1826625_338217620_2_1_0_705256&highlighted_blocks=1826625_338217620_2_1_0_705256&matching_block_id=1826625_338217620_2_1_0_705256&sr_pri_blocks=1826625_338217620_2_1_0_705256_697600&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e3356]: See your options
+                          - img [ref=e3360]
+              - listitem "Property" [ref=e3362]:
+                - generic [ref=e3363]:
+                  - generic [ref=e3365]:
+                    - link [ref=e3366] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/with.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=14&hapos=14&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=146980103_87450945_2_1_0_667076&highlighted_blocks=146980103_87450945_2_1_0_667076&matching_block_id=146980103_87450945_2_1_0_667076&sr_pri_blocks=146980103_87450945_2_1_0_667076_612835&from=searchresults
+                      - img [ref=e3367]
+                    - button "Save this item to a trip list" [ref=e3371] [cursor=pointer]:
+                      - img [ref=e3374]
+                  - generic [ref=e3377]:
+                    - generic [ref=e3378]:
+                      - generic [ref=e3380]:
+                        - generic [ref=e3382]:
+                          - heading "Hotel With Urban Deli Opens in new window" [level=3] [ref=e3383]:
+                            - link "Hotel With Urban Deli Opens in new window" [ref=e3384] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/with.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=14&hapos=14&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=146980103_87450945_2_1_0_667076&highlighted_blocks=146980103_87450945_2_1_0_667076&matching_block_id=146980103_87450945_2_1_0_667076&sr_pri_blocks=146980103_87450945_2_1_0_667076_612835&from=searchresults
+                              - text: Hotel With Urban Deli
+                              - generic [ref=e3385]: Opens in new window
+                          - button "4 out of 5" [ref=e3388]:
+                            - img [ref=e3389]:
+                              - generic [ref=e3390]:
+                                - img [ref=e3392]
+                                - img [ref=e3395]
+                              - generic [ref=e3397]:
+                                - img [ref=e3399]
+                                - img [ref=e3402]
+                              - generic [ref=e3404]:
+                                - img [ref=e3406]
+                                - img [ref=e3409]
+                              - generic [ref=e3411]:
+                                - img [ref=e3413]
+                                - img [ref=e3416]
+                          - generic [ref=e3420]: Featured
+                          - generic [ref=e3421]: This property matches your criteria and may be ranked higher in your search results. It will pay us a higher commission if you make a booking.
+                        - generic [ref=e3423]:
+                          - img [ref=e3428]
+                          - link "Norrmalm, Stockholm · Show on map" [ref=e3430] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/with.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=14&hapos=14&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=146980103_87450945_2_1_0_667076&highlighted_blocks=146980103_87450945_2_1_0_667076&matching_block_id=146980103_87450945_2_1_0_667076&sr_pri_blocks=146980103_87450945_2_1_0_667076_612835&from=searchresults&map=1
+                            - generic [ref=e3431]: Norrmalm, Stockholm · Show on map
+                          - generic [ref=e3432]:
+                            - text: ·
+                            - button "0.5 km from downtown" [ref=e3434]
+                          - generic [ref=e3435]:
+                            - text: ·
+                            - button "Subway Access" [ref=e3437]
+                      - generic [ref=e3441]:
+                        - link "Scored 8.2 Very Good 5,052 reviews" [ref=e3442] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/with.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=14&hapos=14&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=146980103_87450945_2_1_0_667076&highlighted_blocks=146980103_87450945_2_1_0_667076&matching_block_id=146980103_87450945_2_1_0_667076&sr_pri_blocks=146980103_87450945_2_1_0_667076_612835&from=searchresults
+                          - generic [ref=e3444]:
+                            - generic [ref=e3445]: Scored 8.2
+                            - generic [ref=e3446]: "8.2"
+                            - generic [ref=e3447]:
+                              - generic [ref=e3448]: Very Good
+                              - generic [ref=e3449]: 5,052 reviews
+                        - 'link "Location: Scored 9.4" [ref=e3451] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/with.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=14&hapos=14&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=146980103_87450945_2_1_0_667076&highlighted_blocks=146980103_87450945_2_1_0_667076&matching_block_id=146980103_87450945_2_1_0_667076&sr_pri_blocks=146980103_87450945_2_1_0_667076_612835&from=searchresults
+                          - generic [ref=e3453]: Location 9.4
+                    - generic "Getaway Deal. This property is offering a discount on select stays between Mar 26 and Sep 30, 2026.." [ref=e3457]:
+                      - generic [ref=e3458]: Getaway Deal
+                    - generic [ref=e3459]:
+                      - generic [ref=e3462]:
+                        - link "Queen Room without Window" [ref=e3463]
+                        - list [ref=e3464]:
+                          - listitem [ref=e3465]:
+                            - generic [ref=e3467]: 1 queen bed
+                          - listitem [ref=e3468]: Breakfast included
+                          - listitem [ref=e3469]:
+                            - generic [ref=e3471]: We have 5 left at this price
+                      - generic [ref=e3473]:
+                        - generic [ref=e3474]:
+                          - generic [ref=e3475]: 5 nights, 2 adults
+                          - generic [ref=e3477]:
+                            - generic [ref=e3478]: ₹ 79,698
+                            - generic [ref=e3479]:
+                              - generic [ref=e3480]: ₹ 60,485
+                              - img [ref=e3482]
+                          - generic [ref=e3484]: Original price ₹ 79,698. Current price ₹ 60,485.
+                          - generic [ref=e3485]: Includes taxes and fees
+                        - link "See your options" [ref=e3487] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/with.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=14&hapos=14&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=146980103_87450945_2_1_0_667076&highlighted_blocks=146980103_87450945_2_1_0_667076&matching_block_id=146980103_87450945_2_1_0_667076&sr_pri_blocks=146980103_87450945_2_1_0_667076_612835&from=searchresults
+                          - generic [ref=e3488]: See your options
+                          - img [ref=e3492]
+              - listitem "Property" [ref=e3494]:
+                - generic [ref=e3495]:
+                  - generic [ref=e3497]:
+                    - link [ref=e3498] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/clarion-hotel-amaranten.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=15&hapos=15&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1828802_140662077_2_1_0_645605&highlighted_blocks=1828802_140662077_2_1_0_645605&matching_block_id=1828802_140662077_2_1_0_645605&sr_pri_blocks=1828802_140662077_2_1_0_645605_874107&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e3499]
+                    - button "Save this item to a trip list" [ref=e3503] [cursor=pointer]:
+                      - img [ref=e3506]
+                  - generic [ref=e3509]:
+                    - generic [ref=e3510]:
+                      - generic [ref=e3512]:
+                        - generic [ref=e3514]:
+                          - heading "Clarion Hotel Amaranten Opens in new window" [level=3] [ref=e3515]:
+                            - link "Clarion Hotel Amaranten Opens in new window" [ref=e3516] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/clarion-hotel-amaranten.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=15&hapos=15&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1828802_140662077_2_1_0_645605&highlighted_blocks=1828802_140662077_2_1_0_645605&matching_block_id=1828802_140662077_2_1_0_645605&sr_pri_blocks=1828802_140662077_2_1_0_645605_874107&from_sustainable_property_sr=1&from=searchresults
+                              - text: Clarion Hotel Amaranten
+                              - generic [ref=e3517]: Opens in new window
+                          - button "4 out of 5" [ref=e3520]:
+                            - img [ref=e3521]:
+                              - generic [ref=e3522]:
+                                - img [ref=e3524]
+                                - img [ref=e3527]
+                              - generic [ref=e3529]:
+                                - img [ref=e3531]
+                                - img [ref=e3534]
+                              - generic [ref=e3536]:
+                                - img [ref=e3538]
+                                - img [ref=e3541]
+                              - generic [ref=e3543]:
+                                - img [ref=e3545]
+                                - img [ref=e3548]
+                          - button [ref=e3551]:
+                            - img [ref=e3553]
+                        - generic [ref=e3556]:
+                          - img [ref=e3561]
+                          - link "Kungsholmen, Stockholm · Show on map" [ref=e3563] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/clarion-hotel-amaranten.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=15&hapos=15&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1828802_140662077_2_1_0_645605&highlighted_blocks=1828802_140662077_2_1_0_645605&matching_block_id=1828802_140662077_2_1_0_645605&sr_pri_blocks=1828802_140662077_2_1_0_645605_874107&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e3564]: Kungsholmen, Stockholm · Show on map
+                          - generic [ref=e3565]:
+                            - text: ·
+                            - button "1.1 km from downtown" [ref=e3567]
+                          - generic [ref=e3568]:
+                            - text: ·
+                            - button "Subway Access" [ref=e3570]
+                        - generic [ref=e3573]:
+                          - img [ref=e3575]
+                          - generic [ref=e3577]: Sustainability certification
+                      - link "Scored 8.3 Very Good 9,959 reviews" [ref=e3582] [cursor=pointer]:
+                        - /url: https://www.booking.com/hotel/se/clarion-hotel-amaranten.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=15&hapos=15&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1828802_140662077_2_1_0_645605&highlighted_blocks=1828802_140662077_2_1_0_645605&matching_block_id=1828802_140662077_2_1_0_645605&sr_pri_blocks=1828802_140662077_2_1_0_645605_874107&from_sustainable_property_sr=1&from=searchresults
+                        - generic [ref=e3584]:
+                          - generic [ref=e3585]: Scored 8.3
+                          - generic [ref=e3586]: "8.3"
+                          - generic [ref=e3587]:
+                            - generic [ref=e3588]: Very Good
+                            - generic [ref=e3589]: 9,959 reviews
+                    - generic [ref=e3590]:
+                      - generic [ref=e3593]:
+                        - link "Standard Twin Room" [ref=e3594]
+                        - list [ref=e3595]:
+                          - listitem [ref=e3596]:
+                            - generic [ref=e3598]: 2 twin beds
+                          - listitem [ref=e3599]: Breakfast included
+                          - listitem [ref=e3600]:
+                            - generic [ref=e3602]: We have 7 left at this price
+                      - generic [ref=e3604]:
+                        - generic [ref=e3605]:
+                          - generic [ref=e3606]: 5 nights, 2 adults
+                          - generic [ref=e3608]:
+                            - generic [ref=e3609]: ₹ 96,625
+                            - generic [ref=e3610]:
+                              - generic [ref=e3611]: ₹ 86,272
+                              - img [ref=e3613]
+                          - generic [ref=e3615]: Original price ₹ 96,625. Current price ₹ 86,272.
+                          - generic [ref=e3616]: Includes taxes and fees
+                        - link "See your options" [ref=e3618] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/clarion-hotel-amaranten.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=15&hapos=15&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1828802_140662077_2_1_0_645605&highlighted_blocks=1828802_140662077_2_1_0_645605&matching_block_id=1828802_140662077_2_1_0_645605&sr_pri_blocks=1828802_140662077_2_1_0_645605_874107&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e3619]: See your options
+                          - img [ref=e3623]
+              - listitem "Property" [ref=e3625]:
+                - generic [ref=e3626]:
+                  - generic [ref=e3628]:
+                    - link [ref=e3629] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/scandic-norra-bantorget.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=16&hapos=16&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1842506_95143244_2_1_0&highlighted_blocks=1842506_95143244_2_1_0&matching_block_id=1842506_95143244_2_1_0&sr_pri_blocks=1842506_95143244_2_1_0__979300&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e3630]
+                    - button "Save this item to a trip list" [ref=e3634] [cursor=pointer]:
+                      - img [ref=e3637]
+                  - generic [ref=e3640]:
+                    - generic [ref=e3641]:
+                      - generic [ref=e3643]:
+                        - generic [ref=e3645]:
+                          - heading "Scandic Wallin Opens in new window" [level=3] [ref=e3646]:
+                            - link "Scandic Wallin Opens in new window" [ref=e3647] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/scandic-norra-bantorget.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=16&hapos=16&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1842506_95143244_2_1_0&highlighted_blocks=1842506_95143244_2_1_0&matching_block_id=1842506_95143244_2_1_0&sr_pri_blocks=1842506_95143244_2_1_0__979300&from_sustainable_property_sr=1&from=searchresults
+                              - text: Scandic Wallin
+                              - generic [ref=e3648]: Opens in new window
+                          - button "4 out of 5" [ref=e3651]:
+                            - img [ref=e3652]:
+                              - generic [ref=e3653]:
+                                - img [ref=e3655]
+                                - img [ref=e3658]
+                              - generic [ref=e3660]:
+                                - img [ref=e3662]
+                                - img [ref=e3665]
+                              - generic [ref=e3667]:
+                                - img [ref=e3669]
+                                - img [ref=e3672]
+                              - generic [ref=e3674]:
+                                - img [ref=e3676]
+                                - img [ref=e3679]
+                        - generic [ref=e3682]:
+                          - img [ref=e3687]
+                          - link "Norrmalm, Stockholm · Show on map" [ref=e3689] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/scandic-norra-bantorget.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=16&hapos=16&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1842506_95143244_2_1_0&highlighted_blocks=1842506_95143244_2_1_0&matching_block_id=1842506_95143244_2_1_0&sr_pri_blocks=1842506_95143244_2_1_0__979300&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e3690]: Norrmalm, Stockholm · Show on map
+                          - generic [ref=e3691]:
+                            - text: ·
+                            - button "0.7 km from downtown" [ref=e3693]
+                          - generic [ref=e3694]:
+                            - text: ·
+                            - button "Subway Access" [ref=e3696]
+                        - generic [ref=e3699]:
+                          - img [ref=e3701]
+                          - generic [ref=e3703]: Sustainability certification
+                      - generic [ref=e3707]:
+                        - link "Scored 8.5 Very Good 3,063 reviews" [ref=e3708] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/scandic-norra-bantorget.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=16&hapos=16&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1842506_95143244_2_1_0&highlighted_blocks=1842506_95143244_2_1_0&matching_block_id=1842506_95143244_2_1_0&sr_pri_blocks=1842506_95143244_2_1_0__979300&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e3710]:
+                            - generic [ref=e3711]: Scored 8.5
+                            - generic [ref=e3712]: "8.5"
+                            - generic [ref=e3713]:
+                              - generic [ref=e3714]: Very Good
+                              - generic [ref=e3715]: 3,063 reviews
+                        - 'link "Breakfast: Scored 9.0" [ref=e3717] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/scandic-norra-bantorget.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=16&hapos=16&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1842506_95143244_2_1_0&highlighted_blocks=1842506_95143244_2_1_0&matching_block_id=1842506_95143244_2_1_0&sr_pri_blocks=1842506_95143244_2_1_0__979300&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e3719]: Breakfast 9.0
+                    - generic [ref=e3720]:
+                      - generic [ref=e3723]:
+                        - link "Standard Twin Room" [ref=e3724]
+                        - list [ref=e3725]:
+                          - listitem [ref=e3726]:
+                            - generic [ref=e3728]: 2 twin beds
+                          - listitem [ref=e3729]: Breakfast included
+                          - listitem [ref=e3730]:
+                            - generic [ref=e3732]: We have 3 left at this price
+                      - generic [ref=e3734]:
+                        - generic [ref=e3735]:
+                          - generic [ref=e3736]: 5 nights, 2 adults
+                          - generic [ref=e3737]: ₹ 96,655
+                          - generic [ref=e3738]: Price ₹ 96,655
+                          - generic [ref=e3739]: Includes taxes and fees
+                        - link "See your options" [ref=e3741] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/scandic-norra-bantorget.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=16&hapos=16&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1842506_95143244_2_1_0&highlighted_blocks=1842506_95143244_2_1_0&matching_block_id=1842506_95143244_2_1_0&sr_pri_blocks=1842506_95143244_2_1_0__979300&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e3742]: See your options
+                          - img [ref=e3746]
+              - listitem "Property" [ref=e3748]:
+                - generic [ref=e3749]:
+                  - generic [ref=e3751]:
+                    - link [ref=e3752] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/hobo.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=17&hapos=17&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=199639705_97745173_2_1_0_648027&highlighted_blocks=199639705_97745173_2_1_0_648027&matching_block_id=199639705_97745173_2_1_0_648027&sr_pri_blocks=199639705_97745173_2_1_0_648027_818679&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e3753]
+                    - button "Save this item to a trip list" [ref=e3757] [cursor=pointer]:
+                      - img [ref=e3760]
+                  - generic [ref=e3763]:
+                    - generic [ref=e3764]:
+                      - generic [ref=e3766]:
+                        - generic [ref=e3768]:
+                          - heading "Hobo Stockholm Opens in new window" [level=3] [ref=e3769]:
+                            - link "Hobo Stockholm Opens in new window" [ref=e3770] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/hobo.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=17&hapos=17&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=199639705_97745173_2_1_0_648027&highlighted_blocks=199639705_97745173_2_1_0_648027&matching_block_id=199639705_97745173_2_1_0_648027&sr_pri_blocks=199639705_97745173_2_1_0_648027_818679&from_sustainable_property_sr=1&from=searchresults
+                              - text: Hobo Stockholm
+                              - generic [ref=e3771]: Opens in new window
+                          - button "4 out of 5" [ref=e3774]:
+                            - img [ref=e3775]:
+                              - generic [ref=e3776]:
+                                - img [ref=e3778]
+                                - img [ref=e3781]
+                              - generic [ref=e3783]:
+                                - img [ref=e3785]
+                                - img [ref=e3788]
+                              - generic [ref=e3790]:
+                                - img [ref=e3792]
+                                - img [ref=e3795]
+                              - generic [ref=e3797]:
+                                - img [ref=e3799]
+                                - img [ref=e3802]
+                        - generic [ref=e3805]:
+                          - img [ref=e3810]
+                          - link "Norrmalm, Stockholm · Show on map" [ref=e3812] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/hobo.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=17&hapos=17&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=199639705_97745173_2_1_0_648027&highlighted_blocks=199639705_97745173_2_1_0_648027&matching_block_id=199639705_97745173_2_1_0_648027&sr_pri_blocks=199639705_97745173_2_1_0_648027_818679&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e3813]: Norrmalm, Stockholm · Show on map
+                          - generic [ref=e3814]:
+                            - text: ·
+                            - button "200 m from downtown" [ref=e3816]
+                          - generic [ref=e3817]:
+                            - text: ·
+                            - button "Subway Access" [ref=e3819]
+                        - generic [ref=e3822]:
+                          - img [ref=e3824]
+                          - generic [ref=e3826]: Sustainability certification
+                      - generic [ref=e3830]:
+                        - link "Scored 8.8 Excellent 2,827 reviews" [ref=e3831] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/hobo.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=17&hapos=17&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=199639705_97745173_2_1_0_648027&highlighted_blocks=199639705_97745173_2_1_0_648027&matching_block_id=199639705_97745173_2_1_0_648027&sr_pri_blocks=199639705_97745173_2_1_0_648027_818679&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e3833]:
+                            - generic [ref=e3834]: Scored 8.8
+                            - generic [ref=e3835]: "8.8"
+                            - generic [ref=e3836]:
+                              - generic [ref=e3837]: Excellent
+                              - generic [ref=e3838]: 2,827 reviews
+                        - 'link "Breakfast: Scored 9.2" [ref=e3840] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/hobo.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=17&hapos=17&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=199639705_97745173_2_1_0_648027&highlighted_blocks=199639705_97745173_2_1_0_648027&matching_block_id=199639705_97745173_2_1_0_648027&sr_pri_blocks=199639705_97745173_2_1_0_648027_818679&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e3842]: Breakfast 9.2
+                    - generic [ref=e3843]:
+                      - generic [ref=e3846]:
+                        - link "Economy Double Room (No Window)" [ref=e3847]
+                        - list [ref=e3848]:
+                          - listitem [ref=e3849]:
+                            - generic [ref=e3851]: 1 queen bed
+                          - listitem [ref=e3852]: Breakfast included
+                      - generic [ref=e3854]:
+                        - generic [ref=e3855]:
+                          - generic [ref=e3856]: 5 nights, 2 adults
+                          - generic [ref=e3858]:
+                            - generic [ref=e3859]: ₹ 90,486
+                            - generic [ref=e3860]:
+                              - generic [ref=e3861]: ₹ 80,802
+                              - img [ref=e3863]
+                          - generic [ref=e3865]: Original price ₹ 90,486. Current price ₹ 80,802.
+                          - generic [ref=e3866]: Includes taxes and fees
+                        - link "See your options" [ref=e3868] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/hobo.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=17&hapos=17&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=199639705_97745173_2_1_0_648027&highlighted_blocks=199639705_97745173_2_1_0_648027&matching_block_id=199639705_97745173_2_1_0_648027&sr_pri_blocks=199639705_97745173_2_1_0_648027_818679&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e3869]: See your options
+                          - img [ref=e3873]
+              - listitem "Property" [ref=e3875]:
+                - generic [ref=e3876]:
+                  - generic [ref=e3878]:
+                    - link [ref=e3879] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/profilhotels-nacka.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=18&hapos=18&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=707348301_295554001_2_41_0_671619&highlighted_blocks=707348301_295554001_2_41_0_671619&matching_block_id=707348301_295554001_2_41_0_671619&sr_pri_blocks=707348301_295554001_2_41_0_671619_563304&from=searchresults
+                      - img [ref=e3880]
+                    - button "Save this item to a trip list" [ref=e3884] [cursor=pointer]:
+                      - img [ref=e3887]
+                  - generic [ref=e3890]:
+                    - generic [ref=e3891]:
+                      - generic [ref=e3893]:
+                        - generic [ref=e3895]:
+                          - heading "ProfilHotels Nacka Opens in new window" [level=3] [ref=e3896]:
+                            - link "ProfilHotels Nacka Opens in new window" [ref=e3897] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/profilhotels-nacka.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=18&hapos=18&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=707348301_295554001_2_41_0_671619&highlighted_blocks=707348301_295554001_2_41_0_671619&matching_block_id=707348301_295554001_2_41_0_671619&sr_pri_blocks=707348301_295554001_2_41_0_671619_563304&from=searchresults
+                              - text: ProfilHotels Nacka
+                              - generic [ref=e3898]: Opens in new window
+                          - button "4 out of 5" [ref=e3901]:
+                            - img [ref=e3902]:
+                              - generic [ref=e3903]:
+                                - img [ref=e3905]
+                                - img [ref=e3908]
+                              - generic [ref=e3910]:
+                                - img [ref=e3912]
+                                - img [ref=e3915]
+                              - generic [ref=e3917]:
+                                - img [ref=e3919]
+                                - img [ref=e3922]
+                              - generic [ref=e3924]:
+                                - img [ref=e3926]
+                                - img [ref=e3929]
+                        - generic [ref=e3932]:
+                          - link "Stockholm · Show on map" [ref=e3933] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/profilhotels-nacka.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=18&hapos=18&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=707348301_295554001_2_41_0_671619&highlighted_blocks=707348301_295554001_2_41_0_671619&matching_block_id=707348301_295554001_2_41_0_671619&sr_pri_blocks=707348301_295554001_2_41_0_671619_563304&from=searchresults&map=1
+                            - generic [ref=e3934]: Stockholm · Show on map
+                          - generic [ref=e3935]:
+                            - text: ·
+                            - button "4.1 km from downtown" [ref=e3937]
+                      - generic [ref=e3941]:
+                        - link "Scored 8.9 Excellent 6,165 reviews" [ref=e3942] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/profilhotels-nacka.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=18&hapos=18&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=707348301_295554001_2_41_0_671619&highlighted_blocks=707348301_295554001_2_41_0_671619&matching_block_id=707348301_295554001_2_41_0_671619&sr_pri_blocks=707348301_295554001_2_41_0_671619_563304&from=searchresults
+                          - generic [ref=e3944]:
+                            - generic [ref=e3945]: Scored 8.9
+                            - generic [ref=e3946]: "8.9"
+                            - generic [ref=e3947]:
+                              - generic [ref=e3948]: Excellent
+                              - generic [ref=e3949]: 6,165 reviews
+                        - 'link "Breakfast: Scored 9.2" [ref=e3951] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/profilhotels-nacka.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=18&hapos=18&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=707348301_295554001_2_41_0_671619&highlighted_blocks=707348301_295554001_2_41_0_671619&matching_block_id=707348301_295554001_2_41_0_671619&sr_pri_blocks=707348301_295554001_2_41_0_671619_563304&from=searchresults
+                          - generic [ref=e3953]: Breakfast 9.2
+                    - generic [ref=e3954]:
+                      - generic [ref=e3957]:
+                        - link "Classic Queen Room" [ref=e3958]
+                        - list [ref=e3959]:
+                          - listitem [ref=e3960]:
+                            - generic [ref=e3962]: 1 queen bed
+                          - listitem [ref=e3963]: Breakfast included
+                          - listitem [ref=e3964]:
+                            - generic [ref=e3966]: We have 6 left at this price
+                      - generic [ref=e3968]:
+                        - generic [ref=e3969]:
+                          - generic [ref=e3970]: 5 nights, 2 adults
+                          - generic [ref=e3972]:
+                            - generic [ref=e3973]: ₹ 62,268
+                            - generic [ref=e3974]:
+                              - generic [ref=e3975]: ₹ 55,597
+                              - img [ref=e3977]
+                          - generic [ref=e3979]: Original price ₹ 62,268. Current price ₹ 55,597.
+                          - generic [ref=e3980]: Includes taxes and fees
+                        - link "See your options" [ref=e3982] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/profilhotels-nacka.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=18&hapos=18&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=707348301_295554001_2_41_0_671619&highlighted_blocks=707348301_295554001_2_41_0_671619&matching_block_id=707348301_295554001_2_41_0_671619&sr_pri_blocks=707348301_295554001_2_41_0_671619_563304&from=searchresults
+                          - generic [ref=e3983]: See your options
+                          - img [ref=e3987]
+              - listitem "Property" [ref=e3989]:
+                - generic [ref=e3990]:
+                  - generic [ref=e3992]:
+                    - link [ref=e3993] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/boutique.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=19&hapos=19&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=156079919_88392121_2_1_0&highlighted_blocks=156079919_88392121_2_1_0&matching_block_id=156079919_88392121_2_1_0&sr_pri_blocks=156079919_88392121_2_1_0__537857&from=searchresults
+                      - img [ref=e3994]
+                    - button "Save this item to a trip list" [ref=e3998] [cursor=pointer]:
+                      - img [ref=e4001]
+                  - generic [ref=e4004]:
+                    - generic [ref=e4005]:
+                      - generic [ref=e4007]:
+                        - generic [ref=e4009]:
+                          - heading "Hotel Hötorget, BW Signature Collection Opens in new window" [level=3] [ref=e4010]:
+                            - link "Hotel Hötorget, BW Signature Collection Opens in new window" [ref=e4011] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/boutique.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=19&hapos=19&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=156079919_88392121_2_1_0&highlighted_blocks=156079919_88392121_2_1_0&matching_block_id=156079919_88392121_2_1_0&sr_pri_blocks=156079919_88392121_2_1_0__537857&from=searchresults
+                              - text: Hotel Hötorget, BW Signature Collection
+                              - generic [ref=e4012]: Opens in new window
+                          - button "3 out of 5" [ref=e4015]:
+                            - img [ref=e4016]:
+                              - generic [ref=e4017]:
+                                - img [ref=e4019]
+                                - img [ref=e4022]
+                              - generic [ref=e4024]:
+                                - img [ref=e4026]
+                                - img [ref=e4029]
+                              - generic [ref=e4031]:
+                                - img [ref=e4033]
+                                - img [ref=e4036]
+                        - generic [ref=e4039]:
+                          - img [ref=e4044]
+                          - link "Norrmalm, Stockholm · Show on map" [ref=e4046] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/boutique.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=19&hapos=19&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=156079919_88392121_2_1_0&highlighted_blocks=156079919_88392121_2_1_0&matching_block_id=156079919_88392121_2_1_0&sr_pri_blocks=156079919_88392121_2_1_0__537857&from=searchresults&map=1
+                            - generic [ref=e4047]: Norrmalm, Stockholm · Show on map
+                          - generic [ref=e4048]:
+                            - text: ·
+                            - button "0.5 km from downtown" [ref=e4050]
+                          - generic [ref=e4051]:
+                            - text: ·
+                            - button "Subway Access" [ref=e4053]
+                      - generic [ref=e4057]:
+                        - link "Scored 7.3 Good 6,081 reviews" [ref=e4058] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/boutique.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=19&hapos=19&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=156079919_88392121_2_1_0&highlighted_blocks=156079919_88392121_2_1_0&matching_block_id=156079919_88392121_2_1_0&sr_pri_blocks=156079919_88392121_2_1_0__537857&from=searchresults
+                          - generic [ref=e4060]:
+                            - generic [ref=e4061]: Scored 7.3
+                            - generic [ref=e4062]: "7.3"
+                            - generic [ref=e4063]:
+                              - generic [ref=e4064]: Good
+                              - generic [ref=e4065]: 6,081 reviews
+                        - 'link "Location: Scored 9.3" [ref=e4067] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/boutique.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=19&hapos=19&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=156079919_88392121_2_1_0&highlighted_blocks=156079919_88392121_2_1_0&matching_block_id=156079919_88392121_2_1_0&sr_pri_blocks=156079919_88392121_2_1_0__537857&from=searchresults
+                          - generic [ref=e4069]: Location 9.3
+                    - generic [ref=e4070]:
+                      - generic [ref=e4073]:
+                        - link "Economy Double Room without Windows" [ref=e4074]
+                        - list [ref=e4075]:
+                          - listitem [ref=e4076]:
+                            - generic [ref=e4078]: 1 full bed
+                          - listitem [ref=e4079]: Breakfast included
+                          - listitem [ref=e4080]:
+                            - generic [ref=e4082]: We have 6 left at this price
+                      - generic [ref=e4084]:
+                        - generic [ref=e4085]:
+                          - generic [ref=e4086]: 5 nights, 2 adults
+                          - generic [ref=e4088]:
+                            - generic [ref=e4089]: ₹ 59,456
+                            - generic [ref=e4090]:
+                              - generic [ref=e4091]: ₹ 53,085
+                              - img [ref=e4093]
+                          - generic [ref=e4095]: Original price ₹ 59,456. Current price ₹ 53,085.
+                          - generic [ref=e4096]: Includes taxes and fees
+                        - link "See your options" [ref=e4098] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/boutique.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=19&hapos=19&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=156079919_88392121_2_1_0&highlighted_blocks=156079919_88392121_2_1_0&matching_block_id=156079919_88392121_2_1_0&sr_pri_blocks=156079919_88392121_2_1_0__537857&from=searchresults
+                          - generic [ref=e4099]: See your options
+                          - img [ref=e4103]
+              - listitem "Property" [ref=e4105]:
+                - generic [ref=e4106]:
+                  - generic [ref=e4108]:
+                    - link [ref=e4109] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/tegnerlunden.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=20&hapos=20&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1816816_202190466_2_41_0&highlighted_blocks=1816816_202190466_2_41_0&matching_block_id=1816816_202190466_2_41_0&sr_pri_blocks=1816816_202190466_2_41_0__1645300&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e4110]
+                    - button "Save this item to a trip list" [ref=e4114] [cursor=pointer]:
+                      - img [ref=e4117]
+                  - generic [ref=e4120]:
+                    - generic [ref=e4121]:
+                      - generic [ref=e4123]:
+                        - generic [ref=e4125]:
+                          - heading "Villa Dahlia Opens in new window" [level=3] [ref=e4126]:
+                            - link "Villa Dahlia Opens in new window" [ref=e4127] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/tegnerlunden.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=20&hapos=20&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1816816_202190466_2_41_0&highlighted_blocks=1816816_202190466_2_41_0&matching_block_id=1816816_202190466_2_41_0&sr_pri_blocks=1816816_202190466_2_41_0__1645300&from_sustainable_property_sr=1&from=searchresults
+                              - text: Villa Dahlia
+                              - generic [ref=e4128]: Opens in new window
+                          - button "4 out of 5" [ref=e4131]:
+                            - img [ref=e4132]:
+                              - generic [ref=e4133]:
+                                - img [ref=e4135]
+                                - img [ref=e4138]
+                              - generic [ref=e4140]:
+                                - img [ref=e4142]
+                                - img [ref=e4145]
+                              - generic [ref=e4147]:
+                                - img [ref=e4149]
+                                - img [ref=e4152]
+                              - generic [ref=e4154]:
+                                - img [ref=e4156]
+                                - img [ref=e4159]
+                          - button [ref=e4162]:
+                            - img [ref=e4164]
+                        - generic [ref=e4167]:
+                          - img [ref=e4172]
+                          - link "Vasastan, Stockholm · Show on map" [ref=e4174] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/tegnerlunden.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=20&hapos=20&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1816816_202190466_2_41_0&highlighted_blocks=1816816_202190466_2_41_0&matching_block_id=1816816_202190466_2_41_0&sr_pri_blocks=1816816_202190466_2_41_0__1645300&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e4175]: Vasastan, Stockholm · Show on map
+                          - generic [ref=e4176]:
+                            - text: ·
+                            - button "0.9 km from downtown" [ref=e4178]
+                          - generic [ref=e4179]:
+                            - text: ·
+                            - button "Subway Access" [ref=e4181]
+                        - generic [ref=e4184]:
+                          - img [ref=e4186]
+                          - generic [ref=e4188]: Sustainability certification
+                      - generic [ref=e4192]:
+                        - link "Scored 9.0 Wonderful 1,676 reviews" [ref=e4193] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/tegnerlunden.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=20&hapos=20&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1816816_202190466_2_41_0&highlighted_blocks=1816816_202190466_2_41_0&matching_block_id=1816816_202190466_2_41_0&sr_pri_blocks=1816816_202190466_2_41_0__1645300&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e4195]:
+                            - generic [ref=e4196]: Scored 9.0
+                            - generic [ref=e4197]: "9.0"
+                            - generic [ref=e4198]:
+                              - generic [ref=e4199]: Wonderful
+                              - generic [ref=e4200]: 1,676 reviews
+                        - 'link "Breakfast: Scored 9.0" [ref=e4202] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/tegnerlunden.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=20&hapos=20&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1816816_202190466_2_41_0&highlighted_blocks=1816816_202190466_2_41_0&matching_block_id=1816816_202190466_2_41_0&sr_pri_blocks=1816816_202190466_2_41_0__1645300&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e4204]: Breakfast 9.0
+                    - generic [ref=e4205]:
+                      - generic [ref=e4208]:
+                        - link "Superior Room" [ref=e4209]
+                        - list [ref=e4210]:
+                          - listitem [ref=e4211]:
+                            - generic [ref=e4213]: 1 king bed
+                          - listitem [ref=e4214]: Breakfast included
+                          - listitem [ref=e4215]:
+                            - generic [ref=e4216]:
+                              - img [ref=e4219]
+                              - strong [ref=e4223]: Free cancellation
+                          - listitem [ref=e4224]:
+                            - generic [ref=e4225]:
+                              - img [ref=e4228]
+                              - generic [ref=e4231]:
+                                - strong [ref=e4232]: No prepayment needed
+                                - text: – pay at the property
+                          - listitem [ref=e4233]:
+                            - generic [ref=e4235]: We have 7 left at this price
+                      - generic [ref=e4237]:
+                        - generic [ref=e4238]:
+                          - generic [ref=e4239]: 5 nights, 2 adults
+                          - generic [ref=e4240]: ₹ 162,387
+                          - generic [ref=e4241]: Price ₹ 162,387
+                          - generic [ref=e4242]: Includes taxes and fees
+                        - link "See your options" [ref=e4244] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/tegnerlunden.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=20&hapos=20&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1816816_202190466_2_41_0&highlighted_blocks=1816816_202190466_2_41_0&matching_block_id=1816816_202190466_2_41_0&sr_pri_blocks=1816816_202190466_2_41_0__1645300&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e4245]: See your options
+                          - img [ref=e4249]
+              - listitem "Property" [ref=e4251]:
+                - generic [ref=e4252]:
+                  - generic [ref=e4254]:
+                    - link [ref=e4255] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/elite-palace.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=21&hapos=21&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1828410_95143105_2_1_0_649020&highlighted_blocks=1828410_95143105_2_1_0_649020&matching_block_id=1828410_95143105_2_1_0_649020&sr_pri_blocks=1828410_95143105_2_1_0_649020_681821&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e4256]
+                    - button "Save this item to a trip list" [ref=e4260] [cursor=pointer]:
+                      - img [ref=e4263]
+                  - generic [ref=e4266]:
+                    - generic [ref=e4267]:
+                      - generic [ref=e4269]:
+                        - generic [ref=e4271]:
+                          - heading "Elite Palace Hotel & Spa Opens in new window" [level=3] [ref=e4272]:
+                            - link "Elite Palace Hotel & Spa Opens in new window" [ref=e4273] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/elite-palace.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=21&hapos=21&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1828410_95143105_2_1_0_649020&highlighted_blocks=1828410_95143105_2_1_0_649020&matching_block_id=1828410_95143105_2_1_0_649020&sr_pri_blocks=1828410_95143105_2_1_0_649020_681821&from_sustainable_property_sr=1&from=searchresults
+                              - text: Elite Palace Hotel & Spa
+                              - generic [ref=e4274]: Opens in new window
+                          - button "4 out of 5" [ref=e4277]:
+                            - img [ref=e4278]:
+                              - generic [ref=e4279]:
+                                - img [ref=e4281]
+                                - img [ref=e4284]
+                              - generic [ref=e4286]:
+                                - img [ref=e4288]
+                                - img [ref=e4291]
+                              - generic [ref=e4293]:
+                                - img [ref=e4295]
+                                - img [ref=e4298]
+                              - generic [ref=e4300]:
+                                - img [ref=e4302]
+                                - img [ref=e4305]
+                          - button [ref=e4308]:
+                            - img [ref=e4310]
+                        - generic [ref=e4313]:
+                          - link "Vasastan, Stockholm · Show on map" [ref=e4314] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/elite-palace.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=21&hapos=21&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1828410_95143105_2_1_0_649020&highlighted_blocks=1828410_95143105_2_1_0_649020&matching_block_id=1828410_95143105_2_1_0_649020&sr_pri_blocks=1828410_95143105_2_1_0_649020_681821&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e4315]: Vasastan, Stockholm · Show on map
+                          - generic [ref=e4316]:
+                            - text: ·
+                            - button "2.1 km from downtown" [ref=e4318]
+                        - generic [ref=e4321]:
+                          - img [ref=e4323]
+                          - generic [ref=e4325]: Sustainability certification
+                      - generic [ref=e4329]:
+                        - link "Scored 8.2 Very Good 6,843 reviews" [ref=e4330] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/elite-palace.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=21&hapos=21&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1828410_95143105_2_1_0_649020&highlighted_blocks=1828410_95143105_2_1_0_649020&matching_block_id=1828410_95143105_2_1_0_649020&sr_pri_blocks=1828410_95143105_2_1_0_649020_681821&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e4332]:
+                            - generic [ref=e4333]: Scored 8.2
+                            - generic [ref=e4334]: "8.2"
+                            - generic [ref=e4335]:
+                              - generic [ref=e4336]: Very Good
+                              - generic [ref=e4337]: 6,843 reviews
+                        - 'link "Breakfast: Scored 9.1" [ref=e4339] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/elite-palace.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=21&hapos=21&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1828410_95143105_2_1_0_649020&highlighted_blocks=1828410_95143105_2_1_0_649020&matching_block_id=1828410_95143105_2_1_0_649020&sr_pri_blocks=1828410_95143105_2_1_0_649020_681821&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e4341]: Breakfast 9.1
+                    - generic [ref=e4342]:
+                      - generic [ref=e4345]:
+                        - link "Standard Small Double" [ref=e4346]
+                        - list [ref=e4347]:
+                          - listitem [ref=e4348]:
+                            - generic [ref=e4350]: "Beds: 1 double or 2 twins"
+                          - listitem [ref=e4351]: Breakfast included
+                      - generic [ref=e4353]:
+                        - generic [ref=e4354]:
+                          - generic [ref=e4355]: 5 nights, 2 adults
+                          - generic [ref=e4357]:
+                            - generic [ref=e4358]: ₹ 75,369
+                            - generic [ref=e4359]:
+                              - generic [ref=e4360]: ₹ 67,294
+                              - img [ref=e4362]
+                          - generic [ref=e4364]: Original price ₹ 75,369. Current price ₹ 67,294.
+                          - generic [ref=e4365]: Includes taxes and fees
+                        - link "See your options" [ref=e4367] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/elite-palace.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=21&hapos=21&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1828410_95143105_2_1_0_649020&highlighted_blocks=1828410_95143105_2_1_0_649020&matching_block_id=1828410_95143105_2_1_0_649020&sr_pri_blocks=1828410_95143105_2_1_0_649020_681821&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e4368]: See your options
+                          - img [ref=e4372]
+              - listitem "Property" [ref=e4374]:
+                - generic [ref=e4375]:
+                  - generic [ref=e4377]:
+                    - link [ref=e4378] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/clarion-sign.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=22&hapos=22&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1829906_140661798_2_1_0_645600&highlighted_blocks=1829906_140661798_2_1_0_645600&matching_block_id=1829906_140661798_2_1_0_645600&sr_pri_blocks=1829906_140661798_2_1_0_645600_920866&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e4379]
+                    - button "Save this item to a trip list" [ref=e4383] [cursor=pointer]:
+                      - img [ref=e4386]
+                  - generic [ref=e4389]:
+                    - generic [ref=e4390]:
+                      - generic [ref=e4392]:
+                        - generic [ref=e4394]:
+                          - heading "Clarion Hotel Sign Opens in new window" [level=3] [ref=e4395]:
+                            - link "Clarion Hotel Sign Opens in new window" [ref=e4396] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/clarion-sign.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=22&hapos=22&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1829906_140661798_2_1_0_645600&highlighted_blocks=1829906_140661798_2_1_0_645600&matching_block_id=1829906_140661798_2_1_0_645600&sr_pri_blocks=1829906_140661798_2_1_0_645600_920866&from_sustainable_property_sr=1&from=searchresults
+                              - text: Clarion Hotel Sign
+                              - generic [ref=e4397]: Opens in new window
+                          - button "4 out of 5" [ref=e4400]:
+                            - img [ref=e4401]:
+                              - generic [ref=e4402]:
+                                - img [ref=e4404]
+                                - img [ref=e4407]
+                              - generic [ref=e4409]:
+                                - img [ref=e4411]
+                                - img [ref=e4414]
+                              - generic [ref=e4416]:
+                                - img [ref=e4418]
+                                - img [ref=e4421]
+                              - generic [ref=e4423]:
+                                - img [ref=e4425]
+                                - img [ref=e4428]
+                          - button [ref=e4431]:
+                            - img [ref=e4433]
+                        - generic [ref=e4436]:
+                          - img [ref=e4441]
+                          - link "Norrmalm, Stockholm · Show on map" [ref=e4443] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/clarion-sign.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=22&hapos=22&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1829906_140661798_2_1_0_645600&highlighted_blocks=1829906_140661798_2_1_0_645600&matching_block_id=1829906_140661798_2_1_0_645600&sr_pri_blocks=1829906_140661798_2_1_0_645600_920866&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e4444]: Norrmalm, Stockholm · Show on map
+                          - generic [ref=e4445]:
+                            - text: ·
+                            - button "0.7 km from downtown" [ref=e4447]
+                        - generic [ref=e4450]:
+                          - img [ref=e4452]
+                          - generic [ref=e4454]: Sustainability certification
+                      - generic [ref=e4458]:
+                        - link "Scored 8.4 Very Good 7,823 reviews" [ref=e4459] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/clarion-sign.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=22&hapos=22&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1829906_140661798_2_1_0_645600&highlighted_blocks=1829906_140661798_2_1_0_645600&matching_block_id=1829906_140661798_2_1_0_645600&sr_pri_blocks=1829906_140661798_2_1_0_645600_920866&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e4461]:
+                            - generic [ref=e4462]: Scored 8.4
+                            - generic [ref=e4463]: "8.4"
+                            - generic [ref=e4464]:
+                              - generic [ref=e4465]: Very Good
+                              - generic [ref=e4466]: 7,823 reviews
+                        - 'link "Location: Scored 9.3" [ref=e4468] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/clarion-sign.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=22&hapos=22&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1829906_140661798_2_1_0_645600&highlighted_blocks=1829906_140661798_2_1_0_645600&matching_block_id=1829906_140661798_2_1_0_645600&sr_pri_blocks=1829906_140661798_2_1_0_645600_920866&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e4470]: Location 9.3
+                    - generic [ref=e4471]:
+                      - generic [ref=e4474]:
+                        - link "Compact Double" [ref=e4475]
+                        - list [ref=e4476]:
+                          - listitem [ref=e4477]:
+                            - generic [ref=e4479]: 1 full bed
+                          - listitem [ref=e4480]: Breakfast included
+                      - generic [ref=e4482]:
+                        - generic [ref=e4483]:
+                          - generic [ref=e4484]: 5 nights, 2 adults
+                          - generic [ref=e4486]:
+                            - generic [ref=e4487]: ₹ 109,456
+                            - generic [ref=e4488]:
+                              - generic [ref=e4489]: ₹ 90,887
+                              - img [ref=e4491]
+                          - generic [ref=e4493]: Original price ₹ 109,456. Current price ₹ 90,887.
+                          - generic [ref=e4494]: Includes taxes and fees
+                        - link "See your options" [ref=e4496] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/clarion-sign.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=22&hapos=22&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1829906_140661798_2_1_0_645600&highlighted_blocks=1829906_140661798_2_1_0_645600&matching_block_id=1829906_140661798_2_1_0_645600&sr_pri_blocks=1829906_140661798_2_1_0_645600_920866&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e4497]: See your options
+                          - img [ref=e4501]
+              - listitem "Property" [ref=e4503]:
+                - generic [ref=e4504]:
+                  - generic [ref=e4506]:
+                    - link [ref=e4507] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/sky-apartments-stockholm.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=23&hapos=23&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=29604007_360438834_2_1_0_667022&highlighted_blocks=29604007_360438834_2_1_0_667022&matching_block_id=29604007_360438834_2_1_0_667022&sr_pri_blocks=29604007_360438834_2_1_0_667022_788647&from=searchresults
+                      - img [ref=e4508]
+                    - button "Save this item to a trip list" [ref=e4512] [cursor=pointer]:
+                      - img [ref=e4515]
+                  - generic [ref=e4518]:
+                    - generic [ref=e4519]:
+                      - generic [ref=e4521]:
+                        - generic [ref=e4523]:
+                          - heading "VANDER Kungsholmen, Stockholm Opens in new window" [level=3] [ref=e4524]:
+                            - link "VANDER Kungsholmen, Stockholm Opens in new window" [ref=e4525] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/sky-apartments-stockholm.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=23&hapos=23&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=29604007_360438834_2_1_0_667022&highlighted_blocks=29604007_360438834_2_1_0_667022&matching_block_id=29604007_360438834_2_1_0_667022&sr_pri_blocks=29604007_360438834_2_1_0_667022_788647&from=searchresults
+                              - text: VANDER Kungsholmen, Stockholm
+                              - generic [ref=e4526]: Opens in new window
+                          - button "4 out of 5" [ref=e4529]:
+                            - img [ref=e4530]:
+                              - generic [ref=e4531]:
+                                - img [ref=e4533]
+                                - img [ref=e4536]
+                              - generic [ref=e4538]:
+                                - img [ref=e4540]
+                                - img [ref=e4543]
+                              - generic [ref=e4545]:
+                                - img [ref=e4547]
+                                - img [ref=e4550]
+                              - generic [ref=e4552]:
+                                - img [ref=e4554]
+                                - img [ref=e4557]
+                        - generic [ref=e4560]:
+                          - link "Kungsholmen, Stockholm · Show on map" [ref=e4561] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/sky-apartments-stockholm.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=23&hapos=23&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=29604007_360438834_2_1_0_667022&highlighted_blocks=29604007_360438834_2_1_0_667022&matching_block_id=29604007_360438834_2_1_0_667022&sr_pri_blocks=29604007_360438834_2_1_0_667022_788647&from=searchresults&map=1
+                            - generic [ref=e4562]: Kungsholmen, Stockholm · Show on map
+                          - generic [ref=e4563]:
+                            - text: ·
+                            - button "2.8 km from downtown" [ref=e4565]
+                          - generic [ref=e4566]:
+                            - text: ·
+                            - button "Subway Access" [ref=e4568]
+                      - link "Scored 8.8 Excellent 4,667 reviews" [ref=e4573] [cursor=pointer]:
+                        - /url: https://www.booking.com/hotel/se/sky-apartments-stockholm.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=23&hapos=23&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=29604007_360438834_2_1_0_667022&highlighted_blocks=29604007_360438834_2_1_0_667022&matching_block_id=29604007_360438834_2_1_0_667022&sr_pri_blocks=29604007_360438834_2_1_0_667022_788647&from=searchresults
+                        - generic [ref=e4575]:
+                          - generic [ref=e4576]: Scored 8.8
+                          - generic [ref=e4577]: "8.8"
+                          - generic [ref=e4578]:
+                            - generic [ref=e4579]: Excellent
+                            - generic [ref=e4580]: 4,667 reviews
+                    - generic [ref=e4581]:
+                      - generic [ref=e4584]:
+                        - link "Studio Apartment" [ref=e4585]
+                        - list [ref=e4586]:
+                          - listitem [ref=e4587]:
+                            - generic [ref=e4588]:
+                              - generic [ref=e4589]: Entire studio • 1 bathroom • 1 kitchen • 30 m²
+                              - generic [ref=e4590]: 1 queen bed
+                          - listitem [ref=e4591]: Breakfast included
+                      - generic [ref=e4593]:
+                        - generic [ref=e4594]:
+                          - generic [ref=e4595]: 5 nights, 2 adults
+                          - generic [ref=e4596]: ₹ 77,838
+                          - generic [ref=e4597]: Price ₹ 77,838
+                          - generic [ref=e4598]: Includes taxes and fees
+                        - link "See your options" [ref=e4600] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/sky-apartments-stockholm.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=23&hapos=23&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=29604007_360438834_2_1_0_667022&highlighted_blocks=29604007_360438834_2_1_0_667022&matching_block_id=29604007_360438834_2_1_0_667022&sr_pri_blocks=29604007_360438834_2_1_0_667022_788647&from=searchresults
+                          - generic [ref=e4601]: See your options
+                          - img [ref=e4605]
+              - listitem "Property" [ref=e4607]:
+                - generic [ref=e4608]:
+                  - generic [ref=e4610]:
+                    - link [ref=e4611] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/ruby-frida-stoccolma-by-ihg.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=24&hapos=24&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1640113407_434269340_2_1_0&highlighted_blocks=1640113407_434269340_2_1_0&matching_block_id=1640113407_434269340_2_1_0&sr_pri_blocks=1640113407_434269340_2_1_0__796200&from=searchresults
+                      - img [ref=e4612]
+                    - button "Save this item to a trip list" [ref=e4616] [cursor=pointer]:
+                      - img [ref=e4619]
+                  - generic [ref=e4622]:
+                    - generic [ref=e4623]:
+                      - generic [ref=e4625]:
+                        - generic [ref=e4627]:
+                          - heading "Ruby Frida Hotel Stockholm by IHG Opens in new window" [level=3] [ref=e4628]:
+                            - link "Ruby Frida Hotel Stockholm by IHG Opens in new window" [ref=e4629] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/ruby-frida-stoccolma-by-ihg.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=24&hapos=24&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1640113407_434269340_2_1_0&highlighted_blocks=1640113407_434269340_2_1_0&matching_block_id=1640113407_434269340_2_1_0&sr_pri_blocks=1640113407_434269340_2_1_0__796200&from=searchresults
+                              - text: Ruby Frida Hotel Stockholm by IHG
+                              - generic [ref=e4630]: Opens in new window
+                          - button [ref=e4632]:
+                            - img [ref=e4634]
+                        - generic [ref=e4637]:
+                          - link "Kungsholmen, Stockholm · Show on map" [ref=e4638] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/ruby-frida-stoccolma-by-ihg.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=24&hapos=24&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1640113407_434269340_2_1_0&highlighted_blocks=1640113407_434269340_2_1_0&matching_block_id=1640113407_434269340_2_1_0&sr_pri_blocks=1640113407_434269340_2_1_0__796200&from=searchresults&map=1
+                            - generic [ref=e4639]: Kungsholmen, Stockholm · Show on map
+                          - generic [ref=e4640]:
+                            - text: ·
+                            - button "2 km from downtown" [ref=e4642]
+                          - generic [ref=e4643]:
+                            - text: ·
+                            - button "Subway Access" [ref=e4645]
+                      - generic [ref=e4649]:
+                        - link "Scored 8.6 Excellent 30 reviews" [ref=e4650] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/ruby-frida-stoccolma-by-ihg.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=24&hapos=24&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1640113407_434269340_2_1_0&highlighted_blocks=1640113407_434269340_2_1_0&matching_block_id=1640113407_434269340_2_1_0&sr_pri_blocks=1640113407_434269340_2_1_0__796200&from=searchresults
+                          - generic [ref=e4652]:
+                            - generic [ref=e4653]: Scored 8.6
+                            - generic [ref=e4654]: "8.6"
+                            - generic [ref=e4655]:
+                              - generic [ref=e4656]: Excellent
+                              - generic [ref=e4657]: 30 reviews
+                        - generic [ref=e4659]: New to Booking.com
+                    - generic [ref=e4660]:
+                      - generic [ref=e4663]:
+                        - link "Wow Windowless Room - Accessible" [ref=e4664]
+                        - list [ref=e4665]:
+                          - listitem [ref=e4666]:
+                            - generic [ref=e4668]: 1 queen bed
+                          - listitem [ref=e4669]: Breakfast included
+                          - listitem [ref=e4670]:
+                            - generic [ref=e4672]: We have 3 left at this price
+                      - generic [ref=e4674]:
+                        - generic [ref=e4675]:
+                          - generic [ref=e4676]: 5 nights, 2 adults
+                          - generic [ref=e4677]: ₹ 78,583
+                          - generic [ref=e4678]: Price ₹ 78,583
+                          - generic [ref=e4679]: Includes taxes and fees
+                        - link "See your options" [ref=e4681] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/ruby-frida-stoccolma-by-ihg.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=24&hapos=24&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1640113407_434269340_2_1_0&highlighted_blocks=1640113407_434269340_2_1_0&matching_block_id=1640113407_434269340_2_1_0&sr_pri_blocks=1640113407_434269340_2_1_0__796200&from=searchresults
+                          - generic [ref=e4682]: See your options
+                          - img [ref=e4686]
+              - listitem "Property" [ref=e4688]:
+                - generic [ref=e4689]:
+                  - generic [ref=e4691]:
+                    - link [ref=e4692] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/connect-city.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=25&hapos=25&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=24595218_430053540_2_1_0&highlighted_blocks=24595218_430053540_2_1_0&matching_block_id=24595218_430053540_2_1_0&sr_pri_blocks=24595218_430053540_2_1_0__576000&from=searchresults
+                      - img [ref=e4693]
+                    - button "Save this item to a trip list" [ref=e4697] [cursor=pointer]:
+                      - img [ref=e4700]
+                  - generic [ref=e4703]:
+                    - generic [ref=e4704]:
+                      - generic [ref=e4706]:
+                        - generic [ref=e4708]:
+                          - heading "Aiden by Best Western Stockholm City Opens in new window" [level=3] [ref=e4709]:
+                            - link "Aiden by Best Western Stockholm City Opens in new window" [ref=e4710] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/connect-city.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=25&hapos=25&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=24595218_430053540_2_1_0&highlighted_blocks=24595218_430053540_2_1_0&matching_block_id=24595218_430053540_2_1_0&sr_pri_blocks=24595218_430053540_2_1_0__576000&from=searchresults
+                              - text: Aiden by Best Western Stockholm City
+                              - generic [ref=e4711]: Opens in new window
+                          - button "3 out of 5" [ref=e4714]:
+                            - img [ref=e4715]:
+                              - generic [ref=e4716]:
+                                - img [ref=e4718]
+                                - img [ref=e4721]
+                              - generic [ref=e4723]:
+                                - img [ref=e4725]
+                                - img [ref=e4728]
+                              - generic [ref=e4730]:
+                                - img [ref=e4732]
+                                - img [ref=e4735]
+                        - generic [ref=e4738]:
+                          - link "Kungsholmen, Stockholm · Show on map" [ref=e4739] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/connect-city.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=25&hapos=25&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=24595218_430053540_2_1_0&highlighted_blocks=24595218_430053540_2_1_0&matching_block_id=24595218_430053540_2_1_0&sr_pri_blocks=24595218_430053540_2_1_0__576000&from=searchresults&map=1
+                            - generic [ref=e4740]: Kungsholmen, Stockholm · Show on map
+                          - generic [ref=e4741]:
+                            - text: ·
+                            - button "2.1 km from downtown" [ref=e4743]
+                          - generic [ref=e4744]:
+                            - text: ·
+                            - button "Subway Access" [ref=e4746]
+                      - link "Scored 8.1 Very Good 5,061 reviews" [ref=e4751] [cursor=pointer]:
+                        - /url: https://www.booking.com/hotel/se/connect-city.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=25&hapos=25&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=24595218_430053540_2_1_0&highlighted_blocks=24595218_430053540_2_1_0&matching_block_id=24595218_430053540_2_1_0&sr_pri_blocks=24595218_430053540_2_1_0__576000&from=searchresults
+                        - generic [ref=e4753]:
+                          - generic [ref=e4754]: Scored 8.1
+                          - generic [ref=e4755]: "8.1"
+                          - generic [ref=e4756]:
+                            - generic [ref=e4757]: Very Good
+                            - generic [ref=e4758]: 5,061 reviews
+                    - generic "Getaway Deal. This property is offering a discount on select stays between Mar 26 and Sep 30, 2026.." [ref=e4762]:
+                      - generic [ref=e4763]: Getaway Deal
+                    - generic [ref=e4764]:
+                      - generic [ref=e4767]:
+                        - link "Economy Double Room without Window" [ref=e4768]
+                        - list [ref=e4769]:
+                          - listitem [ref=e4770]:
+                            - generic [ref=e4772]: 1 full bed
+                          - listitem [ref=e4773]: Breakfast included
+                          - listitem [ref=e4774]:
+                            - generic [ref=e4775]:
+                              - img [ref=e4778]
+                              - strong [ref=e4782]: Free cancellation
+                          - listitem [ref=e4783]:
+                            - generic [ref=e4784]:
+                              - img [ref=e4787]
+                              - generic [ref=e4790]:
+                                - strong [ref=e4791]: No prepayment needed
+                                - text: – pay at the property
+                          - listitem [ref=e4792]:
+                            - generic [ref=e4794]: We have 1 left at this price
+                      - generic [ref=e4796]:
+                        - generic [ref=e4797]:
+                          - generic [ref=e4798]: 5 nights, 2 adults
+                          - generic [ref=e4800]:
+                            - generic [ref=e4801]: ₹ 71,062
+                            - generic [ref=e4802]:
+                              - generic [ref=e4803]: ₹ 56,850
+                              - img [ref=e4805]
+                          - generic [ref=e4807]: Original price ₹ 71,062. Current price ₹ 56,850.
+                          - generic [ref=e4808]: Includes taxes and fees
+                        - link "See your options" [ref=e4810] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/connect-city.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=25&hapos=25&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=24595218_430053540_2_1_0&highlighted_blocks=24595218_430053540_2_1_0&matching_block_id=24595218_430053540_2_1_0&sr_pri_blocks=24595218_430053540_2_1_0__576000&from=searchresults
+                          - generic [ref=e4811]: See your options
+                          - img [ref=e4815]
+              - listitem "Property" [ref=e4817]:
+                - generic [ref=e4818]:
+                  - generic [ref=e4820]:
+                    - link [ref=e4821] [cursor=pointer]:
+                      - /url: https://www.booking.com/hotel/se/berns.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=26&hapos=26&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1837702_380262510_2_1_0&highlighted_blocks=1837702_380262510_2_1_0&matching_block_id=1837702_380262510_2_1_0&sr_pri_blocks=1837702_380262510_2_1_0__1284800&from_sustainable_property_sr=1&from=searchresults
+                      - img [ref=e4822]
+                    - button "Save this item to a trip list" [ref=e4826] [cursor=pointer]:
+                      - img [ref=e4829]
+                  - generic [ref=e4832]:
+                    - generic [ref=e4833]:
+                      - generic [ref=e4835]:
+                        - generic [ref=e4837]:
+                          - heading "Berns Hotel - Boutique Hotel in the heart of Stockholm Opens in new window" [level=3] [ref=e4838]:
+                            - link "Berns Hotel - Boutique Hotel in the heart of Stockholm Opens in new window" [ref=e4839] [cursor=pointer]:
+                              - /url: https://www.booking.com/hotel/se/berns.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=26&hapos=26&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1837702_380262510_2_1_0&highlighted_blocks=1837702_380262510_2_1_0&matching_block_id=1837702_380262510_2_1_0&sr_pri_blocks=1837702_380262510_2_1_0__1284800&from_sustainable_property_sr=1&from=searchresults
+                              - text: Berns Hotel - Boutique Hotel in the heart of Stockholm
+                              - generic [ref=e4840]: Opens in new window
+                          - button "4 out of 5" [ref=e4843]:
+                            - img [ref=e4844]:
+                              - generic [ref=e4845]:
+                                - img [ref=e4847]
+                                - img [ref=e4850]
+                              - generic [ref=e4852]:
+                                - img [ref=e4854]
+                                - img [ref=e4857]
+                              - generic [ref=e4859]:
+                                - img [ref=e4861]
+                                - img [ref=e4864]
+                              - generic [ref=e4866]:
+                                - img [ref=e4868]
+                                - img [ref=e4871]
+                        - generic [ref=e4874]:
+                          - img [ref=e4879]
+                          - link "Norrmalm, Stockholm · Show on map" [ref=e4881] [cursor=pointer]:
+                            - /url: https://www.booking.com/hotel/se/berns.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=26&hapos=26&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1837702_380262510_2_1_0&highlighted_blocks=1837702_380262510_2_1_0&matching_block_id=1837702_380262510_2_1_0&sr_pri_blocks=1837702_380262510_2_1_0__1284800&from_sustainable_property_sr=1&from=searchresults&map=1
+                            - generic [ref=e4882]: Norrmalm, Stockholm · Show on map
+                          - generic [ref=e4883]:
+                            - text: ·
+                            - button "450 m from downtown" [ref=e4885]
+                          - generic [ref=e4886]:
+                            - text: ·
+                            - button "Subway Access" [ref=e4888]
+                        - generic [ref=e4891]:
+                          - img [ref=e4893]
+                          - generic [ref=e4895]: Sustainability certification
+                      - generic [ref=e4899]:
+                        - link "Scored 8.4 Very Good 2,132 reviews" [ref=e4900] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/berns.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=26&hapos=26&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1837702_380262510_2_1_0&highlighted_blocks=1837702_380262510_2_1_0&matching_block_id=1837702_380262510_2_1_0&sr_pri_blocks=1837702_380262510_2_1_0__1284800&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e4902]:
+                            - generic [ref=e4903]: Scored 8.4
+                            - generic [ref=e4904]: "8.4"
+                            - generic [ref=e4905]:
+                              - generic [ref=e4906]: Very Good
+                              - generic [ref=e4907]: 2,132 reviews
+                        - 'link "Location: Scored 9.7" [ref=e4909] [cursor=pointer]':
+                          - /url: https://www.booking.com/hotel/se/berns.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=26&hapos=26&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1837702_380262510_2_1_0&highlighted_blocks=1837702_380262510_2_1_0&matching_block_id=1837702_380262510_2_1_0&sr_pri_blocks=1837702_380262510_2_1_0__1284800&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e4911]: Location 9.7
+                    - generic [ref=e4912]:
+                      - generic [ref=e4915]:
+                        - link "Essential" [ref=e4916]
+                        - list [ref=e4917]:
+                          - listitem [ref=e4918]:
+                            - generic [ref=e4920]: 1 queen bed
+                          - listitem [ref=e4921]: Breakfast included
+                          - listitem [ref=e4922]:
+                            - generic [ref=e4923]:
+                              - img [ref=e4926]
+                              - strong [ref=e4930]: Free cancellation
+                          - listitem [ref=e4931]:
+                            - generic [ref=e4932]:
+                              - img [ref=e4935]
+                              - generic [ref=e4938]:
+                                - strong [ref=e4939]: No prepayment needed
+                                - text: – pay at the property
+                          - listitem [ref=e4940]:
+                            - generic [ref=e4942]: We have 5 left at this price
+                      - generic [ref=e4944]:
+                        - generic [ref=e4945]:
+                          - generic [ref=e4946]: 5 nights, 2 adults
+                          - generic [ref=e4948]:
+                            - generic [ref=e4949]: ₹ 144,099
+                            - generic [ref=e4950]:
+                              - generic [ref=e4951]: ₹ 126,807
+                              - img [ref=e4953]
+                          - generic [ref=e4955]: Original price ₹ 144,099. Current price ₹ 126,807.
+                          - generic [ref=e4956]: Includes taxes and fees
+                        - link "See your options" [ref=e4958] [cursor=pointer]:
+                          - /url: https://www.booking.com/hotel/se/berns.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-07-15&checkout=2026-07-20&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&hpos=26&hapos=26&sr_order=popularity&nflt=mealplan%3D1&srpvid=b7a82e8465ee12ee&srepoch=1783665435&all_sr_blocks=1837702_380262510_2_1_0&highlighted_blocks=1837702_380262510_2_1_0&matching_block_id=1837702_380262510_2_1_0&sr_pri_blocks=1837702_380262510_2_1_0__1284800&from_sustainable_property_sr=1&from=searchresults
+                          - generic [ref=e4959]: See your options
+                          - img [ref=e4963]
+              - generic [ref=e4968]:
+                - generic [ref=e4970]:
+                  - generic [ref=e4971]:
+                    - heading "Things to do in Stockholm" [level=3] [ref=e4972]
+                    - button "Prices shown are estimates – final amount will be shown right before you book. Free cancellation policy may change based on the booking dates you select." [ref=e4975] [cursor=pointer]:
+                      - img [ref=e4977]
+                  - link "See all" [ref=e4979] [cursor=pointer]:
+                    - /url: https://ch.booking.com/c?target=aHR0cHM6Ly93d3cuYm9va2luZy5jb20vYXR0cmFjdGlvbnMvc2VhcmNocmVzdWx0cy9zZS9zdG9ja2hvbG0uaHRtbD9lbmRfZGF0ZT0yMDI2LTA3LTIwJnNlbGVjdGVkX2N1cnJlbmN5PUlOUiZldFN0YXRlQmxvYj1FUUhFalJYeVU5Zm1pa3RDanJMRXA3Z2swQ0pQTWhwZFZmMmFBUDBhcnF5R05vdEFIVG82aXNoRUF0WnkxZGxWV3hyaW44UEJJdnpzJmFkcGxhdD13d3ctQUNDT01NT0RBVElPTl9TRUFSQ0hfUkVTVUxUUy1JTl9GRUVEX0FUVFJBQ1RJT05fQkFOTkVSLWF0dHJhY3Rpb24tbWlzc2luZ19jcmVhdGl2ZS03R0ZnQzlMMTM3Mkd2ZUthUXBkREFCJmRlc3RfaWQ9LTI1MjQyNzkmc29ydF9ieT0mbGFiZWw9Z2VuMTczbnItMTBDQVFvZ2dKQ0VITmxZWEpqYUY5emRHOWphMmh2YkcxSU0xZ0VhR3lJQVFHWUFUTzRBUmZJQVF6WUFRUG9BUUg0QVFHSUFnR29BZ0c0QW9pbXd0SUd3QUlCMGdJa01ESTJNbU13WmprdFltTTBaQzAwTldRMkxUaGpOR0V0TVRsall6VTRPV0kyWkRFeTJBSUI0QUlCJmRpc3RyaWJ1dGlvbl9pZD03R0ZnQzlMMTM3Mkd2ZUthUXBkREFCJmFpZD0zMDQxNDImY2xpZW50X25hbWU9ZXhwb3N1cmUmc3RhcnRfZGF0ZT0yMDI2LTA3LTE1&st=QVRUUkFDVElPTg==&lt=VklFV19BTEw=&rid=ca1b3282-d7fe-4dcf-b31d-8a7fe92f6d0a&si=ChZiLXBhbmRhLXRvcC1rLXNlbGVjdG9yEAMaQEwumAQ3F1vemBmtSBZ/fltikedU2RjdYIoia2YGkcw56/nWS6ZNnIGaQGvBSMDsjfygCJcwN1cm6W0+YKs4/ww=
+                    - generic [ref=e4980]: See all
+                - generic [ref=e4985]:
+                  - region "Carousel" [ref=e4986]:
+                    - group [ref=e4987]:
+                      - link "Stockholm Archipelago Cruise with Guide 4.1 (936 reviews) Tickets from ‎₹ 3,787.15‏ Free cancellation available" [ref=e4990] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e4994]:
+                          - generic [ref=e4995]:
+                            - generic [ref=e4997]: Stockholm Archipelago Cruise with Guide
+                            - generic [ref=e5001]:
+                              - img [ref=e5004]
+                              - generic [ref=e5006]: 4.1 (936 reviews)
+                          - generic [ref=e5008]:
+                            - generic [ref=e5009]: Tickets from
+                            - strong [ref=e5010]: ‎₹ 3,787.15‏
+                          - generic [ref=e5015]: Free cancellation available
+                    - group [ref=e5016]:
+                      - link "Arlanda Express Airport Transfer 4.69 (360 reviews) Tickets from ‎₹ 3,485.44‏ Free cancellation available" [ref=e5019] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e5023]:
+                          - generic [ref=e5024]:
+                            - generic [ref=e5026]: Arlanda Express Airport Transfer
+                            - generic [ref=e5030]:
+                              - img [ref=e5033]
+                              - generic [ref=e5035]: 4.69 (360 reviews)
+                          - generic [ref=e5037]:
+                            - generic [ref=e5038]: Tickets from
+                            - strong [ref=e5039]: ‎₹ 3,485.44‏
+                          - generic [ref=e5044]: Free cancellation available
+                    - group [ref=e5045]:
+                      - link "Stockholm Archipelago Boat Tour 4.4 (146 reviews) Tickets from ‎₹ 3,648.82‏ Free cancellation available" [ref=e5048] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e5052]:
+                          - generic [ref=e5053]:
+                            - generic [ref=e5055]: Stockholm Archipelago Boat Tour
+                            - generic [ref=e5059]:
+                              - img [ref=e5062]
+                              - generic [ref=e5064]: 4.4 (146 reviews)
+                          - generic [ref=e5066]:
+                            - generic [ref=e5067]: Tickets from
+                            - strong [ref=e5068]: ‎₹ 3,648.82‏
+                          - generic [ref=e5073]: Free cancellation available
+                    - group [ref=e5074]:
+                      - link "Admission to Skansen Open-air Museum 4.51 (374 reviews) Tickets from ‎₹ 3,011.89‏" [ref=e5077] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e5081]:
+                          - generic [ref=e5082]:
+                            - generic [ref=e5084]: Admission to Skansen Open-air Museum
+                            - generic [ref=e5088]:
+                              - img [ref=e5091]
+                              - generic [ref=e5093]: 4.51 (374 reviews)
+                          - generic [ref=e5095]:
+                            - generic [ref=e5096]: Tickets from
+                            - strong [ref=e5097]: ‎₹ 3,011.89‏
+                    - group [ref=e5098]:
+                      - link "Under the Bridges Boat Tour 4.1 (469 reviews) Tickets from ‎₹ 3,900.65‏ Free cancellation available" [ref=e5101] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e5105]:
+                          - generic [ref=e5106]:
+                            - generic [ref=e5108]: Under the Bridges Boat Tour
+                            - generic [ref=e5112]:
+                              - img [ref=e5115]
+                              - generic [ref=e5117]: 4.1 (469 reviews)
+                          - generic [ref=e5119]:
+                            - generic [ref=e5120]: Tickets from
+                            - strong [ref=e5121]: ‎₹ 3,900.65‏
+                          - generic [ref=e5126]: Free cancellation available
+                    - group [ref=e5127]:
+                      - link "Stockholm Pizza Cruise - Explore Stockholm's Waterways 4.19 (30 reviews) Tickets from ‎₹ 2,940.84‏ Free cancellation available" [ref=e5130] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e5134]:
+                          - generic [ref=e5135]:
+                            - generic [ref=e5137]: Stockholm Pizza Cruise - Explore Stockholm's Waterways
+                            - generic [ref=e5141]:
+                              - img [ref=e5144]
+                              - generic [ref=e5146]: 4.19 (30 reviews)
+                          - generic [ref=e5148]:
+                            - generic [ref=e5149]: Tickets from
+                            - strong [ref=e5150]: ‎₹ 2,940.84‏
+                          - generic [ref=e5155]: Free cancellation available
+                    - group [ref=e5156]:
+                      - link "Hop-on, Hop-off Bus and Boat Tours 3.81 (316 reviews) Tickets from ‎₹ 2,178.40‏ Free cancellation available" [ref=e5159] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e5163]:
+                          - generic [ref=e5164]:
+                            - generic [ref=e5166]: Hop-on, Hop-off Bus and Boat Tours
+                            - generic [ref=e5170]:
+                              - img [ref=e5173]
+                              - generic [ref=e5175]: 3.81 (316 reviews)
+                          - generic [ref=e5177]:
+                            - generic [ref=e5178]: Tickets from
+                            - strong [ref=e5179]: ‎₹ 2,178.40‏
+                          - generic [ref=e5184]: Free cancellation available
+                    - group [ref=e5185]:
+                      - link "The Viking Museum Entrance Ticket 4.4 (142 reviews) Tickets from ‎₹ 1,965.14‏ Free cancellation available" [ref=e5188] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e5192]:
+                          - generic [ref=e5193]:
+                            - generic [ref=e5195]: The Viking Museum Entrance Ticket
+                            - generic [ref=e5199]:
+                              - img [ref=e5202]
+                              - generic [ref=e5204]: 4.4 (142 reviews)
+                          - generic [ref=e5206]:
+                            - generic [ref=e5207]: Tickets from
+                            - strong [ref=e5208]: ‎₹ 1,965.14‏
+                          - generic [ref=e5213]: Free cancellation available
+                    - group [ref=e5214]:
+                      - link "Stockholm Old Town Walking Tour with Local Guide 4.61 (204 reviews) Tickets from ‎₹ 2,178.40‏ Free cancellation available" [ref=e5217] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e5221]:
+                          - generic [ref=e5222]:
+                            - generic [ref=e5224]: Stockholm Old Town Walking Tour with Local Guide
+                            - generic [ref=e5228]:
+                              - img [ref=e5231]
+                              - generic [ref=e5233]: 4.61 (204 reviews)
+                          - generic [ref=e5235]:
+                            - generic [ref=e5236]: Tickets from
+                            - strong [ref=e5237]: ‎₹ 2,178.40‏
+                          - generic [ref=e5242]: Free cancellation available
+                  - button [ref=e5243] [cursor=pointer]:
+                    - img [ref=e5246]
+  - contentinfo [ref=e5248]:
+    - contentinfo [ref=e5251]:
+      - navigation "Quick Links" [ref=e5254]:
+        - list [ref=e5255]:
+          - listitem [ref=e5256]:
+            - link "Countries" [ref=e5257] [cursor=pointer]:
+              - /url: https://www.booking.com/country.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5259]: Countries
+            - text: .
+          - listitem [ref=e5260]:
+            - link "Regions" [ref=e5261] [cursor=pointer]:
+              - /url: https://www.booking.com/region.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5263]: Regions
+            - text: .
+          - listitem [ref=e5264]:
+            - link "Cities" [ref=e5265] [cursor=pointer]:
+              - /url: https://www.booking.com/city.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5267]: Cities
+            - text: .
+          - listitem [ref=e5268]:
+            - link "Districts" [ref=e5269] [cursor=pointer]:
+              - /url: https://www.booking.com/district.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5271]: Districts
+            - text: .
+          - listitem [ref=e5272]:
+            - link "Airports" [ref=e5273] [cursor=pointer]:
+              - /url: https://www.booking.com/airport.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5275]: Airports
+            - text: .
+          - listitem [ref=e5276]:
+            - link "Hotels" [ref=e5277] [cursor=pointer]:
+              - /url: https://www.booking.com/hotel/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5279]: Hotels
+            - text: .
+          - listitem [ref=e5280]:
+            - link "Places of interest" [ref=e5281] [cursor=pointer]:
+              - /url: https://www.booking.com/landmark.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5283]: Places of interest
+            - text: .
+          - listitem [ref=e5284]:
+            - link "Vacation Homes" [ref=e5285] [cursor=pointer]:
+              - /url: https://www.booking.com/booking-home/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5287]: Vacation Homes
+            - text: .
+          - listitem [ref=e5288]:
+            - link "Apartments" [ref=e5289] [cursor=pointer]:
+              - /url: https://www.booking.com/apartments/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5291]: Apartments
+            - text: .
+          - listitem [ref=e5292]:
+            - link "Resorts" [ref=e5293] [cursor=pointer]:
+              - /url: https://www.booking.com/resorts/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5295]: Resorts
+            - text: .
+          - listitem [ref=e5296]:
+            - link "Villas" [ref=e5297] [cursor=pointer]:
+              - /url: https://www.booking.com/villas/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5299]: Villas
+            - text: .
+          - listitem [ref=e5300]:
+            - link "Hostels" [ref=e5301] [cursor=pointer]:
+              - /url: https://www.booking.com/hostels/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5303]: Hostels
+            - text: .
+          - listitem [ref=e5304]:
+            - link "B&Bs" [ref=e5305] [cursor=pointer]:
+              - /url: https://www.booking.com/bed-and-breakfast/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5307]: B&Bs
+            - text: .
+          - listitem [ref=e5308]:
+            - link "Guest Houses" [ref=e5309] [cursor=pointer]:
+              - /url: https://www.booking.com/guest-house/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5311]: Guest Houses
+            - text: .
+          - listitem [ref=e5312]:
+            - link "Unique places to stay" [ref=e5313] [cursor=pointer]:
+              - /url: https://www.booking.com/accommodations.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5315]: Unique places to stay
+            - text: .
+          - listitem [ref=e5316]:
+            - link "Discover monthly stays" [ref=e5317] [cursor=pointer]:
+              - /url: https://www.booking.com/extended-stays/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+              - generic [ref=e5319]: Discover monthly stays
+      - generic [ref=e5321]:
+        - generic [ref=e5322]:
+          - heading "Support" [level=3] [ref=e5324]
+          - list [ref=e5325]:
+            - listitem [ref=e5326]:
+              - link "Manage your trips" [ref=e5327] [cursor=pointer]:
+                - /url: https://secure.booking.com/content/cs.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5328]: Manage your trips
+            - listitem [ref=e5329]:
+              - link "Contact Customer Service" [ref=e5330] [cursor=pointer]:
+                - /url: https://secure.booking.com/help.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5331]: Contact Customer Service
+            - listitem [ref=e5332]:
+              - link "Safety Resource Center" [ref=e5333] [cursor=pointer]:
+                - /url: https://www.booking.com/trust_and_safety.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5334]: Safety Resource Center
+        - generic [ref=e5335]:
+          - heading "Discover" [level=3] [ref=e5337]
+          - list [ref=e5338]:
+            - listitem [ref=e5339]:
+              - link "Genius loyalty program" [ref=e5340] [cursor=pointer]:
+                - /url: https://www.booking.com/genius.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5341]: Genius loyalty program
+            - listitem [ref=e5342]:
+              - link "Seasonal and holiday deals" [ref=e5343] [cursor=pointer]:
+                - /url: https://www.booking.com/deals/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5344]: Seasonal and holiday deals
+            - listitem [ref=e5345]:
+              - link "Travel articles" [ref=e5346] [cursor=pointer]:
+                - /url: https://www.booking.com/articles.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5347]: Travel articles
+            - listitem [ref=e5348]:
+              - link "Booking.com for Business" [ref=e5349] [cursor=pointer]:
+                - /url: https://business.booking.com/?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5350]: Booking.com for Business
+            - listitem [ref=e5351]:
+              - link "Traveller Review Awards" [ref=e5352] [cursor=pointer]:
+                - /url: https://www.booking.com/traveller-awards/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5353]: Traveller Review Awards
+            - listitem [ref=e5354]:
+              - link "Car rental" [ref=e5355] [cursor=pointer]:
+                - /url: https://www.booking.com/cars/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5356]: Car rental
+            - listitem [ref=e5357]:
+              - link "Flight finder" [ref=e5358] [cursor=pointer]:
+                - /url: https://booking.com/pxgo?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&token=UmFuZG9tSVYkc2RlIyh9YWDUtbaQciWiGSxolLfIVpai0cxXlLaKQ-jKbDp9gpH8fDfOWoNKitDRXMhJFwYqkDO7fhFFKVLNvYWJRmQKQKxU2yjNa-BahHm7m5J8f0AmSdQ5WQfRMgb537Wp_LfW92tdhcPC_LWb3IR_n_fJ5T8Nx3IjLhK5kWZz4Ye05mv2lhLjAmZiYev_dzM9R9VKQNdc_RztHXB9r_ktDNsW8mRzeYPajt8R8djjEfu34OM24LZuBGcyHr2JzuC70I1SQp4z0LKNvN3HrTHCg3zLhRvyqQR6to6sC1AAKU1mnOGbJdl3LzVzc2g-WVbpDmRpDNWiQfhVuodxCjFsCNntX-4Xt-HsJkQhrt_jiY27oNPNOSjxCaq2ypYTF0BISHRjtMc7xGUI0JRYSiSpsd4HASebSNikR8PsV8JOfOnuV_udCCQt-W2y8P2gqk4ztg9F1I9-raZZy8VgbAriiJ-pEUwLQ-BWiVG0hvyUv2RN0akAWx72W6cYoy4FRakhFFTqEEZsdVDX087N2D5L5AcAdarcRFcA-KsSZPbRBr3QS2zhTTEcRN4AnV0&lang=en-us&url=https%3A%2F%2Fbooking.kayak.com%2Fin%3Fsid%3D7fdae2cc64456324cd4a3848e320ddee%26mc%3DINR%26bdclc%3Den-us%26p%3Dfooter_link%26a%3Dbdc%252Ffooter_link
+                - generic [ref=e5359]: Flight finder
+            - listitem [ref=e5360]:
+              - link "Restaurant reservations" [ref=e5361] [cursor=pointer]:
+                - /url: https://www.opentable.com/?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&ref=16087
+                - generic [ref=e5362]: Restaurant reservations
+            - listitem [ref=e5363]:
+              - link "Booking.com for Travel Agents" [ref=e5364] [cursor=pointer]:
+                - /url: https://www.booking.com/affiliate-program/v2/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee&utm_campaign=booking-footer&utm_content=travel-agents-link&utm_medium=referral&utm_source=booking.com
+                - generic [ref=e5365]: Booking.com for Travel Agents
+        - generic [ref=e5366]:
+          - heading "Terms and settings" [level=3] [ref=e5368]
+          - list [ref=e5369]:
+            - listitem [ref=e5370]:
+              - link "Privacy Notice" [ref=e5371] [cursor=pointer]:
+                - /url: https://www.booking.com/content/privacy.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5372]: Privacy Notice
+            - listitem [ref=e5373]:
+              - link "Terms of Service" [ref=e5374] [cursor=pointer]:
+                - /url: https://www.booking.com/content/terms.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5375]: Terms of Service
+            - listitem [ref=e5376]:
+              - link "Accessibility Statement" [ref=e5377] [cursor=pointer]:
+                - /url: https://www.booking.com/content/accessibility_statement.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5378]: Accessibility Statement
+            - listitem [ref=e5379]:
+              - link "Grievance officer" [ref=e5380] [cursor=pointer]:
+                - /url: https://secure.booking.com/content/complaints.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5381]: Grievance officer
+            - listitem [ref=e5382]:
+              - link "Modern Slavery Statement" [ref=e5383] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/modern-slavery-statement/?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB
+                - generic [ref=e5384]: Modern Slavery Statement
+            - listitem [ref=e5385]:
+              - link "Human Rights Statement" [ref=e5386] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/about/compliance-and-ethics/human-rights/?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB
+                - generic [ref=e5387]: Human Rights Statement
+        - generic [ref=e5388]:
+          - heading "Partners" [level=3] [ref=e5390]
+          - list [ref=e5391]:
+            - listitem [ref=e5392]:
+              - link "Extranet login" [ref=e5393] [cursor=pointer]:
+                - /url: https://admin.booking.com/?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee&utm_campaign=login_footer_v0&utm_medium=frontend&utm_source=extranet_login_footer
+                - generic [ref=e5394]: Extranet login
+            - listitem [ref=e5395]:
+              - link "Partner help" [ref=e5396] [cursor=pointer]:
+                - /url: https://partner.booking.com/en-us?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee&utm_campaign=footer_list&utm_medium=frontend_footer&utm_source=booking.com
+                - generic [ref=e5397]: Partner help
+            - listitem [ref=e5398]:
+              - link "List your property" [ref=e5399] [cursor=pointer]:
+                - /url: https://join.booking.com/?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&lang=en-us&sid=7fdae2cc64456324cd4a3848e320ddee&utm_medium=frontend&utm_source=footer_menu
+                - generic [ref=e5400]: List your property
+            - listitem [ref=e5401]:
+              - link "Become an affiliate" [ref=e5402] [cursor=pointer]:
+                - /url: https://www.booking.com/affiliate-program/v2/index.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee&utm_campaign=booking-footer&utm_content=become-an-affiliate-link&utm_medium=referral&utm_source=booking.com
+                - generic [ref=e5403]: Become an affiliate
+        - generic [ref=e5404]:
+          - heading "About" [level=3] [ref=e5406]
+          - list [ref=e5407]:
+            - listitem [ref=e5408]:
+              - link "About Booking.com" [ref=e5409] [cursor=pointer]:
+                - /url: https://www.booking.com/content/about.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5410]: About Booking.com
+            - listitem [ref=e5411]:
+              - link "How We Work" [ref=e5412] [cursor=pointer]:
+                - /url: https://www.booking.com/content/how_we_work.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5413]: How We Work
+            - listitem [ref=e5414]:
+              - link "Sustainability" [ref=e5415] [cursor=pointer]:
+                - /url: https://sustainability.booking.com/?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB
+                - generic [ref=e5416]: Sustainability
+            - listitem [ref=e5417]:
+              - link "Press center" [ref=e5418] [cursor=pointer]:
+                - /url: https://news.booking.com/en-in
+                - generic [ref=e5419]: Press center
+            - listitem [ref=e5420]:
+              - link "Careers" [ref=e5421] [cursor=pointer]:
+                - /url: https://careers.booking.com/?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB
+                - generic [ref=e5422]: Careers
+            - listitem [ref=e5423]:
+              - link "Investor relations" [ref=e5424] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB
+                - generic [ref=e5425]: Investor relations
+            - listitem [ref=e5426]:
+              - link "Corporate contact" [ref=e5427] [cursor=pointer]:
+                - /url: https://www.booking.com/content/contact-us.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5428]: Corporate contact
+            - listitem [ref=e5429]:
+              - link "Content guidelines and reporting" [ref=e5430] [cursor=pointer]:
+                - /url: https://www.booking.com/content-moderation-policy/overview-page.html?aid=304142&label=gen173nr-10CAQoggJCEHNlYXJjaF9zdG9ja2hvbG1IM1gEaGyIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoimwtIGwAIB0gIkMDI2MmMwZjktYmM0ZC00NWQ2LThjNGEtMTljYzU4OWI2ZDEy2AIB4AIB&sid=7fdae2cc64456324cd4a3848e320ddee
+                - generic [ref=e5431]: Content guidelines and reporting
+      - generic [ref=e5433]:
+        - generic [ref=e5434]:
+          - 'button "Language: English (US)" [ref=e5436] [cursor=pointer]'
+          - button "Prices in Indian Rupee" [ref=e5441] [cursor=pointer]:
+            - generic [ref=e5442]: INR
+        - separator [ref=e5443]
+        - generic [ref=e5444]:
+          - generic [ref=e5446]: Booking.com is part of Booking Holdings Inc., the world leader in online travel and related services.
+          - generic [ref=e5447]: Copyright © 1996–2026 Booking.com™. All rights reserved.
+        - generic [ref=e5448]:
+          - img "Booking.com" [ref=e5449]:
+            - img [ref=e5450]
+          - img "Priceline.com" [ref=e5452]:
+            - img [ref=e5453]
+          - img "Kayak" [ref=e5456]:
+            - img [ref=e5457]
+          - img "Agoda" [ref=e5471]:
+            - img [ref=e5472]
+          - img "OpenTable" [ref=e5480]:
+            - img [ref=e5481]
+  - text: 끖 낝 끲 낝 넌
+  - alert [ref=e5484]
+```
