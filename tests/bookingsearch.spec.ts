@@ -1,7 +1,7 @@
 import { test, expect, type Page } from '@playwright/test';
 
 
-test('Scenario 1, 2 and 3 in one flow', async ({ page }) => {
+test('Scenario 1, 2 and 3 in one flow @smoke', async ({ page }) => {
   const destination = 'Stockholm';
 
   const checkInDate = '2026-07-15';
